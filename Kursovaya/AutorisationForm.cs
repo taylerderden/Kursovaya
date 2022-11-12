@@ -16,13 +16,30 @@ namespace Kursovaya
         public AutorisationForm()
         {
             InitializeComponent();
-            
+
+            Login.Text = "Ваш логин";
+            Login.ForeColor = Color.Gray;
+
+            Password.Text = "пароль";
+            Password.ForeColor = Color.Gray;
+
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             String loginUser = Login.Text; // запись логина
             String passUser = Password.Text; // запись пароля
+
+            if (Login.Text == "")
+            {
+                MessageBox.Show("Введите логин!");
+                return;
+            }
+            if (Password.Text == "")
+            {
+                MessageBox.Show("Введите пароль!");
+                return;
+            }
 
             DB db = new DB();
 
@@ -63,6 +80,86 @@ namespace Kursovaya
             }
                 
         }
+
+        private void Login_Enter(object sender, EventArgs e)
+        {
+            if (Login.Text == "Ваш логин")
+            {
+                Login.Text = "";
+                Login.ForeColor = Color.Black;
+            }
+        }
+
+        private void Login_Leave(object sender, EventArgs e)
+        {
+            if (Login.Text == "")
+            {
+                Login.Text = "Ваш логин ";
+                Login.ForeColor = Color.Gray;                
+            }
+        }
+
+        private void Password_Enter(object sender, EventArgs e)
+        {
+            if (Password.Text == "пароль")
+            {
+                Password.Text = "";
+                Password.ForeColor = Color.Black;
+            }
+        }
+
+        private void Password_Leave(object sender, EventArgs e)
+        {
+            if (Password.Text == "")
+            {
+                Password.Text = "пароль";
+                Password.ForeColor = Color.Gray;
+            }
+        }
+
+        private void labelID_Click(object sender, EventArgs e)
+        {
+            String loginUser = Login.Text; // запись логина
+            String passUser = Password.Text; // запись пароля
+
+            if (Login.Text == "")
+            {
+                MessageBox.Show("Введите логин!");
+                return;
+            }
+            if (Password.Text == "")
+            {
+                MessageBox.Show("Введите пароль!");
+                return;
+            }
+
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand commandID = new MySqlCommand("SELECT `Employee_idEmployee` FROM `Security` WHERE `Security_Login` = @uL AND `Security_Password` = @uP", db.getConnection()); //авторизация администратора
+            commandID.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
+            commandID.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
+
+            adapter.SelectCommand = commandID;
+            adapter.Fill(table);
+
+            db.openConnection();
+
+            if (table.Rows.Count > 0) //поиск записей
+            {
+                string id = commandID.ExecuteScalar().ToString();   // извлекаем id
+                labelID.Text = "ID:" + ' ' + id;
+            }
+            else
+                MessageBox.Show("Failed!"); //иначе ошибка
+
+            db.closeConnection();
+
+            }
+        }
     }
     
-}
+

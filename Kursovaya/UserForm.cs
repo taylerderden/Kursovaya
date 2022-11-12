@@ -20,7 +20,7 @@ namespace Kursovaya
             InitializeComponent();
         }
 
-        public static DateTime GetNetworkTime()
+        public static DateTime GetNetworkTime()  //получение времени из сети
         {
             const string ntpServer = "time.windows.com";
             var ntpData = new byte[48];
@@ -48,7 +48,7 @@ namespace Kursovaya
                
         private void UserForm_Load(object sender, EventArgs e)
         {                                  
-            labelTime.Text = Convert.ToString(GetNetworkTime().ToLongTimeString());
+            labelTime.Text = Convert.ToString(GetNetworkTime().ToShortTimeString());
             Timer tmr = new Timer();
             tmr.Interval = 1000;
             tmr.Tick += new EventHandler(timer1_Tick);
@@ -56,12 +56,12 @@ namespace Kursovaya
 
             labelDay.Text = Convert.ToString(GetNetworkTime().ToShortDateString());
         }
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)  //таймер обновления времени
         {
-            labelTime.Text = Convert.ToString(GetNetworkTime().ToLongTimeString());
+            labelTime.Text = Convert.ToString(GetNetworkTime().ToShortTimeString());
         }
         
-        private void labelTasks_Click(object sender, EventArgs e)
+        private void labelTasks_Click(object sender, EventArgs e)  //назначенные задачи
         {
             DB db = new DB();
 
@@ -81,46 +81,55 @@ namespace Kursovaya
 
         }
         
-        private void btnStartTime_Click(object sender, EventArgs e)
+        private void btnStartTime_Click(object sender, EventArgs e) // начало смены
         {
             DB db = new DB();
-          
-            MySqlCommand command = new MySqlCommand("INSERT INTO `WTime` (`WTime_Day`, `WTime_Start`, `Employee_idEmployee`) VALUES(@Day, @Time, @ID);", db.getConnection());
-            command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
-            command.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
-            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
-            
-            db.openConnection();
 
-            if (command.ExecuteNonQuery() == 1)
-                MessageBox.Show("Удачного дня!");
+            if (textBoxID.Text != "")
+            {
+                MySqlCommand command = new MySqlCommand("INSERT INTO `WTime` (`WTime_Day`, `WTime_Start`, `Employee_idEmployee`) VALUES(@Day, @Time, @ID);", db.getConnection());
+                command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
+                command.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
+                command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+
+                db.openConnection();
+
+                if (command.ExecuteNonQuery() == 1)
+                    MessageBox.Show("Удачного дня!");
+                else
+                    MessageBox.Show("Ошибка!");
+
+                db.closeConnection();
+            }
             else
-                MessageBox.Show("Ошибка!");
-
-            db.closeConnection();
-
+                MessageBox.Show("Введите ID");
         }
 
-        private void btnFinishTime_Click(object sender, EventArgs e)
+        private void btnFinishTime_Click(object sender, EventArgs e)  //конец смены
         {            
             DB db = new DB();
 
-            MySqlCommand command = new MySqlCommand("UPDATE `WTime` SET `WTime_Finish` = @Time WHERE `WTime_Day` =@Day  AND `WTime_Finish` is null AND `Employee_idEmployee` = @ID;", db.getConnection());
-            command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
-            command.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
-            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;           
+            if (textBoxID.Text != "")
+            {
+                MySqlCommand command = new MySqlCommand("UPDATE `WTime` SET `WTime_Finish` = @Time WHERE `WTime_Day` =@Day  AND `WTime_Finish` is null AND `Employee_idEmployee` = @ID;", db.getConnection());
+                command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
+                command.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
+                command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+            
+                db.openConnection();
 
-            db.openConnection();
+                if (command.ExecuteNonQuery() == 1)
+                    MessageBox.Show("До свидания!");
+                else
+                    MessageBox.Show("Ошибка!");
 
-            if (command.ExecuteNonQuery() == 1)
-                MessageBox.Show("До свидания!");
+                db.closeConnection();
+            }
             else
-                MessageBox.Show("Ошибка!");
-
-            db.closeConnection();
+                MessageBox.Show("Введите ID");
         }
 
-        private void labelHours_Click(object sender, EventArgs e)
+        private void labelHours_Click(object sender, EventArgs e)  //отработанное время 
         {
             DB db = new DB();
 
@@ -128,15 +137,23 @@ namespace Kursovaya
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT  Sum(TIMEDIFF(`WTime_Start`, `WTime_Finish`)) AS Hours FROM `WTime` where `Employee_idEmployee` = @ID;", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT  COUNT(*) AS Days, Sum(SUBTIME(`WTime_Finish`, `WTime_Start`)/10000) AS Hours FROM `WTime` where `Employee_idEmployee` = @ID", db.getConnection());
             command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
             dataGridView2.DataSource = table;
-            dataGridView2.Columns[0].HeaderText = "Рабочие часы";
-            
+            dataGridView2.Columns[0].HeaderText = "Дни";
+            dataGridView2.Columns[1].HeaderText = "Рабочие часы";
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)      //выход в авторизацию
+        {
+            this.Hide();
+            AutorisationForm aForm = new AutorisationForm(); 
+            aForm.Show();
         }
     }
 }

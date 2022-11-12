@@ -37,6 +37,7 @@ namespace Kursovaya
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -46,6 +47,7 @@ namespace Kursovaya
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.DimGray;
+            this.mainPanel.Controls.Add(this.labelID);
             this.mainPanel.Controls.Add(this.buttonLogin);
             this.mainPanel.Controls.Add(this.Password);
             this.mainPanel.Controls.Add(this.pictureBox2);
@@ -56,7 +58,7 @@ namespace Kursovaya
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(484, 274);
+            this.mainPanel.Size = new System.Drawing.Size(484, 297);
             this.mainPanel.TabIndex = 1;
             // 
             // buttonLogin
@@ -68,7 +70,7 @@ namespace Kursovaya
             this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLogin.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(178, 224);
+            this.buttonLogin.Location = new System.Drawing.Point(335, 244);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(135, 41);
             this.buttonLogin.TabIndex = 5;
@@ -79,13 +81,15 @@ namespace Kursovaya
             // Password
             // 
             this.Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Password.Font = new System.Drawing.Font("NSimSun", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password.Font = new System.Drawing.Font("Palatino Linotype", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Password.ForeColor = System.Drawing.Color.Silver;
             this.Password.Location = new System.Drawing.Point(82, 157);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(388, 61);
+            this.Password.Size = new System.Drawing.Size(388, 66);
             this.Password.TabIndex = 4;
             this.Password.UseSystemPasswordChar = true;
+            this.Password.Enter += new System.EventHandler(this.Password_Enter);
+            this.Password.Leave += new System.EventHandler(this.Password_Leave);
             // 
             // pictureBox2
             // 
@@ -101,13 +105,15 @@ namespace Kursovaya
             // Login
             // 
             this.Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Login.Font = new System.Drawing.Font("NSimSun", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login.Font = new System.Drawing.Font("Palatino Linotype", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.ForeColor = System.Drawing.Color.Silver;
             this.Login.Location = new System.Drawing.Point(82, 72);
             this.Login.Multiline = true;
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(388, 64);
             this.Login.TabIndex = 2;
+            this.Login.Enter += new System.EventHandler(this.Login_Enter);
+            this.Login.Leave += new System.EventHandler(this.Login_Leave);
             // 
             // pictureBox1
             // 
@@ -143,11 +149,25 @@ namespace Kursovaya
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelID.ForeColor = System.Drawing.Color.White;
+            this.labelID.Location = new System.Drawing.Point(7, 261);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(42, 27);
+            this.labelID.TabIndex = 6;
+            this.labelID.Text = "ID:";
+            this.labelID.Click += new System.EventHandler(this.labelID_Click);
+            // 
             // AutorisationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 274);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(484, 297);
             this.Controls.Add(this.mainPanel);
             this.Name = "AutorisationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -171,5 +191,6 @@ namespace Kursovaya
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelID;
     }
 }

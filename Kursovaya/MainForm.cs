@@ -65,6 +65,13 @@ namespace Kursovaya
             EmployeeForm registerForm = new EmployeeForm();
             registerForm.Show();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AutorisationForm aForm = new AutorisationForm();
+            aForm.Show();
+        }
     }
 
         
