@@ -24,6 +24,19 @@ namespace Kursovaya
             InitializeComponent();
         }
 
+        private void LoadData()
+        {
+            DB db = new DB();
+               try
+            {
+                adapter = new SqlDataAdapter("SELECT *, 'Delete' AS [Delete] FROM `Employee`");
+            }
+            catch
+            {
+
+            }
+        }
+
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
             DB db = new DB();

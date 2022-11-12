@@ -17,60 +17,54 @@ namespace Kursovaya
         {
             InitializeComponent();
         }
-
-        private void labelEmployee_Click(object sender, EventArgs e)
-        {           
-            EmployeeForm registerForm = new EmployeeForm();
-            registerForm.Show();
-        }
-
-        private void labelPosition_Click(object sender, EventArgs e)
-        {
-            PositionForm registerForm = new PositionForm();
-            registerForm.Show();
-        }
-
-        private void labelWTime_Click(object sender, EventArgs e)
-        {
-            WTimeForm registerForm = new WTimeForm();
-            registerForm.Show();
-        }
-
-        private void labelDismissial_Click(object sender, EventArgs e)
-        {
-            DismissialForm registerForm = new DismissialForm();
-            registerForm.Show();
-        }
-
-        private void labelVacation_Click(object sender, EventArgs e)
-        {
-            VacationForm registerForm = new VacationForm();
-            registerForm.Show();
-        }
-
-        private void labelTasks_Click(object sender, EventArgs e)
-        {
-            TasksForm registerForm = new TasksForm();
-            registerForm.Show();
-        }
-
-        private void labelEducation_Click(object sender, EventArgs e)
-        {
-            EducationForm registerForm = new EducationForm();
-            registerForm.Show();
-        }
-
-        private void labelEmployee_Click_1(object sender, EventArgs e)
-        {
-            EmployeeForm registerForm = new EmployeeForm();
-            registerForm.Show();
-        }
-
+       
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
             AutorisationForm aForm = new AutorisationForm();
             aForm.Show();
+        }
+
+        private void tsBtnEmployee_Click(object sender, EventArgs e)
+        {
+            EmployeeForm eForm = new EmployeeForm();
+            eForm.Show();
+        }
+
+        private void tsBtnPosition_Click(object sender, EventArgs e)
+        {
+            PositionForm pForm = new PositionForm();
+            pForm.Show();
+        }
+
+        private void tsBtnEducation_Click(object sender, EventArgs e)
+        {
+            EducationForm edForm = new EducationForm();
+            edForm.Show();
+        }
+
+        private void tsBtnWTime_Click(object sender, EventArgs e)
+        {
+            WTimeForm tForm = new WTimeForm();
+            tForm.Show();
+        }
+
+        private void tsBtnTasks_Click(object sender, EventArgs e)
+        {
+            TasksForm taskForm = new TasksForm();
+            taskForm.Show();
+        }
+
+        private void tsBtnVacation_Click(object sender, EventArgs e)
+        {
+            VacationForm vForm = new VacationForm();
+            vForm.Show();
+        }
+
+        private void tsBtnDismissal_Click(object sender, EventArgs e)
+        {
+            DismissialForm dForm = new DismissialForm();
+            dForm.Show();
         }
     }
 
