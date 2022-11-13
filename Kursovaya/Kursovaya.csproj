@@ -169,6 +169,8 @@
   <ItemGroup>
     <Content Include="images\1218728_bad_criminal_cybercriminal_thief_user_icon.png" />
     <Content Include="images\8644333_lock_open_security_protection_icon.png" />
+    <None Include="images\pass.png" />
+    <None Include="images\login.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

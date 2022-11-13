@@ -17,14 +17,7 @@ namespace Kursovaya
         {
             InitializeComponent();
         }
-       
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AutorisationForm aForm = new AutorisationForm();
-            aForm.Show();
-        }
-
+              
         private void tsBtnEmployee_Click(object sender, EventArgs e)
         {
             EmployeeForm eForm = new EmployeeForm();
@@ -65,6 +58,13 @@ namespace Kursovaya
         {
             DismissialForm dForm = new DismissialForm();
             dForm.Show();
+        }
+
+        private void tsBtnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AutorisationForm aForm = new AutorisationForm();
+            aForm.Show();
         }
     }
 
