@@ -116,6 +116,9 @@
     <EmbeddedResource Include="AutorisationForm.resx">
       <DependentUpon>AutorisationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DismissialForm.resx">
+      <DependentUpon>DismissialForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EducationForm.resx">
       <DependentUpon>EducationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,8 +141,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TasksForm.resx">
+      <DependentUpon>TasksForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VacationForm.resx">
+      <DependentUpon>VacationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WTimeForm.resx">
+      <DependentUpon>WTimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

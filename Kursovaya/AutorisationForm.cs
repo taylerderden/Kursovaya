@@ -30,12 +30,12 @@ namespace Kursovaya
             String loginUser = Login.Text; // запись логина
             String passUser = Password.Text; // запись пароля
 
-            if (Login.Text == "")
+            if (Login.Text == "" || Login.Text == "Ваш логин")
             {
                 MessageBox.Show("Введите логин!");
                 return;
             }
-            if (Password.Text == "")
+            if (Password.Text == "" || Password.Text == "пароль")
             {
                 MessageBox.Show("Введите пароль!");
                 return;
@@ -86,7 +86,7 @@ namespace Kursovaya
             if (Login.Text == "Ваш логин")
             {
                 Login.Text = "";
-                Login.ForeColor = Color.Black;
+                Login.ForeColor = Color.Silver;
             }
         }
 
@@ -94,7 +94,7 @@ namespace Kursovaya
         {
             if (Login.Text == "")
             {
-                Login.Text = "Ваш логин ";
+                Login.Text = "Ваш логин";
                 Login.ForeColor = Color.Gray;                
             }
         }
@@ -104,7 +104,7 @@ namespace Kursovaya
             if (Password.Text == "пароль")
             {
                 Password.Text = "";
-                Password.ForeColor = Color.Black;
+                Password.ForeColor = Color.Silver;
             }
         }
 
@@ -122,12 +122,12 @@ namespace Kursovaya
             String loginUser = Login.Text; // запись логина
             String passUser = Password.Text; // запись пароля
 
-            if (Login.Text == "")
+            if (Login.Text == "" || Login.Text == "Ваш логин")
             {
                 MessageBox.Show("Введите логин!");
                 return;
             }
-            if (Password.Text == "")
+            if (Password.Text == "" || Password.Text == "пароль")
             {
                 MessageBox.Show("Введите пароль!");
                 return;

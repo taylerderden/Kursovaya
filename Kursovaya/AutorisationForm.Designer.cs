@@ -30,6 +30,7 @@ namespace Kursovaya
         private void InitializeComponent()
         {
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.labelID = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.Password = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -37,7 +38,6 @@ namespace Kursovaya
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelID = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,6 +60,19 @@ namespace Kursovaya
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(484, 297);
             this.mainPanel.TabIndex = 1;
+            // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelID.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelID.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelID.Location = new System.Drawing.Point(7, 252);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(42, 27);
+            this.labelID.TabIndex = 6;
+            this.labelID.Text = "ID:";
+            this.labelID.Click += new System.EventHandler(this.labelID_Click);
             // 
             // buttonLogin
             // 
@@ -139,28 +152,16 @@ namespace Kursovaya
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Maroon;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(484, 57);
             this.label1.TabIndex = 1;
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelID
-            // 
-            this.labelID.AutoSize = true;
-            this.labelID.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelID.ForeColor = System.Drawing.Color.White;
-            this.labelID.Location = new System.Drawing.Point(7, 261);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(42, 27);
-            this.labelID.TabIndex = 6;
-            this.labelID.Text = "ID:";
-            this.labelID.Click += new System.EventHandler(this.labelID_Click);
             // 
             // AutorisationForm
             // 
