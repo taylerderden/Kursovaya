@@ -1,7 +1,7 @@
 ﻿
 namespace Kursovaya
 {
-    partial class WTimeForm
+    partial class DismissalForm
     {
         /// <summary>
         /// Required designer variable.
@@ -156,7 +156,7 @@ namespace Kursovaya
             this.dataGridView1.Size = new System.Drawing.Size(592, 273);
             this.dataGridView1.TabIndex = 18;
             // 
-            // WTimeForm
+            // DismissialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,10 +173,10 @@ namespace Kursovaya
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "WTimeForm";
+            this.Name = "DismissialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WTimeForm";
-            this.Load += new System.EventHandler(this.WTimeForm_Load);
+            this.Text = "DismissialForm";
+            this.Load += new System.EventHandler(this.DismissalForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

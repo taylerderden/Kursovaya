@@ -17,11 +17,15 @@ namespace Kursovaya
         {
             InitializeComponent();
 
+
             Login.Text = "Ваш логин";
             Login.ForeColor = Color.Gray;
 
             Password.Text = "пароль";
             Password.ForeColor = Color.Gray;
+
+            Login.MaxLength = 15;
+            Password.MaxLength = 12;
 
         }
 
@@ -159,7 +163,23 @@ namespace Kursovaya
             db.closeConnection();
 
             }
+
+        private void checkPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkPass.Checked)
+            {
+                Password.UseSystemPasswordChar = false;
+                checkPass.Text = "👁";
+            }
+            else
+            {
+                Password.UseSystemPasswordChar = true;
+                checkPass.Text = "✱";
+            }
+                
+            
         }
+    }
     }
     
 

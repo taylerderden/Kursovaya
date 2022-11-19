@@ -56,7 +56,7 @@ namespace Kursovaya
 
         private void tsBtnDismissal_Click(object sender, EventArgs e)
         {
-            DismissialForm dForm = new DismissialForm();
+            DismissalForm dForm = new DismissalForm();
             dForm.Show();
         }
 

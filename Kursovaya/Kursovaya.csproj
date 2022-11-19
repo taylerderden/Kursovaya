@@ -57,11 +57,11 @@
       <DependentUpon>AutorisationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
-    <Compile Include="DismissialForm.cs">
+    <Compile Include="DismissalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DismissialForm.Designer.cs">
-      <DependentUpon>DismissialForm.cs</DependentUpon>
+    <Compile Include="DismissalForm.Designer.cs">
+      <DependentUpon>DismissalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EducationForm.cs">
       <SubType>Form</SubType>
@@ -89,6 +89,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TasksForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,8 +121,8 @@
     <EmbeddedResource Include="AutorisationForm.resx">
       <DependentUpon>AutorisationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DismissialForm.resx">
-      <DependentUpon>DismissialForm.cs</DependentUpon>
+    <EmbeddedResource Include="DismissalForm.resx">
+      <DependentUpon>DismissalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EducationForm.resx">
       <DependentUpon>EducationForm.cs</DependentUpon>
@@ -133,14 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="TasksForm.resx">
       <DependentUpon>TasksForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,12 +166,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="images\1218728_bad_criminal_cybercriminal_thief_user_icon.png" />
-    <Content Include="images\8644333_lock_open_security_protection_icon.png" />
-    <None Include="images\pass.png" />
-    <None Include="images\login.png" />
-  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="images\2203549_admin_avatar_human_login_user_icon.png" />
+    <Content Include="images\4308331_clock_hours_man_personal_schedule_icon.png" />
+    <Content Include="images\7107779_level_recruitment_employment_organization_position_icon.png" />
+    <Content Include="images\9021590_password_bold_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

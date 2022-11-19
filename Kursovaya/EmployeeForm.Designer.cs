@@ -32,10 +32,8 @@ namespace Kursovaya
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tSBtnSearch = new System.Windows.Forms.ToolStripButton();
-            this.tSBtnAdd = new System.Windows.Forms.ToolStripButton();
-            this.tSBtnDel = new System.Windows.Forms.ToolStripButton();
             this.tsBtnReload = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnBack = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,12 +42,11 @@ namespace Kursovaya
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 42);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1157, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(1157, 304);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
@@ -60,53 +57,37 @@ namespace Kursovaya
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tSBtnSearch,
-            this.tSBtnAdd,
-            this.tSBtnDel,
-            this.tsBtnReload});
+            this.tsBtnReload,
+            this.tsBtnBack});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1157, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1157, 39);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tSBtnSearch
-            // 
-            this.tSBtnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tSBtnSearch.Image = ((System.Drawing.Image)(resources.GetObject("tSBtnSearch.Image")));
-            this.tSBtnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBtnSearch.Name = "tSBtnSearch";
-            this.tSBtnSearch.Size = new System.Drawing.Size(56, 24);
-            this.tSBtnSearch.Text = "Поиск";
-            // 
-            // tSBtnAdd
-            // 
-            this.tSBtnAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tSBtnAdd.Image = ((System.Drawing.Image)(resources.GetObject("tSBtnAdd.Image")));
-            this.tSBtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBtnAdd.Name = "tSBtnAdd";
-            this.tSBtnAdd.Size = new System.Drawing.Size(80, 24);
-            this.tSBtnAdd.Text = "Добавить";
-            // 
-            // tSBtnDel
-            // 
-            this.tSBtnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tSBtnDel.Image = ((System.Drawing.Image)(resources.GetObject("tSBtnDel.Image")));
-            this.tSBtnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBtnDel.Name = "tSBtnDel";
-            this.tSBtnDel.Size = new System.Drawing.Size(69, 24);
-            this.tSBtnDel.Text = "Удалить";
-            this.tSBtnDel.Click += new System.EventHandler(this.tSBtnDel_Click);
             // 
             // tsBtnReload
             // 
             this.tsBtnReload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnReload.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsBtnReload.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnReload.Image")));
             this.tsBtnReload.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnReload.Name = "tsBtnReload";
-            this.tsBtnReload.Size = new System.Drawing.Size(82, 24);
-            this.tsBtnReload.Text = "Обновить";
+            this.tsBtnReload.Size = new System.Drawing.Size(43, 36);
+            this.tsBtnReload.Text = "🗘";
             this.tsBtnReload.Click += new System.EventHandler(this.tsBtnReload_Click);
+            // 
+            // tsBtnBack
+            // 
+            this.tsBtnBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnBack.Font = new System.Drawing.Font("Palatino Linotype", 13.8F);
+            this.tsBtnBack.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnBack.Image")));
+            this.tsBtnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnBack.Margin = new System.Windows.Forms.Padding(1070, 1, 0, 2);
+            this.tsBtnBack.Name = "tsBtnBack";
+            this.tsBtnBack.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tsBtnBack.Size = new System.Drawing.Size(40, 36);
+            this.tsBtnBack.Text = "→";
+            this.tsBtnBack.Click += new System.EventHandler(this.tsBtnBack_Click);
             // 
             // EmployeeForm
             // 
@@ -133,9 +114,7 @@ namespace Kursovaya
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tSBtnSearch;
-        private System.Windows.Forms.ToolStripButton tSBtnAdd;
-        private System.Windows.Forms.ToolStripButton tSBtnDel;
         private System.Windows.Forms.ToolStripButton tsBtnReload;
+        private System.Windows.Forms.ToolStripButton tsBtnBack;
     }
 }

@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="8644333_lock_open_security_protection_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\8644333_lock_open_security_protection_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="7107779_level_recruitment_employment_organization_position_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\7107779_level_recruitment_employment_organization_position_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="9021590_password_bold_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\9021590_password_bold_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1218728_bad_criminal_cybercriminal_thief_user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\1218728_bad_criminal_cybercriminal_thief_user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="2203549_admin_avatar_human_login_user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\2203549_admin_avatar_human_login_user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4308331_clock_hours_man_personal_schedule_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\4308331_clock_hours_man_personal_schedule_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

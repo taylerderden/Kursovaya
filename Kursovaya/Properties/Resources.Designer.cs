@@ -63,9 +63,9 @@ namespace Kursovaya.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1218728_bad_criminal_cybercriminal_thief_user_icon {
+        internal static System.Drawing.Bitmap _2203549_admin_avatar_human_login_user_icon {
             get {
-                object obj = ResourceManager.GetObject("1218728_bad_criminal_cybercriminal_thief_user_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("2203549_admin_avatar_human_login_user_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Kursovaya.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8644333_lock_open_security_protection_icon {
+        internal static System.Drawing.Bitmap _4308331_clock_hours_man_personal_schedule_icon {
             get {
-                object obj = ResourceManager.GetObject("8644333_lock_open_security_protection_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("4308331_clock_hours_man_personal_schedule_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Kursovaya.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap login {
+        internal static System.Drawing.Bitmap _7107779_level_recruitment_employment_organization_position_icon {
             get {
-                object obj = ResourceManager.GetObject("login", resourceCulture);
+                object obj = ResourceManager.GetObject("7107779_level_recruitment_employment_organization_position_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Kursovaya.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pass {
+        internal static System.Drawing.Bitmap _9021590_password_bold_icon {
             get {
-                object obj = ResourceManager.GetObject("pass", resourceCulture);
+                object obj = ResourceManager.GetObject("9021590_password_bold_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -31,6 +31,7 @@ namespace Kursovaya
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.labelTime = new System.Windows.Forms.Label();
             this.labelDay = new System.Windows.Forms.Label();
@@ -42,15 +43,17 @@ namespace Kursovaya
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.labelTasks = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnExit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.labelTime);
@@ -65,8 +68,20 @@ namespace Kursovaya
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(594, 408);
             this.panel1.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnExit.Location = new System.Drawing.Point(431, 361);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(145, 35);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.Text = "Выход";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // dataGridView2
             // 
@@ -84,7 +99,7 @@ namespace Kursovaya
             this.labelTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelTime.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelTime.ForeColor = System.Drawing.Color.White;
-            this.labelTime.Location = new System.Drawing.Point(12, 406);
+            this.labelTime.Location = new System.Drawing.Point(12, 373);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(72, 26);
             this.labelTime.TabIndex = 9;
@@ -95,7 +110,7 @@ namespace Kursovaya
             this.labelDay.AutoSize = true;
             this.labelDay.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelDay.ForeColor = System.Drawing.Color.White;
-            this.labelDay.Location = new System.Drawing.Point(12, 380);
+            this.labelDay.Location = new System.Drawing.Point(12, 335);
             this.labelDay.Name = "labelDay";
             this.labelDay.Size = new System.Drawing.Size(60, 26);
             this.labelDay.TabIndex = 8;
@@ -117,7 +132,7 @@ namespace Kursovaya
             // 
             this.btnFinishTime.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinishTime.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnFinishTime.Location = new System.Drawing.Point(643, 73);
+            this.btnFinishTime.Location = new System.Drawing.Point(431, 268);
             this.btnFinishTime.Name = "btnFinishTime";
             this.btnFinishTime.Size = new System.Drawing.Size(145, 35);
             this.btnFinishTime.TabIndex = 6;
@@ -129,7 +144,7 @@ namespace Kursovaya
             // 
             this.btnStartTime.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartTime.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnStartTime.Location = new System.Drawing.Point(643, 18);
+            this.btnStartTime.Location = new System.Drawing.Point(431, 211);
             this.btnStartTime.Name = "btnStartTime";
             this.btnStartTime.Size = new System.Drawing.Size(145, 35);
             this.btnStartTime.TabIndex = 5;
@@ -175,7 +190,7 @@ namespace Kursovaya
             this.labelTasks.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelTasks.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelTasks.ForeColor = System.Drawing.Color.White;
-            this.labelTasks.Location = new System.Drawing.Point(12, 18);
+            this.labelTasks.Location = new System.Drawing.Point(12, 19);
             this.labelTasks.Name = "labelTasks";
             this.labelTasks.Size = new System.Drawing.Size(154, 27);
             this.labelTasks.TabIndex = 1;
@@ -186,23 +201,22 @@ namespace Kursovaya
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnExit
+            // pictureBox1
             // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnExit.Location = new System.Drawing.Point(643, 402);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(145, 35);
-            this.btnExit.TabIndex = 11;
-            this.btnExit.Text = "Выход";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.pictureBox1.Image = global::Kursovaya.Properties.Resources._4308331_clock_hours_man_personal_schedule_icon;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(431, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(145, 141);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(594, 408);
             this.Controls.Add(this.panel1);
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -212,6 +226,7 @@ namespace Kursovaya
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,5 +246,6 @@ namespace Kursovaya
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

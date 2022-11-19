@@ -204,17 +204,6 @@ namespace Kursovaya
             }
         }
 
-        private void tSBtnDel_Click(object sender, EventArgs e)
-        {
-
-
-
-            dataSet.Tables["Employee"].Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);            
-
-            ReloadData();
-
-        }
-
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -267,6 +256,11 @@ namespace Kursovaya
             {
                 e.Handled = true;
             }
+        }
+
+        private void tsBtnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
