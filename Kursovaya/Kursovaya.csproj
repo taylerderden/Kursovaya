@@ -53,32 +53,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutorisationForm.cs" />
+    <Compile Include="AutorisationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AutorisationForm.Designer.cs">
       <DependentUpon>AutorisationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
-    <Compile Include="DismissalForm.cs" />
+    <Compile Include="DismissalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DismissalForm.Designer.cs">
       <DependentUpon>DismissalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EducationForm.cs" />
+    <Compile Include="EducationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EducationForm.Designer.cs">
       <DependentUpon>EducationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeForm.cs" />
+    <Compile Include="EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaymentForm.cs" />
+    <Compile Include="PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PositionForm.cs" />
+    <Compile Include="PositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PositionForm.Designer.cs">
       <DependentUpon>PositionForm.cs</DependentUpon>
     </Compile>
@@ -89,19 +103,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TasksForm.cs" />
+    <Compile Include="TasksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TasksForm.Designer.cs">
       <DependentUpon>TasksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm.cs" />
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VacationForm.cs" />
+    <Compile Include="VacationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VacationForm.Designer.cs">
       <DependentUpon>VacationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="WTimeForm.cs" />
+    <Compile Include="WTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="WTimeForm.Designer.cs">
       <DependentUpon>WTimeForm.cs</DependentUpon>
     </Compile>

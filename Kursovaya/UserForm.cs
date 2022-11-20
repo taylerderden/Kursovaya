@@ -92,22 +92,37 @@ namespace Kursovaya
             {
                 DB db = new DB();
 
-                MySqlCommand command = new MySqlCommand("INSERT INTO `WTime` (`WTime_Day`, `WTime_Start`, `Employee_idEmployee`) VALUES(@Day, @Time, @ID);", db.getConnection());
+                DataTable table = new DataTable();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                MySqlCommand command = new MySqlCommand("SELECT `WTime_Day` FROM `WTime` WHERE `WTime_Day` = @Day AND `Employee_idEmployee` = @ID;", db.getConnection()); //авторизация администратора
                 command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
-                command.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
                 command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
 
-                db.openConnection();
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
 
-                if (command.ExecuteNonQuery() == 1)
-                    MessageBox.Show("Удачного дня!");
+                if (table.Rows.Count == 0) //поиск записей
+                {
+                    MySqlCommand commandStart = new MySqlCommand("INSERT INTO `WTime` (`WTime_Day`, `WTime_Start`, `Employee_idEmployee`) VALUES(@Day, @Time, @ID);", db.getConnection());
+                    commandStart.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
+                    commandStart.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
+                    commandStart.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+
+                    db.openConnection();
+
+                    if (commandStart.ExecuteNonQuery() == 1)
+                        MessageBox.Show("Удачного дня!");
+                    else
+                        MessageBox.Show("Ошибка!");
+
+                    db.closeConnection();
+                }
                 else
-                    MessageBox.Show("Ошибка!");
-
-                db.closeConnection();
+                    MessageBox.Show("Вы уже начали смену!");
             }
-            else
-                MessageBox.Show("Введите ID");
+            
         }
 
         private void btnFinishTime_Click(object sender, EventArgs e)  //конец смены
@@ -173,9 +188,7 @@ namespace Kursovaya
         }
 
         private void labelPayment_Click(object sender, EventArgs e)
-        {
-            
-
+        {           
             if (textBoxID.Text != "")
             {
                 DB db = new DB();
@@ -196,6 +209,92 @@ namespace Kursovaya
             }
             else
                 MessageBox.Show("Введите ID");
+        }
+
+        private void labelHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void labelFullScreen_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                this.TopMost = true;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.TopMost = true;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void labelHide_MouseEnter(object sender, EventArgs e)
+        {
+            labelHide.ForeColor = Color.Orange;
+        }
+
+        private void labelHide_MouseLeave(object sender, EventArgs e)
+        {
+            labelHide.ForeColor = Color.Black;
+        }
+
+        private void labelFullScreen_MouseEnter(object sender, EventArgs e)
+        {
+            labelFullScreen.ForeColor = Color.White;
+        }
+
+        private void labelFullScreen_MouseLeave(object sender, EventArgs e)
+        {
+            labelFullScreen.ForeColor = Color.Black;
+        }
+
+        private void labelClose_MouseEnter(object sender, EventArgs e)
+        {
+            labelClose.ForeColor = Color.Red;
+        }
+
+        private void labelClose_MouseLeave(object sender, EventArgs e)
+        {
+            labelClose.ForeColor = Color.Black;
+        }
+
+        private void labelTasks_MouseEnter(object sender, EventArgs e)
+        {
+            labelTasks.ForeColor = Color.Yellow;
+        }
+
+        private void labelTasks_MouseLeave(object sender, EventArgs e)
+        {
+            labelTasks.ForeColor = Color.White;
+        }
+
+        private void labelHours_MouseEnter(object sender, EventArgs e)
+        {
+            labelHours.ForeColor = Color.Tan;
+        }
+
+        private void labelHours_MouseLeave(object sender, EventArgs e)
+        {
+            labelHours.ForeColor = Color.White;
+        }
+
+        private void labelPayment_MouseEnter(object sender, EventArgs e)
+        {
+            labelPayment.ForeColor = Color.Green;
+        }
+
+        private void labelPayment_MouseLeave(object sender, EventArgs e)
+        {
+            labelPayment.ForeColor = Color.White;
         }
     }
 }

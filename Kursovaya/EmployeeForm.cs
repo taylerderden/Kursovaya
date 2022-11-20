@@ -14,8 +14,7 @@ namespace Kursovaya
 {
     public partial class EmployeeForm : Form
     {
-        private MySqlConnection sqlConnection = null;
-
+  
         private MySqlCommandBuilder sqlBuilder = null;        
 
         private MySqlDataAdapter adapter = new MySqlDataAdapter();
@@ -261,6 +260,26 @@ namespace Kursovaya
         private void tsBtnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void tsBtnReload_MouseEnter(object sender, EventArgs e)
+        {
+            tsBtnReload.ForeColor = Color.Green;
+        }
+
+        private void tsBtnReload_MouseLeave(object sender, EventArgs e)
+        {
+            tsBtnReload.ForeColor = Color.Silver;
+        }
+
+        private void tsBtnBack_MouseEnter(object sender, EventArgs e)
+        {
+            tsBtnBack.ForeColor = Color.Green;
+        }
+
+        private void tsBtnBack_MouseLeave(object sender, EventArgs e)
+        {
+            tsBtnBack.ForeColor = Color.Silver;
         }
     }
 }

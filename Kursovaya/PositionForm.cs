@@ -204,6 +204,62 @@ namespace Kursovaya
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Зарплата";
         }
+
+        private void labelHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void labelFullScreen_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                this.TopMost = true;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.TopMost = true;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void labelHide_MouseEnter(object sender, EventArgs e)
+        {
+            labelHide.ForeColor = Color.Orange;
+        }
+
+        private void labelHide_MouseLeave(object sender, EventArgs e)
+        {
+            labelHide.ForeColor = Color.Black;
+        }
+
+        private void labelFullScreen_MouseEnter(object sender, EventArgs e)
+        {
+            labelFullScreen.ForeColor = Color.White;
+        }
+
+        private void labelFullScreen_MouseLeave(object sender, EventArgs e)
+        {
+            labelFullScreen.ForeColor = Color.Black;
+        }
+
+        private void labelClose_MouseEnter(object sender, EventArgs e)
+        {
+            labelClose.ForeColor = Color.Red;
+        }
+
+        private void labelClose_MouseLeave(object sender, EventArgs e)
+        {
+            labelClose.ForeColor = Color.Black;
+        }
     }
 } 
 

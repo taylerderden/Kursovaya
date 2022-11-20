@@ -17,6 +17,7 @@ namespace Kursovaya
         {
             InitializeComponent();
 
+            Password.UseSystemPasswordChar = false;
 
             Login.Text = "Ваш логин";
             Login.ForeColor = Color.Gray;
@@ -82,7 +83,7 @@ namespace Kursovaya
                 else
                     MessageBox.Show("Failed!"); //иначе ошибка
             }
-                
+
         }
 
         private void Login_Enter(object sender, EventArgs e)
@@ -99,7 +100,7 @@ namespace Kursovaya
             if (Login.Text == "")
             {
                 Login.Text = "Ваш логин";
-                Login.ForeColor = Color.Gray;                
+                Login.ForeColor = Color.Gray;
             }
         }
 
@@ -162,29 +163,143 @@ namespace Kursovaya
 
             db.closeConnection();
 
-            }
-
-        private void checkPass_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkPass.Checked)
-            {
-                Password.UseSystemPasswordChar = false;
-                checkPass.Text = "👁";
-            }
-            else
-            {
-                Password.UseSystemPasswordChar = true;
-                checkPass.Text = "✱";
-            }
-                
-            
         }
+
 
         private void AutorisationForm_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+
+        private void labelClose_MouseEnter(object sender, EventArgs e)
+        {
+            labelClose.ForeColor = Color.Red;
+        }
+
+        private void labelClose_MouseLeave(object sender, EventArgs e)
+        {
+            labelClose.ForeColor = Color.Black;
+        }
+
+        Point lastPoint;
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void label1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void labelCheck_Click(object sender, EventArgs e)
+        {
+            if (labelCheck.Text == "✱")
+            {
+                Password.UseSystemPasswordChar = true;
+                labelCheck.Text = "👁";
+            }
+            else
+            {
+                Password.UseSystemPasswordChar = false;
+                labelCheck.Text = "✱";
+            }
+        }
+
+        private void labelCheck_DoubleClick(object sender, EventArgs e)
+        {
+            if (labelCheck.Text == "✱")
+            {
+                Password.UseSystemPasswordChar = true;
+                labelCheck.Text = "👁";
+            }
+            else
+            {
+                Password.UseSystemPasswordChar = false;
+                labelCheck.Text = "✱";
+            }
+        }
+
+        private void labelFullScreen_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                this.TopMost = true;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.TopMost = true;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Normal;
+            }
+
+
+        }
+        private void labelFullScreen_MouseEnter(object sender, EventArgs e)
+        {
+            labelFullScreen.ForeColor = Color.White;
+        }
+
+        private void labelFullScreen_MouseLeave(object sender, EventArgs e)
+        {
+            labelFullScreen.ForeColor = Color.Black;
+        }
+
+        private void AutorisationForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {                
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+                TopMost = false;                                         
+            }
+
+
+        }
+
+        private void labelHide_MouseEnter(object sender, EventArgs e)
+        {
+            labelHide.ForeColor = Color.Orange;
+        }
+
+        private void labelHide_MouseLeave(object sender, EventArgs e)
+        {
+            labelHide.ForeColor = Color.Black;
+        }
+
+        private void labelHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
-    }
+}
     
 
