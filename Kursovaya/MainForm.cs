@@ -66,6 +66,12 @@ namespace Kursovaya
             AutorisationForm aForm = new AutorisationForm();
             aForm.Show();
         }
+
+        private void tsBtnPayment_Click(object sender, EventArgs e)
+        {
+            PaymentForm pForm = new PaymentForm();
+            pForm.Show();
+        }
     }
 
         

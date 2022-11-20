@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.28\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
@@ -50,40 +53,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutorisationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AutorisationForm.cs" />
     <Compile Include="AutorisationForm.Designer.cs">
       <DependentUpon>AutorisationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
-    <Compile Include="DismissalForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="DismissalForm.cs" />
     <Compile Include="DismissalForm.Designer.cs">
       <DependentUpon>DismissalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EducationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="EducationForm.cs" />
     <Compile Include="EducationForm.Designer.cs">
       <DependentUpon>EducationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="EmployeeForm.cs" />
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PositionForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="PaymentForm.cs" />
+    <Compile Include="PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PositionForm.cs" />
     <Compile Include="PositionForm.Designer.cs">
       <DependentUpon>PositionForm.cs</DependentUpon>
     </Compile>
@@ -94,27 +89,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TasksForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="TasksForm.cs" />
     <Compile Include="TasksForm.Designer.cs">
       <DependentUpon>TasksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="UserForm.cs" />
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VacationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="VacationForm.cs" />
     <Compile Include="VacationForm.Designer.cs">
       <DependentUpon>VacationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="WTimeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="WTimeForm.cs" />
     <Compile Include="WTimeForm.Designer.cs">
       <DependentUpon>WTimeForm.cs</DependentUpon>
     </Compile>
@@ -132,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PositionForm.resx">
       <DependentUpon>PositionForm.cs</DependentUpon>
@@ -153,6 +143,7 @@
     <EmbeddedResource Include="WTimeForm.resx">
       <DependentUpon>WTimeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

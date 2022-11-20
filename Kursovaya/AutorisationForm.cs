@@ -179,6 +179,11 @@ namespace Kursovaya
                 
             
         }
+
+        private void AutorisationForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }
     

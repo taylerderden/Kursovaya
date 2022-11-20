@@ -63,30 +63,35 @@ namespace Kursovaya
         
         private void labelTasks_Click(object sender, EventArgs e)  //назначенные задачи
         {
-            DB db = new DB();
+            if (textBoxID.Text != "")
+            {
+                DB db = new DB();
 
-            DataTable table = new DataTable();
+                DataTable table = new DataTable();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT Tasks_Name, Tasks_Deadline FROM Tasks WHERE Employee_idEmployee = @ID", db.getConnection());
-            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+                MySqlCommand command = new MySqlCommand("SELECT Tasks_Name, Tasks_Deadline FROM Tasks WHERE Employee_idEmployee = @ID", db.getConnection());
+                command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
 
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
 
-            dataGridView1.DataSource = table;
-            dataGridView1.Columns[0].HeaderText = "Название";
-            dataGridView1.Columns[1].HeaderText = "Сроки";
+                dataGridView1.DataSource = table;
+                dataGridView1.Columns[0].HeaderText = "Название";
+                dataGridView1.Columns[1].HeaderText = "Сроки";
+            }
+            else
+                MessageBox.Show("Введите ID");
 
         }
         
         private void btnStartTime_Click(object sender, EventArgs e) // начало смены
         {
-            DB db = new DB();
-
             if (textBoxID.Text != "")
             {
+                DB db = new DB();
+
                 MySqlCommand command = new MySqlCommand("INSERT INTO `WTime` (`WTime_Day`, `WTime_Start`, `Employee_idEmployee`) VALUES(@Day, @Time, @ID);", db.getConnection());
                 command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
                 command.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
@@ -107,10 +112,12 @@ namespace Kursovaya
 
         private void btnFinishTime_Click(object sender, EventArgs e)  //конец смены
         {            
-            DB db = new DB();
+            
 
             if (textBoxID.Text != "")
-            {
+            {   
+                DB db = new DB();
+
                 MySqlCommand command = new MySqlCommand("UPDATE `WTime` SET `WTime_Finish` = @Time WHERE `WTime_Day` =@Day  AND `WTime_Finish` is null AND `Employee_idEmployee` = @ID;", db.getConnection());
                 command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
                 command.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
@@ -131,22 +138,26 @@ namespace Kursovaya
 
         private void labelHours_Click(object sender, EventArgs e)  //отработанное время 
         {
-            DB db = new DB();
+            if (textBoxID.Text != "")
+            {
+                DB db = new DB();
 
-            DataTable table = new DataTable();
+                DataTable table = new DataTable();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT  COUNT(*) AS Days, Sum(SUBTIME(`WTime_Finish`, `WTime_Start`)/10000) AS Hours FROM `WTime` where `Employee_idEmployee` = @ID", db.getConnection());
-            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+                MySqlCommand command = new MySqlCommand("SELECT  COUNT(*) AS Days, Sum(SUBTIME(`WTime_Finish`, `WTime_Start`)/10000) AS Hours FROM `WTime` where `Employee_idEmployee` = @ID", db.getConnection());
+                command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
 
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
 
-            dataGridView2.DataSource = table;
-            dataGridView2.Columns[0].HeaderText = "Дни";
-            dataGridView2.Columns[1].HeaderText = "Рабочие часы";
-
+                dataGridView2.DataSource = table;
+                dataGridView2.Columns[0].HeaderText = "Дни";
+                dataGridView2.Columns[1].HeaderText = "Рабочие часы";
+            }
+            else
+                MessageBox.Show("Введите ID");
         }
 
         private void btnExit_Click(object sender, EventArgs e)      //выход в авторизацию
@@ -154,6 +165,37 @@ namespace Kursovaya
             this.Hide();
             AutorisationForm aForm = new AutorisationForm(); 
             aForm.Show();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void labelPayment_Click(object sender, EventArgs e)
+        {
+            
+
+            if (textBoxID.Text != "")
+            {
+                DB db = new DB();
+
+                DataTable table = new DataTable();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                MySqlCommand command = new MySqlCommand("SELECT Payment_Date, Payment_Sum FROM Payment WHERE Employee_idEmployee = @ID", db.getConnection());
+                command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                dataGridView3.DataSource = table;
+                dataGridView3.Columns[0].HeaderText = "Дата";
+                dataGridView3.Columns[1].HeaderText = "Сумма";
+            }
+            else
+                MessageBox.Show("Введите ID");
         }
     }
 }

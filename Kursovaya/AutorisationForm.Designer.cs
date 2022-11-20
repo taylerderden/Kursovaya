@@ -184,9 +184,11 @@ namespace Kursovaya
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(497, 313);
             this.Controls.Add(this.mainPanel);
+            this.MinimumSize = new System.Drawing.Size(515, 360);
             this.Name = "AutorisationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
+            this.Load += new System.EventHandler(this.AutorisationForm_Load);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

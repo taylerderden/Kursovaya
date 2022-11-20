@@ -40,6 +40,7 @@ namespace Kursovaya
             this.tsBtnVacation = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDismissal = new System.Windows.Forms.ToolStripButton();
             this.tsBtnExit = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnPayment = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@ namespace Kursovaya
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(927, 443);
+            this.panel1.Size = new System.Drawing.Size(1061, 443);
             this.panel1.TabIndex = 7;
             // 
             // toolStrip1
@@ -67,10 +68,11 @@ namespace Kursovaya
             this.tsBtnTasks,
             this.tsBtnVacation,
             this.tsBtnDismissal,
+            this.tsBtnPayment,
             this.tsBtnExit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(927, 48);
+            this.toolStrip1.Size = new System.Drawing.Size(1061, 48);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -172,17 +174,30 @@ namespace Kursovaya
             this.tsBtnExit.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold);
             this.tsBtnExit.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnExit.Image")));
             this.tsBtnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnExit.Margin = new System.Windows.Forms.Padding(10, 2, 0, 3);
+            this.tsBtnExit.Margin = new System.Windows.Forms.Padding(15, 2, 0, 3);
             this.tsBtnExit.Name = "tsBtnExit";
             this.tsBtnExit.Size = new System.Drawing.Size(69, 43);
             this.tsBtnExit.Text = "Выход";
             this.tsBtnExit.Click += new System.EventHandler(this.tsBtnExit_Click);
             // 
+            // tsBtnPayment
+            // 
+            this.tsBtnPayment.BackColor = System.Drawing.Color.Silver;
+            this.tsBtnPayment.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnPayment.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsBtnPayment.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnPayment.Image")));
+            this.tsBtnPayment.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnPayment.Margin = new System.Windows.Forms.Padding(0, 2, 2, 3);
+            this.tsBtnPayment.Name = "tsBtnPayment";
+            this.tsBtnPayment.Size = new System.Drawing.Size(92, 43);
+            this.tsBtnPayment.Text = "Выплаты";
+            this.tsBtnPayment.Click += new System.EventHandler(this.tsBtnPayment_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 443);
+            this.ClientSize = new System.Drawing.Size(1061, 443);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -205,6 +220,7 @@ namespace Kursovaya
         private System.Windows.Forms.ToolStripButton tsBtnVacation;
         private System.Windows.Forms.ToolStripButton tsBtnDismissal;
         private System.Windows.Forms.ToolStripButton tsBtnExit;
+        private System.Windows.Forms.ToolStripButton tsBtnPayment;
     }
 }
 
