@@ -45,44 +45,51 @@ namespace Kursovaya
 
         private void btnIns_Click(object sender, EventArgs e)
         {
-            if (isDataExists())
+            if (tBid.Text != "" && tBname.Text != "" && tBsalary.Text != "")
             {
-                return;
-            }
 
-            DB db = new DB();
+                if (isDataExists())
+                {
+                    return;
+                }
 
-            MySqlCommand command = new MySqlCommand("INSERT INTO `Position`(`Position_Name`,`Position_Salary`) VALUES(@Name, @Salary);", db.getConnection());
-            command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = tBname.Text;
-            command.Parameters.Add("@Salary", MySqlDbType.VarChar).Value = tBsalary.Text;
+                DB db = new DB();
 
-            db.openConnection();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `Position`(`Position_Name`,`Position_Salary`) VALUES(@Name, @Salary);", db.getConnection());
+                command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = tBname.Text;
+                command.Parameters.Add("@Salary", MySqlDbType.VarChar).Value = tBsalary.Text;
 
-            if (command.ExecuteNonQuery() == 1)
-            {
-                MessageBox.Show("Данные добавлены");
+                db.openConnection();
 
-                DataTable table = new DataTable();
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Данные добавлены");
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    DataTable table = new DataTable();
 
-                MySqlCommand command1 = new MySqlCommand("SELECT * FROM Position", db.getConnection());
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                adapter.SelectCommand = command1;
-                adapter.Fill(table);
+                    MySqlCommand command1 = new MySqlCommand("SELECT * FROM Position", db.getConnection());
 
-                dataGridView1.DataSource = table;
+                    adapter.SelectCommand = command1;
+                    adapter.Fill(table);
+
+                    dataGridView1.DataSource = table;
 
 
 
-                dataGridView1.Columns[0].HeaderText = "код_Должности";
-                dataGridView1.Columns[1].HeaderText = "Название";
-                dataGridView1.Columns[2].HeaderText = "Зарплата";
+                    dataGridView1.Columns[0].HeaderText = "код_Должности";
+                    dataGridView1.Columns[1].HeaderText = "Название";
+                    dataGridView1.Columns[2].HeaderText = "Зарплата";
+                }
+                else
+                    MessageBox.Show("Ошибка!");
+
+                db.closeConnection();
+
             }
             else
-                MessageBox.Show("Ошибка!");
-
-            db.closeConnection();
+                MessageBox.Show("Введите данные для добавления!");
 
         }
 
@@ -94,14 +101,14 @@ namespace Kursovaya
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM Position WHERE `Position_Name`= @Name AND `Position_Salary` = @Salary ", db.getConnection()); //проверка лог введенного пользов-м и указываем БД к которой подключ-ся 
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Position WHERE `Position_Name`= @Name AND `Position_Salary` = @Salary ", db.getConnection()); 
             command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = tBname.Text;
             command.Parameters.Add("@Salary", MySqlDbType.VarChar).Value = tBsalary.Text;
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            if (table.Rows.Count > 0)   //проверка занятости логина, поиск записей в табл
+            if (table.Rows.Count > 0)   //проверка введенности данных
             {
                 MessageBox.Show("Данные уже введены!");
                 return true;
@@ -112,97 +119,119 @@ namespace Kursovaya
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            DB db = new DB();
-                       
-            MySqlCommand command = new MySqlCommand("UPDATE `Position` SET `Position_Name`= @Name, `Position_Salary`= @Salary WHERE `idPosition` = @ID;", db.getConnection());
-            command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = tBname.Text;
-            command.Parameters.Add("@Salary", MySqlDbType.VarChar).Value = tBsalary.Text;
-            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = tBid.Text;
-
-            db.openConnection();
-
-            if (command.ExecuteNonQuery() == 1)
+            if (tBid.Text != "" && tBname.Text != "" && tBsalary.Text != "")
             {
-                MessageBox.Show("Данные обновлены");
-                DataTable table = new DataTable();
+                DB db = new DB();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlCommand command = new MySqlCommand("UPDATE `Position` SET `Position_Name`= @Name, `Position_Salary`= @Salary WHERE `idPosition` = @ID;", db.getConnection());
+                command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = tBname.Text;
+                command.Parameters.Add("@Salary", MySqlDbType.VarChar).Value = tBsalary.Text;
+                command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = tBid.Text;
 
-                MySqlCommand command1 = new MySqlCommand("SELECT * FROM Position", db.getConnection());
+                db.openConnection();
 
-                adapter.SelectCommand = command1;
-                adapter.Fill(table);
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Данные обновлены");
+                    DataTable table = new DataTable();
 
-                dataGridView1.DataSource = table;
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                dataGridView1.Columns[0].HeaderText = "код_Должности";
-                dataGridView1.Columns[1].HeaderText = "Название";
-                dataGridView1.Columns[2].HeaderText = "Зарплата";
-            }               
+                    MySqlCommand command1 = new MySqlCommand("SELECT * FROM Position", db.getConnection());
+
+                    adapter.SelectCommand = command1;
+                    adapter.Fill(table);
+
+                    dataGridView1.DataSource = table;
+
+                    dataGridView1.Columns[0].HeaderText = "код_Должности";
+                    dataGridView1.Columns[1].HeaderText = "Название";
+                    dataGridView1.Columns[2].HeaderText = "Зарплата";
+                }
+                else
+                    MessageBox.Show("Ошибка!");
+
+                db.closeConnection();
+            }
             else
-                MessageBox.Show("Ошибка!");
+                MessageBox.Show("Введите данные для обновления!");
 
-            db.closeConnection();
-            
-            
+
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            DB db = new DB();
-
-            MySqlCommand command = new MySqlCommand("DELETE FROM `Position` WHERE `idPosition` = @ID;", db.getConnection());
-            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = tBid.Text;
-
-            db.openConnection();
-
-            if (command.ExecuteNonQuery() == 1)
+            if (tBid.Text != "" || tBname.Text != "" || tBsalary.Text != "")
             {
-                MessageBox.Show("Данные удалены");
+                try
+                {
+                    DB db = new DB();
+
+                    MySqlCommand command = new MySqlCommand("DELETE FROM `Position` WHERE `idPosition` = @ID;", db.getConnection());
+                    command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = tBid.Text;
+
+                    db.openConnection();
+
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Данные удалены");
+                        DataTable table = new DataTable();
+
+                        MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                        MySqlCommand command1 = new MySqlCommand("SELECT * FROM Position", db.getConnection());
+
+                        adapter.SelectCommand = command1;
+                        adapter.Fill(table);
+
+                        dataGridView1.DataSource = table;
+
+                        dataGridView1.Columns[0].HeaderText = "код_Должности";
+                        dataGridView1.Columns[1].HeaderText = "Название";
+                        dataGridView1.Columns[2].HeaderText = "Зарплата";
+                    }
+                    else
+                        MessageBox.Show("Ошибка!");
+
+                    db.closeConnection();
+                }
+                catch (Exception exep)
+                {
+                    MessageBox.Show(exep.Message, "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+                MessageBox.Show("Введите данные для удаления!");
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (tBid.Text != "" || tBname.Text != "" || tBsalary.Text != "")
+            {
+                DB db = new DB();
+
                 DataTable table = new DataTable();
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                MySqlCommand command1 = new MySqlCommand("SELECT * FROM Position", db.getConnection());
+                MySqlCommand command = new MySqlCommand("SELECT * FROM Position WHERE `idPosition` = @ID OR`Position_Name`= @Name OR `Position_Salary`= @Salary;", db.getConnection());
+                command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = tBname.Text;
+                command.Parameters.Add("@Salary", MySqlDbType.VarChar).Value = tBsalary.Text;
+                command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = tBid.Text;
 
-                adapter.SelectCommand = command1;
+                adapter.SelectCommand = command;
                 adapter.Fill(table);
 
                 dataGridView1.DataSource = table;
+
+
 
                 dataGridView1.Columns[0].HeaderText = "код_Должности";
                 dataGridView1.Columns[1].HeaderText = "Название";
                 dataGridView1.Columns[2].HeaderText = "Зарплата";
             }
             else
-                MessageBox.Show("Ошибка!");
-
-            db.closeConnection();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            DB db = new DB();
-
-            DataTable table = new DataTable();
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-            MySqlCommand command = new MySqlCommand("SELECT * FROM Position WHERE `idPosition` = @ID OR`Position_Name`= @Name OR `Position_Salary`= @Salary;", db.getConnection());
-            command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = tBname.Text;
-            command.Parameters.Add("@Salary", MySqlDbType.VarChar).Value = tBsalary.Text;
-            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = tBid.Text;
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-            dataGridView1.DataSource = table;
-
-
-
-            dataGridView1.Columns[0].HeaderText = "код_Должности";
-            dataGridView1.Columns[1].HeaderText = "Название";
-            dataGridView1.Columns[2].HeaderText = "Зарплата";
+                MessageBox.Show("Введите данные для поиска!");
         }
 
         private void labelHide_Click(object sender, EventArgs e)
@@ -259,6 +288,28 @@ namespace Kursovaya
         private void labelClose_MouseLeave(object sender, EventArgs e)
         {
             labelClose.ForeColor = Color.Black;
+        }
+
+        private void labelLoadData_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Position", db.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            dataGridView1.DataSource = table;
+
+
+
+            dataGridView1.Columns[0].HeaderText = "код_Должности";
+            dataGridView1.Columns[1].HeaderText = "Название";
+            dataGridView1.Columns[2].HeaderText = "Зарплата";
         }
     }
 } 

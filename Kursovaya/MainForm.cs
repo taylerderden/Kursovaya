@@ -17,46 +17,48 @@ namespace Kursovaya
         {
             InitializeComponent();
         }
-              
-        private void tsBtnEmployee_Click(object sender, EventArgs e)
-        {
+            //создание глоб форм для открытия и закрытия
             EmployeeForm eForm = new EmployeeForm();
+            PositionForm pForm = new PositionForm();
+            EducationForm edForm = new EducationForm();
+            WTimeForm wForm = new WTimeForm();
+            TasksForm taskForm = new TasksForm();
+            DismissalForm dForm = new DismissalForm();
+            PaymentForm payForm = new PaymentForm();
+            VacationForm vForm = new VacationForm();
+
+        private void tsBtnEmployee_Click(object sender, EventArgs e)
+        {           
             eForm.Show();
         }
 
         private void tsBtnPosition_Click(object sender, EventArgs e)
-        {
-            PositionForm pForm = new PositionForm();
+        {          
             pForm.Show();
         }
 
         private void tsBtnEducation_Click(object sender, EventArgs e)
-        {
-            EducationForm edForm = new EducationForm();
+        {           
             edForm.Show();
         }
 
         private void tsBtnWTime_Click(object sender, EventArgs e)
-        {
-            WTimeForm tForm = new WTimeForm();
-            tForm.Show();
+        {           
+            wForm.Show();
         }
 
         private void tsBtnTasks_Click(object sender, EventArgs e)
-        {
-            TasksForm taskForm = new TasksForm();
+        {           
             taskForm.Show();
         }
 
         private void tsBtnVacation_Click(object sender, EventArgs e)
-        {
-            VacationForm vForm = new VacationForm();
+        {           
             vForm.Show();
         }
 
         private void tsBtnDismissal_Click(object sender, EventArgs e)
-        {
-            DismissalForm dForm = new DismissalForm();
+        {            
             dForm.Show();
         }
 
@@ -68,9 +70,8 @@ namespace Kursovaya
         }
 
         private void tsBtnPayment_Click(object sender, EventArgs e)
-        {
-            PaymentForm pForm = new PaymentForm();
-            pForm.Show();
+        {          
+            payForm.Show();
         }
 
         private void labelHide_Click(object sender, EventArgs e)
@@ -130,7 +131,16 @@ namespace Kursovaya
         }
 
         private void tsLback_Click(object sender, EventArgs e)
-        {
+        {           
+            eForm.Hide();            
+            pForm.Hide();           
+            edForm.Hide();            
+            wForm.Hide();            
+            taskForm.Hide();            
+            vForm.Hide();           
+            dForm.Hide();            
+            payForm.Hide();
+
             this.Hide();
             AutorisationForm aForm = new AutorisationForm(); 
             aForm.Show();
@@ -144,6 +154,21 @@ namespace Kursovaya
         private void tsLback_MouseLeave(object sender, EventArgs e)
         {
             tsLback.ForeColor = Color.Silver;
+        }
+
+        Point lastPoint;
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
         }
     }
 

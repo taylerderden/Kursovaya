@@ -269,7 +269,7 @@ namespace Kursovaya
 
         private void labelTasks_MouseEnter(object sender, EventArgs e)
         {
-            labelTasks.ForeColor = Color.Yellow;
+            labelTasks.ForeColor = Color.Blue;
         }
 
         private void labelTasks_MouseLeave(object sender, EventArgs e)
@@ -279,7 +279,7 @@ namespace Kursovaya
 
         private void labelHours_MouseEnter(object sender, EventArgs e)
         {
-            labelHours.ForeColor = Color.Tan;
+            labelHours.ForeColor = Color.Blue;
         }
 
         private void labelHours_MouseLeave(object sender, EventArgs e)
@@ -289,7 +289,7 @@ namespace Kursovaya
 
         private void labelPayment_MouseEnter(object sender, EventArgs e)
         {
-            labelPayment.ForeColor = Color.Green;
+            labelPayment.ForeColor = Color.Blue;
         }
 
         private void labelPayment_MouseLeave(object sender, EventArgs e)
