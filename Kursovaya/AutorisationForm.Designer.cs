@@ -145,6 +145,7 @@ namespace Kursovaya
             this.Password.TabIndex = 4;
             this.Password.UseSystemPasswordChar = true;
             this.Password.Enter += new System.EventHandler(this.Password_Enter);
+            this.Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Password_KeyDown);
             this.Password.Leave += new System.EventHandler(this.Password_Leave);
             // 
             // pictureBox2
@@ -251,8 +252,7 @@ namespace Kursovaya
             // 
             // AutorisationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(515, 314);
             this.Controls.Add(this.mainPanel);

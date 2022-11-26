@@ -45,7 +45,7 @@ namespace Kursovaya
 
         private void btnIns_Click(object sender, EventArgs e)
         {
-            if (tBid.Text != "" && tBname.Text != "" && tBsalary.Text != "")
+            if (tBname.Text != "" && tBsalary.Text != "")
             {
 
                 if (isDataExists())
@@ -76,8 +76,6 @@ namespace Kursovaya
 
                     dataGridView1.DataSource = table;
 
-
-
                     dataGridView1.Columns[0].HeaderText = "код_Должности";
                     dataGridView1.Columns[1].HeaderText = "Название";
                     dataGridView1.Columns[2].HeaderText = "Зарплата";
@@ -86,11 +84,9 @@ namespace Kursovaya
                     MessageBox.Show("Ошибка!");
 
                 db.closeConnection();
-
             }
             else
                 MessageBox.Show("Введите данные для добавления!");
-
         }
 
         public Boolean isDataExists()
@@ -155,8 +151,6 @@ namespace Kursovaya
             }
             else
                 MessageBox.Show("Введите данные для обновления!");
-
-
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -167,8 +161,9 @@ namespace Kursovaya
                 {
                     DB db = new DB();
 
-                    MySqlCommand command = new MySqlCommand("DELETE FROM `Position` WHERE `idPosition` = @ID;", db.getConnection());
+                    MySqlCommand command = new MySqlCommand("DELETE FROM `Position` WHERE `idPosition` = @ID OR `Position_Name` = @Name;", db.getConnection());
                     command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = tBid.Text;
+                    command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = tBname.Text;
 
                     db.openConnection();
 
@@ -214,7 +209,7 @@ namespace Kursovaya
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                MySqlCommand command = new MySqlCommand("SELECT * FROM Position WHERE `idPosition` = @ID OR`Position_Name`= @Name OR `Position_Salary`= @Salary;", db.getConnection());
+                MySqlCommand command = new MySqlCommand("SELECT * FROM Position WHERE `idPosition` = @ID OR `Position_Name`= @Name OR `Position_Salary`= @Salary;", db.getConnection());
                 command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = tBname.Text;
                 command.Parameters.Add("@Salary", MySqlDbType.VarChar).Value = tBsalary.Text;
                 command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = tBid.Text;
@@ -223,8 +218,6 @@ namespace Kursovaya
                 adapter.Fill(table);
 
                 dataGridView1.DataSource = table;
-
-
 
                 dataGridView1.Columns[0].HeaderText = "код_Должности";
                 dataGridView1.Columns[1].HeaderText = "Название";
@@ -305,11 +298,18 @@ namespace Kursovaya
 
             dataGridView1.DataSource = table;
 
-
-
             dataGridView1.Columns[0].HeaderText = "код_Должности";
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Зарплата";
+        }
+
+        private void PositionForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.Size = new Size(824, 393);
+            }
         }
     }
 } 

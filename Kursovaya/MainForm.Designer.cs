@@ -32,6 +32,7 @@ namespace Kursovaya
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.labelHide = new System.Windows.Forms.Label();
             this.labelFullScreen = new System.Windows.Forms.Label();
             this.labelClose = new System.Windows.Forms.Label();
@@ -58,7 +59,7 @@ namespace Kursovaya
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1061, 443);
+            this.panel1.Size = new System.Drawing.Size(1069, 443);
             this.panel1.TabIndex = 7;
             // 
             // panel2
@@ -66,16 +67,28 @@ namespace Kursovaya
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.labelHide);
             this.panel2.Controls.Add(this.labelFullScreen);
             this.panel2.Controls.Add(this.labelClose);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1061, 30);
+            this.panel2.Size = new System.Drawing.Size(1069, 26);
             this.panel2.TabIndex = 16;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(263, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Система управления персоналом";
             // 
             // labelHide
             // 
@@ -84,7 +97,7 @@ namespace Kursovaya
             this.labelHide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelHide.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelHide.ForeColor = System.Drawing.Color.Black;
-            this.labelHide.Location = new System.Drawing.Point(979, 0);
+            this.labelHide.Location = new System.Drawing.Point(987, 0);
             this.labelHide.Name = "labelHide";
             this.labelHide.Size = new System.Drawing.Size(22, 29);
             this.labelHide.TabIndex = 8;
@@ -100,7 +113,7 @@ namespace Kursovaya
             this.labelFullScreen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelFullScreen.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFullScreen.ForeColor = System.Drawing.Color.Black;
-            this.labelFullScreen.Location = new System.Drawing.Point(998, 0);
+            this.labelFullScreen.Location = new System.Drawing.Point(1006, 0);
             this.labelFullScreen.Name = "labelFullScreen";
             this.labelFullScreen.Size = new System.Drawing.Size(32, 26);
             this.labelFullScreen.TabIndex = 1;
@@ -116,7 +129,7 @@ namespace Kursovaya
             this.labelClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelClose.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelClose.ForeColor = System.Drawing.Color.Black;
-            this.labelClose.Location = new System.Drawing.Point(1024, 3);
+            this.labelClose.Location = new System.Drawing.Point(1032, 3);
             this.labelClose.Name = "labelClose";
             this.labelClose.Size = new System.Drawing.Size(34, 23);
             this.labelClose.TabIndex = 0;
@@ -143,9 +156,9 @@ namespace Kursovaya
             this.tsBtnDismissal,
             this.tsBtnPayment,
             this.tsLback});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 29);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 26);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1061, 45);
+            this.toolStrip1.Size = new System.Drawing.Size(1069, 48);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -158,7 +171,7 @@ namespace Kursovaya
             this.tsBtnEmployee.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnEmployee.Margin = new System.Windows.Forms.Padding(0, 2, 2, 3);
             this.tsBtnEmployee.Name = "tsBtnEmployee";
-            this.tsBtnEmployee.Size = new System.Drawing.Size(120, 40);
+            this.tsBtnEmployee.Size = new System.Drawing.Size(120, 43);
             this.tsBtnEmployee.Text = "Сотрудники";
             this.tsBtnEmployee.Click += new System.EventHandler(this.tsBtnEmployee_Click);
             // 
@@ -171,7 +184,7 @@ namespace Kursovaya
             this.tsBtnPosition.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnPosition.Margin = new System.Windows.Forms.Padding(0, 2, 2, 3);
             this.tsBtnPosition.Name = "tsBtnPosition";
-            this.tsBtnPosition.Size = new System.Drawing.Size(111, 40);
+            this.tsBtnPosition.Size = new System.Drawing.Size(111, 43);
             this.tsBtnPosition.Text = "Должности";
             this.tsBtnPosition.Click += new System.EventHandler(this.tsBtnPosition_Click);
             // 
@@ -184,7 +197,7 @@ namespace Kursovaya
             this.tsBtnEducation.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnEducation.Margin = new System.Windows.Forms.Padding(0, 2, 2, 3);
             this.tsBtnEducation.Name = "tsBtnEducation";
-            this.tsBtnEducation.Size = new System.Drawing.Size(125, 40);
+            this.tsBtnEducation.Size = new System.Drawing.Size(125, 43);
             this.tsBtnEducation.Text = "Образование";
             this.tsBtnEducation.Click += new System.EventHandler(this.tsBtnEducation_Click);
             // 
@@ -197,7 +210,7 @@ namespace Kursovaya
             this.tsBtnWTime.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnWTime.Margin = new System.Windows.Forms.Padding(0, 2, 2, 3);
             this.tsBtnWTime.Name = "tsBtnWTime";
-            this.tsBtnWTime.Size = new System.Drawing.Size(73, 40);
+            this.tsBtnWTime.Size = new System.Drawing.Size(73, 43);
             this.tsBtnWTime.Text = "Смены";
             this.tsBtnWTime.Click += new System.EventHandler(this.tsBtnWTime_Click);
             // 
@@ -210,7 +223,7 @@ namespace Kursovaya
             this.tsBtnTasks.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnTasks.Margin = new System.Windows.Forms.Padding(0, 2, 2, 3);
             this.tsBtnTasks.Name = "tsBtnTasks";
-            this.tsBtnTasks.Size = new System.Drawing.Size(74, 40);
+            this.tsBtnTasks.Size = new System.Drawing.Size(74, 43);
             this.tsBtnTasks.Text = "Задачи";
             this.tsBtnTasks.Click += new System.EventHandler(this.tsBtnTasks_Click);
             // 
@@ -223,7 +236,7 @@ namespace Kursovaya
             this.tsBtnVacation.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnVacation.Margin = new System.Windows.Forms.Padding(0, 2, 2, 3);
             this.tsBtnVacation.Name = "tsBtnVacation";
-            this.tsBtnVacation.Size = new System.Drawing.Size(85, 40);
+            this.tsBtnVacation.Size = new System.Drawing.Size(85, 43);
             this.tsBtnVacation.Text = "Отпуска";
             this.tsBtnVacation.Click += new System.EventHandler(this.tsBtnVacation_Click);
             // 
@@ -236,7 +249,7 @@ namespace Kursovaya
             this.tsBtnDismissal.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnDismissal.Margin = new System.Windows.Forms.Padding(0, 2, 2, 3);
             this.tsBtnDismissal.Name = "tsBtnDismissal";
-            this.tsBtnDismissal.Size = new System.Drawing.Size(116, 40);
+            this.tsBtnDismissal.Size = new System.Drawing.Size(116, 43);
             this.tsBtnDismissal.Text = "Увольнения";
             this.tsBtnDismissal.Click += new System.EventHandler(this.tsBtnDismissal_Click);
             // 
@@ -249,7 +262,7 @@ namespace Kursovaya
             this.tsBtnPayment.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnPayment.Margin = new System.Windows.Forms.Padding(0, 2, 2, 3);
             this.tsBtnPayment.Name = "tsBtnPayment";
-            this.tsBtnPayment.Size = new System.Drawing.Size(92, 40);
+            this.tsBtnPayment.Size = new System.Drawing.Size(92, 43);
             this.tsBtnPayment.Text = "Выплаты";
             this.tsBtnPayment.Click += new System.EventHandler(this.tsBtnPayment_Click);
             // 
@@ -260,7 +273,7 @@ namespace Kursovaya
             this.tsLback.ForeColor = System.Drawing.Color.Silver;
             this.tsLback.Margin = new System.Windows.Forms.Padding(60, 1, 0, 2);
             this.tsLback.Name = "tsLback";
-            this.tsLback.Size = new System.Drawing.Size(38, 42);
+            this.tsLback.Size = new System.Drawing.Size(38, 45);
             this.tsLback.Text = "→";
             this.tsLback.Click += new System.EventHandler(this.tsLback_Click);
             this.tsLback.MouseEnter += new System.EventHandler(this.tsLback_MouseEnter);
@@ -270,9 +283,11 @@ namespace Kursovaya
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 443);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1069, 443);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(929, 443);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Система управления персоналом";
@@ -301,6 +316,7 @@ namespace Kursovaya
         private System.Windows.Forms.Label labelFullScreen;
         private System.Windows.Forms.Label labelClose;
         private System.Windows.Forms.ToolStripLabel tsLback;
+        private System.Windows.Forms.Label label1;
     }
 }
 

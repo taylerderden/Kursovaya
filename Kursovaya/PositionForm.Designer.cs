@@ -42,11 +42,11 @@ namespace Kursovaya
             this.btnSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.labelHide = new System.Windows.Forms.Label();
             this.labelFullScreen = new System.Windows.Forms.Label();
             this.labelClose = new System.Windows.Forms.Label();
             this.labelLoadData = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,24 +57,24 @@ namespace Kursovaya
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 41);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(592, 273);
+            this.dataGridView1.Size = new System.Drawing.Size(771, 342);
             this.dataGridView1.TabIndex = 2;
             // 
             // labelID
             // 
             this.labelID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelID.AutoSize = true;
-            this.labelID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.labelID.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelID.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelID.Location = new System.Drawing.Point(15, 323);
+            this.labelID.Location = new System.Drawing.Point(13, 392);
             this.labelID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(30, 27);
+            this.labelID.Size = new System.Drawing.Size(24, 21);
             this.labelID.TabIndex = 8;
             this.labelID.Text = "id";
             // 
@@ -82,12 +82,12 @@ namespace Kursovaya
             // 
             this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.labelName.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelName.Location = new System.Drawing.Point(154, 323);
+            this.labelName.Location = new System.Drawing.Point(152, 392);
             this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(107, 27);
+            this.labelName.Size = new System.Drawing.Size(81, 21);
             this.labelName.TabIndex = 9;
             this.labelName.Text = "Название";
             // 
@@ -95,12 +95,12 @@ namespace Kursovaya
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(403, 323);
+            this.label2.Location = new System.Drawing.Point(401, 392);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 27);
+            this.label2.Size = new System.Drawing.Size(80, 21);
             this.label2.TabIndex = 10;
             this.label2.Text = "Зарплата";
             // 
@@ -108,7 +108,7 @@ namespace Kursovaya
             // 
             this.tBid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tBid.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tBid.Location = new System.Drawing.Point(20, 353);
+            this.tBid.Location = new System.Drawing.Point(17, 416);
             this.tBid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tBid.Name = "tBid";
             this.tBid.Size = new System.Drawing.Size(92, 28);
@@ -118,7 +118,7 @@ namespace Kursovaya
             // 
             this.tBname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tBname.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tBname.Location = new System.Drawing.Point(159, 353);
+            this.tBname.Location = new System.Drawing.Point(156, 416);
             this.tBname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tBname.Name = "tBname";
             this.tBname.Size = new System.Drawing.Size(209, 28);
@@ -128,7 +128,7 @@ namespace Kursovaya
             // 
             this.tBsalary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tBsalary.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tBsalary.Location = new System.Drawing.Point(408, 353);
+            this.tBsalary.Location = new System.Drawing.Point(405, 416);
             this.tBsalary.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tBsalary.Name = "tBsalary";
             this.tBsalary.Size = new System.Drawing.Size(125, 28);
@@ -137,10 +137,10 @@ namespace Kursovaya
             // btnIns
             // 
             this.btnIns.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIns.Location = new System.Drawing.Point(665, 227);
+            this.btnIns.Location = new System.Drawing.Point(792, 290);
             this.btnIns.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnIns.Name = "btnIns";
-            this.btnIns.Size = new System.Drawing.Size(147, 34);
+            this.btnIns.Size = new System.Drawing.Size(164, 34);
             this.btnIns.TabIndex = 14;
             this.btnIns.Text = "Добавить";
             this.btnIns.UseVisualStyleBackColor = true;
@@ -149,10 +149,10 @@ namespace Kursovaya
             // btnUp
             // 
             this.btnUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUp.Location = new System.Drawing.Point(664, 267);
+            this.btnUp.Location = new System.Drawing.Point(791, 330);
             this.btnUp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(147, 34);
+            this.btnUp.Size = new System.Drawing.Size(164, 34);
             this.btnUp.TabIndex = 15;
             this.btnUp.Text = "Обновить";
             this.btnUp.UseVisualStyleBackColor = true;
@@ -161,10 +161,10 @@ namespace Kursovaya
             // btnDel
             // 
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.Location = new System.Drawing.Point(664, 307);
+            this.btnDel.Location = new System.Drawing.Point(791, 370);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(147, 34);
+            this.btnDel.Size = new System.Drawing.Size(164, 34);
             this.btnDel.TabIndex = 16;
             this.btnDel.Text = "Удалить";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -173,10 +173,10 @@ namespace Kursovaya
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(664, 347);
+            this.btnSearch.Location = new System.Drawing.Point(791, 410);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(147, 34);
+            this.btnSearch.Size = new System.Drawing.Size(164, 34);
             this.btnSearch.TabIndex = 17;
             this.btnSearch.Text = "Найти";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -187,9 +187,9 @@ namespace Kursovaya
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Kursovaya.Properties.Resources._7107779_level_recruitment_employment_organization_position_icon;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(665, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(791, 41);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(147, 142);
+            this.pictureBox1.Size = new System.Drawing.Size(164, 151);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -206,8 +206,18 @@ namespace Kursovaya
             this.panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel2.Location = new System.Drawing.Point(-1, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(826, 25);
+            this.panel2.Size = new System.Drawing.Size(969, 25);
             this.panel2.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(13, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Должности";
             // 
             // labelHide
             // 
@@ -216,7 +226,7 @@ namespace Kursovaya
             this.labelHide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelHide.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelHide.ForeColor = System.Drawing.Color.Black;
-            this.labelHide.Location = new System.Drawing.Point(744, 0);
+            this.labelHide.Location = new System.Drawing.Point(887, 0);
             this.labelHide.Name = "labelHide";
             this.labelHide.Size = new System.Drawing.Size(22, 29);
             this.labelHide.TabIndex = 8;
@@ -232,7 +242,7 @@ namespace Kursovaya
             this.labelFullScreen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelFullScreen.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFullScreen.ForeColor = System.Drawing.Color.Black;
-            this.labelFullScreen.Location = new System.Drawing.Point(763, 0);
+            this.labelFullScreen.Location = new System.Drawing.Point(906, 0);
             this.labelFullScreen.Name = "labelFullScreen";
             this.labelFullScreen.Size = new System.Drawing.Size(32, 26);
             this.labelFullScreen.TabIndex = 1;
@@ -248,7 +258,7 @@ namespace Kursovaya
             this.labelClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelClose.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelClose.ForeColor = System.Drawing.Color.Black;
-            this.labelClose.Location = new System.Drawing.Point(789, 3);
+            this.labelClose.Location = new System.Drawing.Point(932, 3);
             this.labelClose.Name = "labelClose";
             this.labelClose.Size = new System.Drawing.Size(34, 23);
             this.labelClose.TabIndex = 0;
@@ -262,29 +272,19 @@ namespace Kursovaya
             this.labelLoadData.AutoSize = true;
             this.labelLoadData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelLoadData.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLoadData.Location = new System.Drawing.Point(581, 317);
+            this.labelLoadData.Location = new System.Drawing.Point(744, 389);
             this.labelLoadData.Name = "labelLoadData";
             this.labelLoadData.Size = new System.Drawing.Size(40, 27);
             this.labelLoadData.TabIndex = 21;
             this.labelLoadData.Text = "🔄";
             this.labelLoadData.Click += new System.EventHandler(this.labelLoadData_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(13, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 21);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Должности";
-            // 
             // PositionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(824, 393);
+            this.ClientSize = new System.Drawing.Size(967, 462);
             this.Controls.Add(this.labelLoadData);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
@@ -306,6 +306,7 @@ namespace Kursovaya
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PositionForm";
             this.Load += new System.EventHandler(this.PositionForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PositionForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

@@ -299,6 +299,66 @@ namespace Kursovaya
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                String loginUser = Login.Text; // запись логина
+                String passUser = Password.Text; // запись пароля
+
+                if (Login.Text == "" || Login.Text == "Ваш логин")
+                {
+                    MessageBox.Show("Введите логин!");
+                    return;
+                }
+                if (Password.Text == "" || Password.Text == "пароль")
+                {
+                    MessageBox.Show("Введите пароль!");
+                    return;
+                }
+
+                DB db = new DB();
+
+                DataTable table = new DataTable();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                MySqlCommand commandAdmin = new MySqlCommand("SELECT * FROM `Security` WHERE `Security_Login` = @uL AND `Security_Password` = @uP AND `Security_Category` = 'Admin'", db.getConnection()); //авторизация администратора
+                commandAdmin.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
+                commandAdmin.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
+
+                adapter.SelectCommand = commandAdmin;
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0) //поиск записей
+                {
+                    this.Hide();
+                    MainForm mainForm = new MainForm(); //если успешна то открытие формы для админа
+                    mainForm.Show();
+                }
+                else //иначе ищет запись пользователя(сотрудника)
+                {
+                    MySqlCommand commandUser = new MySqlCommand("SELECT * FROM `Security` WHERE `Security_Login` = @uL AND `Security_Password` = @uP", db.getConnection()); //авторизация пользователя(сотрудника)
+                    commandUser.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
+                    commandUser.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
+
+                    adapter.SelectCommand = commandUser;
+                    adapter.Fill(table);
+
+                    if (table.Rows.Count > 0)
+                    {
+                        this.Hide();
+                        UserForm userForm = new UserForm(); //если успешна то открытие формы для сотрудника
+                        userForm.Show();
+                    }
+                    else
+                        MessageBox.Show("Failed!"); //иначе ошибка
+                }
+            }
+        }
+
+        
     }
 }
     

@@ -281,5 +281,100 @@ namespace Kursovaya
         {
             tsBtnBack.ForeColor = Color.Silver;
         }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void labelFullScreen_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                this.TopMost = true;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.TopMost = true;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void labelHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        Point lastPoint;
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void labelClose_MouseEnter(object sender, EventArgs e)
+        {
+            labelClose.ForeColor = Color.Red;
+        }
+
+        private void labelClose_MouseLeave(object sender, EventArgs e)
+        {
+            labelClose.ForeColor = Color.Black;
+        }
+
+        private void labelFullScreen_MouseEnter(object sender, EventArgs e)
+        {
+            labelFullScreen.ForeColor = Color.White;
+        }
+
+        private void labelFullScreen_MouseLeave(object sender, EventArgs e)
+        {
+            labelFullScreen.ForeColor = Color.Black;
+        }
+
+        private void labelHide_MouseEnter(object sender, EventArgs e)
+        {
+            labelHide.ForeColor = Color.Orange;
+        }
+
+        private void labelHide_MouseLeave(object sender, EventArgs e)
+        {
+            labelHide.ForeColor = Color.Black;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Employee WHERE CONCAT(`idEmployee`, `Employee_FIO`, `Employee_Gender`, `Employee_Phone`, `Employee_Experience`, `Employee_Department`, `Position_idPosition`)like '%" + tBsearch.Text +"%'", db.getConnection());
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            dataGridView1.DataSource = table;
+
+            dataGridView1.Columns[0].HeaderText = "код_Сотрудника";
+            dataGridView1.Columns[1].HeaderText = "ФИО";
+            dataGridView1.Columns[2].HeaderText = "Пол";
+            dataGridView1.Columns[3].HeaderText = "Телефон";
+            dataGridView1.Columns[4].HeaderText = "Стаж";
+            dataGridView1.Columns[5].HeaderText = "Отдел";
+            dataGridView1.Columns[6].HeaderText = "код_Должности";
+
+        }
     }
 }

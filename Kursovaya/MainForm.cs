@@ -28,37 +28,44 @@ namespace Kursovaya
             VacationForm vForm = new VacationForm();
 
         private void tsBtnEmployee_Click(object sender, EventArgs e)
-        {           
+        {
+            EmployeeForm eForm = new EmployeeForm();
             eForm.Show();
         }
 
         private void tsBtnPosition_Click(object sender, EventArgs e)
-        {          
+        {
+            PositionForm pForm = new PositionForm();
             pForm.Show();
         }
 
         private void tsBtnEducation_Click(object sender, EventArgs e)
-        {           
+        {
+            EducationForm edForm = new EducationForm();
             edForm.Show();
         }
 
         private void tsBtnWTime_Click(object sender, EventArgs e)
-        {           
+        {
+            WTimeForm wForm = new WTimeForm();
             wForm.Show();
         }
 
         private void tsBtnTasks_Click(object sender, EventArgs e)
-        {           
+        {
+            TasksForm taskForm = new TasksForm();
             taskForm.Show();
         }
 
         private void tsBtnVacation_Click(object sender, EventArgs e)
-        {           
+        {
+            VacationForm vForm = new VacationForm();
             vForm.Show();
         }
 
         private void tsBtnDismissal_Click(object sender, EventArgs e)
-        {            
+        {
+            DismissalForm dForm = new DismissalForm();
             dForm.Show();
         }
 
@@ -70,7 +77,8 @@ namespace Kursovaya
         }
 
         private void tsBtnPayment_Click(object sender, EventArgs e)
-        {          
+        {
+            PaymentForm payForm = new PaymentForm();
             payForm.Show();
         }
 

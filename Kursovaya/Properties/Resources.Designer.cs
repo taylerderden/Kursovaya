@@ -63,6 +63,16 @@ namespace Kursovaya.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _172506_money_icon {
+            get {
+                object obj = ResourceManager.GetObject("172506_money_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2203549_admin_avatar_human_login_user_icon {
             get {
                 object obj = ResourceManager.GetObject("2203549_admin_avatar_human_login_user_icon", resourceCulture);
@@ -73,9 +83,39 @@ namespace Kursovaya.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3586376_education_graduate_graduation_cap_icon {
+            get {
+                object obj = ResourceManager.GetObject("3586376_education_graduate_graduation cap_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _4308331_clock_hours_man_personal_schedule_icon {
             get {
                 object obj = ResourceManager.GetObject("4308331_clock_hours_man_personal_schedule_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4308334_dismissal_employee_exit_job_layoff_icon {
+            get {
+                object obj = ResourceManager.GetObject("4308334_dismissal_employee_exit_job_layoff_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5803966_checklist_clipboard_task_todo_icon {
+            get {
+                object obj = ResourceManager.GetObject("5803966_checklist_clipboard_task_todo_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +136,16 @@ namespace Kursovaya.Properties {
         internal static System.Drawing.Bitmap _9021590_password_bold_icon {
             get {
                 object obj = ResourceManager.GetObject("9021590_password_bold_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9929010_working_time_work_timetable_efficiency_icon {
+            get {
+                object obj = ResourceManager.GetObject("9929010_working_time_work_timetable_efficiency_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
