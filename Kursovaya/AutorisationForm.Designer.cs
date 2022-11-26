@@ -252,7 +252,8 @@ namespace Kursovaya
             // 
             // AutorisationForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(515, 314);
             this.Controls.Add(this.mainPanel);

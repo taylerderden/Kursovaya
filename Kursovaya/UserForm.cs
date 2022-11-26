@@ -18,6 +18,8 @@ namespace Kursovaya
         public UserForm()
         {
             InitializeComponent();
+
+            textBoxID.MaxLength = 4;
         }
 
         public static DateTime GetNetworkTime()  //получение времени из сети
@@ -96,56 +98,84 @@ namespace Kursovaya
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                MySqlCommand command = new MySqlCommand("SELECT `WTime_Day` FROM `WTime` WHERE `WTime_Day` = @Day AND `Employee_idEmployee` = @ID;", db.getConnection()); //авторизация администратора
-                command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
-                command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+                MySqlCommand commandID = new MySqlCommand("SELECT * FROM `Employee` WHERE `idEmployee` = @ID;", db.getConnection()); //проверка id
+                commandID.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
 
-                adapter.SelectCommand = command;
+                adapter.SelectCommand = commandID;
                 adapter.Fill(table);
 
-                if (table.Rows.Count == 0) //поиск записей
+                if (table.Rows.Count > 0) //поиск записей
                 {
-                    MySqlCommand commandStart = new MySqlCommand("INSERT INTO `WTime` (`WTime_Day`, `WTime_Start`, `Employee_idEmployee`) VALUES(@Day, @Time, @ID);", db.getConnection());
-                    commandStart.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
-                    commandStart.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
-                    commandStart.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+                    DataTable table2 = new DataTable();
+
+                    MySqlCommand command = new MySqlCommand("SELECT `WTime_Day` FROM `WTime` WHERE `WTime_Day` = @Day AND `Employee_idEmployee` = @ID;", db.getConnection()); //поиск
+                    command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
+                    command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+
+                    adapter.SelectCommand = command;
+                    adapter.Fill(table2);
+
+                    if (table2.Rows.Count == 0) //поиск записей
+                    {
+                        MySqlCommand commandStart = new MySqlCommand("INSERT INTO `WTime` (`WTime_Day`, `WTime_Start`, `Employee_idEmployee`) VALUES(@Day, @Time, @ID);", db.getConnection());
+                        commandStart.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
+                        commandStart.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
+                        commandStart.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+
+                        db.openConnection();
+
+                        if (commandStart.ExecuteNonQuery() == 1)
+                            MessageBox.Show("Удачного дня!");
+                        else
+                            MessageBox.Show("Ошибка!");
+
+                        db.closeConnection();
+                    }
+                    else
+                        MessageBox.Show("Вы уже начали смену!");
+                }
+                else
+                    MessageBox.Show("ID не найден!");
+            }
+            else
+                MessageBox.Show("Введите ID");
+
+        }
+
+        private void btnFinishTime_Click(object sender, EventArgs e)  //конец смены
+        {                       
+            if (textBoxID.Text != "")
+            {   
+                DB db = new DB();
+
+                DataTable table = new DataTable();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                MySqlCommand commandID = new MySqlCommand("SELECT * FROM `Employee` WHERE `idEmployee` = @ID;", db.getConnection()); //проверка id
+                commandID.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
+
+                adapter.SelectCommand = commandID;
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0) //поиск записей
+                {
+                    MySqlCommand command = new MySqlCommand("UPDATE `WTime` SET `WTime_Finish` = @Time WHERE `WTime_Day` =@Day  AND `WTime_Finish` is null AND `Employee_idEmployee` = @ID;", db.getConnection());
+                    command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
+                    command.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
+                    command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
 
                     db.openConnection();
 
-                    if (commandStart.ExecuteNonQuery() == 1)
-                        MessageBox.Show("Удачного дня!");
+                    if (command.ExecuteNonQuery() == 1)
+                        MessageBox.Show("До свидания!");
                     else
                         MessageBox.Show("Ошибка!");
 
                     db.closeConnection();
                 }
                 else
-                    MessageBox.Show("Вы уже начали смену!");
-            }
-            
-        }
-
-        private void btnFinishTime_Click(object sender, EventArgs e)  //конец смены
-        {            
-            
-
-            if (textBoxID.Text != "")
-            {   
-                DB db = new DB();
-
-                MySqlCommand command = new MySqlCommand("UPDATE `WTime` SET `WTime_Finish` = @Time WHERE `WTime_Day` =@Day  AND `WTime_Finish` is null AND `Employee_idEmployee` = @ID;", db.getConnection());
-                command.Parameters.Add("@Day", MySqlDbType.VarChar).Value = labelDay.Text;
-                command.Parameters.Add("@Time", MySqlDbType.VarChar).Value = labelTime.Text;
-                command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = textBoxID.Text;
-            
-                db.openConnection();
-
-                if (command.ExecuteNonQuery() == 1)
-                    MessageBox.Show("До свидания!");
-                else
-                    MessageBox.Show("Ошибка!");
-
-                db.closeConnection();
+                    MessageBox.Show("ID не найден!");
             }
             else
                 MessageBox.Show("Введите ID");
