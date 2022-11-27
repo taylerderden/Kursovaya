@@ -37,6 +37,8 @@ namespace Kursovaya
             this.labelFullScreen = new System.Windows.Forms.Label();
             this.labelClose = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsLback = new System.Windows.Forms.ToolStripLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tsBtnEmployee = new System.Windows.Forms.ToolStripButton();
             this.tsBtnPosition = new System.Windows.Forms.ToolStripButton();
             this.tsBtnEducation = new System.Windows.Forms.ToolStripButton();
@@ -45,15 +47,18 @@ namespace Kursovaya
             this.tsBtnVacation = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDismissal = new System.Windows.Forms.ToolStripButton();
             this.tsBtnPayment = new System.Windows.Forms.ToolStripButton();
-            this.tsLback = new System.Windows.Forms.ToolStripLabel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.toolStrip1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -162,6 +167,32 @@ namespace Kursovaya
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // tsLback
+            // 
+            this.tsLback.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsLback.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsLback.ForeColor = System.Drawing.Color.Silver;
+            this.tsLback.Margin = new System.Windows.Forms.Padding(60, 1, 0, 2);
+            this.tsLback.Name = "tsLback";
+            this.tsLback.Size = new System.Drawing.Size(38, 45);
+            this.tsLback.Text = "→";
+            this.tsLback.Click += new System.EventHandler(this.tsLback_Click);
+            this.tsLback.MouseEnter += new System.EventHandler(this.tsLback_MouseEnter);
+            this.tsLback.MouseLeave += new System.EventHandler(this.tsLback_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox1.Image = global::Kursovaya.Properties.Resources._3209382_article_content_contract_form_paper_icon;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 277);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // tsBtnEmployee
             // 
             this.tsBtnEmployee.BackColor = System.Drawing.Color.Silver;
@@ -266,18 +297,15 @@ namespace Kursovaya
             this.tsBtnPayment.Text = "Выплаты";
             this.tsBtnPayment.Click += new System.EventHandler(this.tsBtnPayment_Click);
             // 
-            // tsLback
+            // label2
             // 
-            this.tsLback.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsLback.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tsLback.ForeColor = System.Drawing.Color.Silver;
-            this.tsLback.Margin = new System.Windows.Forms.Padding(60, 1, 0, 2);
-            this.tsLback.Name = "tsLback";
-            this.tsLback.Size = new System.Drawing.Size(38, 45);
-            this.tsLback.Text = "→";
-            this.tsLback.Click += new System.EventHandler(this.tsLback_Click);
-            this.tsLback.MouseEnter += new System.EventHandler(this.tsLback_MouseEnter);
-            this.tsLback.MouseLeave += new System.EventHandler(this.tsLback_MouseLeave);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(958, 423);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "alpha-version";
             // 
             // MainForm
             // 
@@ -292,10 +320,12 @@ namespace Kursovaya
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Система управления персоналом";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,6 +347,8 @@ namespace Kursovaya
         private System.Windows.Forms.Label labelClose;
         private System.Windows.Forms.ToolStripLabel tsLback;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

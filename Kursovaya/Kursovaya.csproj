@@ -183,6 +183,7 @@
   <ItemGroup>
     <Content Include="images\172506_money_icon.png" />
     <Content Include="images\2203549_admin_avatar_human_login_user_icon.png" />
+    <Content Include="images\3209382_article_content_contract_form_paper_icon.png" />
     <Content Include="images\3586376_education_graduate_graduation cap_icon.png" />
     <Content Include="images\4308331_clock_hours_man_personal_schedule_icon.png" />
     <Content Include="images\4308334_dismissal_employee_exit_job_layoff_icon.png" />

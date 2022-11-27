@@ -32,7 +32,6 @@ namespace Kursovaya
             this.mainPanel = new System.Windows.Forms.Panel();
             this.labelCheck = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelID = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.Password = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -53,7 +52,6 @@ namespace Kursovaya
             this.mainPanel.BackColor = System.Drawing.Color.DimGray;
             this.mainPanel.Controls.Add(this.labelCheck);
             this.mainPanel.Controls.Add(this.label1);
-            this.mainPanel.Controls.Add(this.labelID);
             this.mainPanel.Controls.Add(this.buttonLogin);
             this.mainPanel.Controls.Add(this.Password);
             this.mainPanel.Controls.Add(this.pictureBox2);
@@ -97,21 +95,6 @@ namespace Kursovaya
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
-            // 
-            // labelID
-            // 
-            this.labelID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelID.AutoSize = true;
-            this.labelID.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.labelID.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelID.Location = new System.Drawing.Point(12, 269);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(42, 27);
-            this.labelID.TabIndex = 6;
-            this.labelID.Text = "ID:";
-            this.labelID.Click += new System.EventHandler(this.labelID_Click);
             // 
             // buttonLogin
             // 
@@ -284,7 +267,6 @@ namespace Kursovaya
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.Label labelClose;
         private System.Windows.Forms.Label labelHide;
         private System.Windows.Forms.Label labelFullScreen;

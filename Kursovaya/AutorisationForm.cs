@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Kursovaya
 {
+    
     public partial class AutorisationForm : Form
     {
         public AutorisationForm()
@@ -29,8 +30,8 @@ namespace Kursovaya
             Password.MaxLength = 12;
 
         }
-
-        private void buttonLogin_Click(object sender, EventArgs e)
+      
+        public void buttonLogin_Click(object sender, EventArgs e)
         {
             String loginUser = Login.Text; // запись логина
             String passUser = Password.Text; // запись пароля
@@ -60,7 +61,7 @@ namespace Kursovaya
             adapter.Fill(table);
 
             if (table.Rows.Count > 0) //поиск записей
-            {
+            {               
                 this.Hide();
                 MainForm mainForm = new MainForm(); //если успешна то открытие формы для админа
                 mainForm.Show();
@@ -76,6 +77,29 @@ namespace Kursovaya
 
                 if (table.Rows.Count > 0)
                 {
+                    DataTable tableID = new DataTable();
+
+                    MySqlDataAdapter adapterID = new MySqlDataAdapter();
+
+                    MySqlCommand commandID = new MySqlCommand("SELECT `Employee_idEmployee` FROM `Security` WHERE `Security_Login` = @uL AND `Security_Password` = @uP", db.getConnection()); //авторизация администратора
+                    commandID.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
+                    commandID.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
+
+                    adapterID.SelectCommand = commandID;
+                    adapterID.Fill(tableID);
+
+                    db.openConnection();
+
+                    if (table.Rows.Count > 0) //поиск записей
+                    {
+                        string id = commandID.ExecuteScalar().ToString();   // извлекаем id
+                        Global.GlobalVar = id;                                              
+                    }
+                    else
+                        MessageBox.Show("Failed!"); //иначе ошибка
+
+                    db.closeConnection();
+
                     this.Hide();
                     UserForm userForm = new UserForm(); //если успешна то открытие формы для сотрудника
                     userForm.Show();
@@ -155,8 +179,7 @@ namespace Kursovaya
 
             if (table.Rows.Count > 0) //поиск записей
             {
-                string id = commandID.ExecuteScalar().ToString();   // извлекаем id
-                labelID.Text = "ID:" + ' ' + id;
+                string id = commandID.ExecuteScalar().ToString();   // извлекаем id               
             }
             else
                 MessageBox.Show("Failed!"); //иначе ошибка
@@ -359,6 +382,16 @@ namespace Kursovaya
         }
 
         
+    }
+    static class Global
+    {
+        public static string _globalVar = "";
+
+        public static string GlobalVar
+        {
+            get { return _globalVar; }
+            set { _globalVar = value; }
+        }
     }
 }
     

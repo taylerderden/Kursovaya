@@ -83,6 +83,16 @@ namespace Kursovaya.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3209382_article_content_contract_form_paper_icon {
+            get {
+                object obj = ResourceManager.GetObject("3209382_article_content_contract_form_paper_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3586376_education_graduate_graduation_cap_icon {
             get {
                 object obj = ResourceManager.GetObject("3586376_education_graduate_graduation cap_icon", resourceCulture);

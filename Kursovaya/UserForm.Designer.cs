@@ -146,7 +146,7 @@ namespace Kursovaya
             // 
             // dataGridView3
             // 
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -159,7 +159,7 @@ namespace Kursovaya
             // 
             // labelPayment
             // 
-            this.labelPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelPayment.AutoSize = true;
             this.labelPayment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelPayment.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -175,7 +175,7 @@ namespace Kursovaya
             // 
             // labelTime
             // 
-            this.labelTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTime.AutoSize = true;
             this.labelTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelTime.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -188,7 +188,7 @@ namespace Kursovaya
             // 
             // labelDay
             // 
-            this.labelDay.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelDay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelDay.AutoSize = true;
             this.labelDay.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelDay.ForeColor = System.Drawing.Color.White;
@@ -200,7 +200,7 @@ namespace Kursovaya
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Kursovaya.Properties.Resources._4308331_clock_hours_man_personal_schedule_icon;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(448, 41);
@@ -212,7 +212,7 @@ namespace Kursovaya
             // 
             // btnExit
             // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnExit.Location = new System.Drawing.Point(448, 466);
@@ -225,7 +225,7 @@ namespace Kursovaya
             // 
             // dataGridView2
             // 
-            this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -239,7 +239,7 @@ namespace Kursovaya
             // 
             // labelHours
             // 
-            this.labelHours.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelHours.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelHours.AutoSize = true;
             this.labelHours.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelHours.ForeColor = System.Drawing.Color.White;
@@ -254,7 +254,7 @@ namespace Kursovaya
             // 
             // btnFinishTime
             // 
-            this.btnFinishTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFinishTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnFinishTime.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinishTime.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnFinishTime.Location = new System.Drawing.Point(448, 303);
@@ -267,7 +267,7 @@ namespace Kursovaya
             // 
             // btnStartTime
             // 
-            this.btnStartTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnStartTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnStartTime.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartTime.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnStartTime.Location = new System.Drawing.Point(448, 220);
@@ -280,6 +280,7 @@ namespace Kursovaya
             // 
             // labelID
             // 
+            this.labelID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelID.ForeColor = System.Drawing.Color.White;
@@ -291,6 +292,7 @@ namespace Kursovaya
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -303,6 +305,7 @@ namespace Kursovaya
             // 
             // textBoxID
             // 
+            this.textBoxID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBoxID.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxID.ForeColor = System.Drawing.Color.White;
@@ -314,6 +317,7 @@ namespace Kursovaya
             // 
             // labelTasks
             // 
+            this.labelTasks.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTasks.AutoSize = true;
             this.labelTasks.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelTasks.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -342,6 +346,7 @@ namespace Kursovaya
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserForm";
             this.Load += new System.EventHandler(this.UserForm_Load);
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

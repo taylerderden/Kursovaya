@@ -56,10 +56,10 @@ namespace Kursovaya
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(763, 432);
+            this.btnSearch.Location = new System.Drawing.Point(763, 443);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(192, 45);
+            this.btnSearch.Size = new System.Drawing.Size(192, 34);
             this.btnSearch.TabIndex = 29;
             this.btnSearch.Text = "Найти";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -67,10 +67,10 @@ namespace Kursovaya
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(763, 379);
+            this.btnDel.Location = new System.Drawing.Point(763, 401);
             this.btnDel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(190, 45);
+            this.btnDel.Size = new System.Drawing.Size(190, 34);
             this.btnDel.TabIndex = 28;
             this.btnDel.Text = "Удалить";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -78,10 +78,10 @@ namespace Kursovaya
             // 
             // btnUp
             // 
-            this.btnUp.Location = new System.Drawing.Point(762, 326);
+            this.btnUp.Location = new System.Drawing.Point(762, 359);
             this.btnUp.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(191, 45);
+            this.btnUp.Size = new System.Drawing.Size(191, 34);
             this.btnUp.TabIndex = 27;
             this.btnUp.Text = "Обновить";
             this.btnUp.UseVisualStyleBackColor = true;
@@ -89,10 +89,10 @@ namespace Kursovaya
             // 
             // btnIns
             // 
-            this.btnIns.Location = new System.Drawing.Point(762, 273);
+            this.btnIns.Location = new System.Drawing.Point(762, 317);
             this.btnIns.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnIns.Name = "btnIns";
-            this.btnIns.Size = new System.Drawing.Size(191, 45);
+            this.btnIns.Size = new System.Drawing.Size(191, 34);
             this.btnIns.TabIndex = 26;
             this.btnIns.Text = "Добавить";
             this.btnIns.UseVisualStyleBackColor = true;

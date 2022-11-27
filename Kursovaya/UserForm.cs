@@ -48,7 +48,7 @@ namespace Kursovaya
             return networkDateTime.ToLocalTime();
         }
                
-        private void UserForm_Load(object sender, EventArgs e)
+        public void UserForm_Load(object sender, EventArgs e)
         {                                  
             labelTime.Text = Convert.ToString(GetNetworkTime().ToShortTimeString());
             Timer tmr = new Timer();
@@ -57,6 +57,8 @@ namespace Kursovaya
             tmr.Start();
 
             labelDay.Text = Convert.ToString(GetNetworkTime().ToShortDateString());
+
+            textBoxID.Text = Global.GlobalVar;
         }
         private void timer1_Tick(object sender, EventArgs e)  //таймер обновления времени
         {
@@ -326,5 +328,7 @@ namespace Kursovaya
         {
             labelPayment.ForeColor = Color.White;
         }
+
+        
     }
 }
