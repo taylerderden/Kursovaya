@@ -119,7 +119,7 @@ namespace Kursovaya
             this.labelHide.Location = new System.Drawing.Point(877, 1);
             this.labelHide.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelHide.Name = "labelHide";
-            this.labelHide.Size = new System.Drawing.Size(22, 29);
+            this.labelHide.Size = new System.Drawing.Size(21, 29);
             this.labelHide.TabIndex = 8;
             this.labelHide.Text = "–";
             this.labelHide.Click += new System.EventHandler(this.labelHide_Click);
@@ -136,10 +136,9 @@ namespace Kursovaya
             this.labelFullScreen.Location = new System.Drawing.Point(896, 1);
             this.labelFullScreen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFullScreen.Name = "labelFullScreen";
-            this.labelFullScreen.Size = new System.Drawing.Size(32, 26);
+            this.labelFullScreen.Size = new System.Drawing.Size(25, 24);
             this.labelFullScreen.TabIndex = 1;
             this.labelFullScreen.Text = "⧉";
-            this.labelFullScreen.Click += new System.EventHandler(this.labelFullScreen_Click);
             this.labelFullScreen.MouseEnter += new System.EventHandler(this.labelFullScreen_MouseEnter);
             this.labelFullScreen.MouseLeave += new System.EventHandler(this.labelFullScreen_MouseLeave);
             // 
@@ -316,6 +315,7 @@ namespace Kursovaya
             // DismissalForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(955, 489);
             this.Controls.Add(this.label2);

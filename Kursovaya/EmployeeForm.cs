@@ -113,16 +113,24 @@ namespace Kursovaya
 
                     if (task == "Delete")
                     {
-                        if (MessageBox.Show("Удалить эту строку?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        try
                         {
-                            int rowIndex = e.RowIndex;
+                            if (MessageBox.Show("Удалить эту строку?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                int rowIndex = e.RowIndex;
 
-                            dataGridView1.Rows.RemoveAt(rowIndex);
-                            dataSet.Tables["Employee"].Rows[rowIndex].Delete();
+                                dataGridView1.Rows.RemoveAt(rowIndex);
+                                dataSet.Tables["Employee"].Rows[rowIndex].Delete();
 
-                            adapter.Update(dataSet, "Employee");
+                                adapter.Update(dataSet, "Employee");
+                            }
                         }
-                    }
+                        catch
+                        {
+                            MessageBox.Show("Удалите данные из дочерних таблиц!");
+                        }
+                            
+                    }                   
                     else if (task == "Insert")
                     {
                         int rowIndex = dataGridView1.Rows.Count - 2;
@@ -230,6 +238,15 @@ namespace Kursovaya
         {
             e.Control.KeyPress -= new KeyPressEventHandler(Column_KeyPress);
 
+            if (dataGridView1.CurrentCell.ColumnIndex == 0)         //на месте _3_ ставим индекс колонки который валидируем
+            {
+                TextBox textBox = e.Control as TextBox;
+                if (textBox != null)
+                {
+                    textBox.KeyPress += new KeyPressEventHandler(Column_KeyPress);
+                }
+            }
+
             if (dataGridView1.CurrentCell.ColumnIndex == 3)         //на месте _3_ ставим индекс колонки который валидируем
             {
                 TextBox textBox = e.Control as TextBox;
@@ -289,18 +306,7 @@ namespace Kursovaya
 
         private void labelFullScreen_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal)
-            {
-                this.TopMost = true;
-                this.FormBorderStyle = FormBorderStyle.None;
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.TopMost = true;
-                this.FormBorderStyle = FormBorderStyle.None;
-                this.WindowState = FormWindowState.Normal;
-            }
+
         }
 
         private void labelHide_Click(object sender, EventArgs e)

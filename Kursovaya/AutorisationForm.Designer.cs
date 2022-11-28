@@ -74,7 +74,7 @@ namespace Kursovaya
             this.labelCheck.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCheck.Location = new System.Drawing.Point(432, 190);
             this.labelCheck.Name = "labelCheck";
-            this.labelCheck.Size = new System.Drawing.Size(37, 32);
+            this.labelCheck.Size = new System.Drawing.Size(35, 31);
             this.labelCheck.TabIndex = 8;
             this.labelCheck.Text = "✱";
             this.labelCheck.Click += new System.EventHandler(this.labelCheck_Click);
@@ -194,7 +194,7 @@ namespace Kursovaya
             this.labelHide.ForeColor = System.Drawing.Color.Black;
             this.labelHide.Location = new System.Drawing.Point(433, 0);
             this.labelHide.Name = "labelHide";
-            this.labelHide.Size = new System.Drawing.Size(22, 29);
+            this.labelHide.Size = new System.Drawing.Size(21, 29);
             this.labelHide.TabIndex = 8;
             this.labelHide.Text = "–";
             this.labelHide.Click += new System.EventHandler(this.labelHide_Click);
@@ -210,10 +210,9 @@ namespace Kursovaya
             this.labelFullScreen.ForeColor = System.Drawing.Color.Black;
             this.labelFullScreen.Location = new System.Drawing.Point(452, 0);
             this.labelFullScreen.Name = "labelFullScreen";
-            this.labelFullScreen.Size = new System.Drawing.Size(32, 26);
+            this.labelFullScreen.Size = new System.Drawing.Size(25, 24);
             this.labelFullScreen.TabIndex = 1;
             this.labelFullScreen.Text = "⧉";
-            this.labelFullScreen.Click += new System.EventHandler(this.labelFullScreen_Click);
             this.labelFullScreen.MouseEnter += new System.EventHandler(this.labelFullScreen_MouseEnter);
             this.labelFullScreen.MouseLeave += new System.EventHandler(this.labelFullScreen_MouseLeave);
             // 
@@ -238,6 +237,7 @@ namespace Kursovaya
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(515, 314);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

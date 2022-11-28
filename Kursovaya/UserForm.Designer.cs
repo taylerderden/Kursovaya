@@ -105,7 +105,7 @@ namespace Kursovaya
             this.labelHide.ForeColor = System.Drawing.Color.Black;
             this.labelHide.Location = new System.Drawing.Point(523, 0);
             this.labelHide.Name = "labelHide";
-            this.labelHide.Size = new System.Drawing.Size(22, 29);
+            this.labelHide.Size = new System.Drawing.Size(21, 29);
             this.labelHide.TabIndex = 8;
             this.labelHide.Text = "–";
             this.labelHide.Click += new System.EventHandler(this.labelHide_Click);
@@ -121,10 +121,9 @@ namespace Kursovaya
             this.labelFullScreen.ForeColor = System.Drawing.Color.Black;
             this.labelFullScreen.Location = new System.Drawing.Point(542, 0);
             this.labelFullScreen.Name = "labelFullScreen";
-            this.labelFullScreen.Size = new System.Drawing.Size(32, 26);
+            this.labelFullScreen.Size = new System.Drawing.Size(25, 24);
             this.labelFullScreen.TabIndex = 1;
             this.labelFullScreen.Text = "⧉";
-            this.labelFullScreen.Click += new System.EventHandler(this.labelFullScreen_Click);
             this.labelFullScreen.MouseEnter += new System.EventHandler(this.labelFullScreen_MouseEnter);
             this.labelFullScreen.MouseLeave += new System.EventHandler(this.labelFullScreen_MouseLeave);
             // 
@@ -182,7 +181,7 @@ namespace Kursovaya
             this.labelTime.ForeColor = System.Drawing.Color.White;
             this.labelTime.Location = new System.Drawing.Point(521, 274);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(72, 26);
+            this.labelTime.Size = new System.Drawing.Size(69, 24);
             this.labelTime.TabIndex = 9;
             this.labelTime.Text = "Время";
             // 
@@ -194,7 +193,7 @@ namespace Kursovaya
             this.labelDay.ForeColor = System.Drawing.Color.White;
             this.labelDay.Location = new System.Drawing.Point(443, 258);
             this.labelDay.Name = "labelDay";
-            this.labelDay.Size = new System.Drawing.Size(60, 26);
+            this.labelDay.Size = new System.Drawing.Size(56, 24);
             this.labelDay.TabIndex = 8;
             this.labelDay.Text = "День";
             // 
@@ -338,6 +337,7 @@ namespace Kursovaya
             // UserForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(605, 513);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -346,7 +346,6 @@ namespace Kursovaya
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserForm";
             this.Load += new System.EventHandler(this.UserForm_Load);
-
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

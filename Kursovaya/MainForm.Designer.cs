@@ -31,14 +31,14 @@ namespace Kursovaya
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.labelHide = new System.Windows.Forms.Label();
             this.labelFullScreen = new System.Windows.Forms.Label();
             this.labelClose = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsLback = new System.Windows.Forms.ToolStripLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tsBtnEmployee = new System.Windows.Forms.ToolStripButton();
             this.tsBtnPosition = new System.Windows.Forms.ToolStripButton();
             this.tsBtnEducation = new System.Windows.Forms.ToolStripButton();
@@ -47,11 +47,11 @@ namespace Kursovaya
             this.tsBtnVacation = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDismissal = new System.Windows.Forms.ToolStripButton();
             this.tsBtnPayment = new System.Windows.Forms.ToolStripButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tsLback = new System.Windows.Forms.ToolStripLabel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,6 +66,29 @@ namespace Kursovaya
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1069, 443);
             this.panel1.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(958, 423);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "alpha-version";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox1.Image = global::Kursovaya.Properties.Resources._3209382_article_content_contract_form_paper_icon;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 277);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -104,7 +127,7 @@ namespace Kursovaya
             this.labelHide.ForeColor = System.Drawing.Color.Black;
             this.labelHide.Location = new System.Drawing.Point(987, 0);
             this.labelHide.Name = "labelHide";
-            this.labelHide.Size = new System.Drawing.Size(22, 29);
+            this.labelHide.Size = new System.Drawing.Size(21, 29);
             this.labelHide.TabIndex = 8;
             this.labelHide.Text = "–";
             this.labelHide.Click += new System.EventHandler(this.labelHide_Click);
@@ -120,10 +143,9 @@ namespace Kursovaya
             this.labelFullScreen.ForeColor = System.Drawing.Color.Black;
             this.labelFullScreen.Location = new System.Drawing.Point(1006, 0);
             this.labelFullScreen.Name = "labelFullScreen";
-            this.labelFullScreen.Size = new System.Drawing.Size(32, 26);
+            this.labelFullScreen.Size = new System.Drawing.Size(25, 24);
             this.labelFullScreen.TabIndex = 1;
             this.labelFullScreen.Text = "⧉";
-            this.labelFullScreen.Click += new System.EventHandler(this.labelFullScreen_Click);
             this.labelFullScreen.MouseEnter += new System.EventHandler(this.labelFullScreen_MouseEnter);
             this.labelFullScreen.MouseLeave += new System.EventHandler(this.labelFullScreen_MouseLeave);
             // 
@@ -166,32 +188,6 @@ namespace Kursovaya
             this.toolStrip1.Size = new System.Drawing.Size(1069, 48);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsLback
-            // 
-            this.tsLback.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsLback.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tsLback.ForeColor = System.Drawing.Color.Silver;
-            this.tsLback.Margin = new System.Windows.Forms.Padding(60, 1, 0, 2);
-            this.tsLback.Name = "tsLback";
-            this.tsLback.Size = new System.Drawing.Size(38, 45);
-            this.tsLback.Text = "→";
-            this.tsLback.Click += new System.EventHandler(this.tsLback_Click);
-            this.tsLback.MouseEnter += new System.EventHandler(this.tsLback_MouseEnter);
-            this.tsLback.MouseLeave += new System.EventHandler(this.tsLback_MouseLeave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox1.Image = global::Kursovaya.Properties.Resources._3209382_article_content_contract_form_paper_icon;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 115);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(280, 277);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
             // 
             // tsBtnEmployee
             // 
@@ -297,21 +293,25 @@ namespace Kursovaya
             this.tsBtnPayment.Text = "Выплаты";
             this.tsBtnPayment.Click += new System.EventHandler(this.tsBtnPayment_Click);
             // 
-            // label2
+            // tsLback
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(958, 423);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 20);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "alpha-version";
+            this.tsLback.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsLback.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsLback.ForeColor = System.Drawing.Color.Silver;
+            this.tsLback.Margin = new System.Windows.Forms.Padding(60, 1, 0, 2);
+            this.tsLback.Name = "tsLback";
+            this.tsLback.Size = new System.Drawing.Size(36, 45);
+            this.tsLback.Text = "→";
+            this.tsLback.Click += new System.EventHandler(this.tsLback_Click);
+            this.tsLback.MouseEnter += new System.EventHandler(this.tsLback_MouseEnter);
+            this.tsLback.MouseLeave += new System.EventHandler(this.tsLback_MouseLeave);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1069, 443);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -321,11 +321,11 @@ namespace Kursovaya
             this.Text = "Система управления персоналом";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -89,7 +89,7 @@ namespace Kursovaya
             this.tsBtnReload.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnReload.Image")));
             this.tsBtnReload.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnReload.Name = "tsBtnReload";
-            this.tsBtnReload.Size = new System.Drawing.Size(43, 42);
+            this.tsBtnReload.Size = new System.Drawing.Size(41, 42);
             this.tsBtnReload.Text = "🗘";
             this.tsBtnReload.Click += new System.EventHandler(this.tsBtnReload_Click);
             this.tsBtnReload.MouseEnter += new System.EventHandler(this.tsBtnReload_MouseEnter);
@@ -105,7 +105,7 @@ namespace Kursovaya
             this.tsBtnBack.Margin = new System.Windows.Forms.Padding(1070, 1, 0, 2);
             this.tsBtnBack.Name = "tsBtnBack";
             this.tsBtnBack.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tsBtnBack.Size = new System.Drawing.Size(40, 36);
+            this.tsBtnBack.Size = new System.Drawing.Size(38, 35);
             this.tsBtnBack.Text = "→";
             this.tsBtnBack.Click += new System.EventHandler(this.tsBtnBack_Click);
             this.tsBtnBack.MouseEnter += new System.EventHandler(this.tsBtnBack_MouseEnter);
@@ -134,7 +134,7 @@ namespace Kursovaya
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(13, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 19);
+            this.label1.Size = new System.Drawing.Size(87, 18);
             this.label1.TabIndex = 9;
             this.label1.Text = "Сотрудники";
             // 
@@ -147,7 +147,7 @@ namespace Kursovaya
             this.labelHide.ForeColor = System.Drawing.Color.Black;
             this.labelHide.Location = new System.Drawing.Point(1075, 0);
             this.labelHide.Name = "labelHide";
-            this.labelHide.Size = new System.Drawing.Size(22, 29);
+            this.labelHide.Size = new System.Drawing.Size(21, 29);
             this.labelHide.TabIndex = 8;
             this.labelHide.Text = "–";
             this.labelHide.Click += new System.EventHandler(this.labelHide_Click);
@@ -163,10 +163,9 @@ namespace Kursovaya
             this.labelFullScreen.ForeColor = System.Drawing.Color.Black;
             this.labelFullScreen.Location = new System.Drawing.Point(1094, 0);
             this.labelFullScreen.Name = "labelFullScreen";
-            this.labelFullScreen.Size = new System.Drawing.Size(32, 26);
+            this.labelFullScreen.Size = new System.Drawing.Size(25, 24);
             this.labelFullScreen.TabIndex = 1;
             this.labelFullScreen.Text = "⧉";
-            this.labelFullScreen.Click += new System.EventHandler(this.labelFullScreen_Click);
             this.labelFullScreen.MouseEnter += new System.EventHandler(this.labelFullScreen_MouseEnter);
             this.labelFullScreen.MouseLeave += new System.EventHandler(this.labelFullScreen_MouseLeave);
             // 
@@ -201,7 +200,7 @@ namespace Kursovaya
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(339, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 19);
+            this.label2.Size = new System.Drawing.Size(27, 18);
             this.label2.TabIndex = 38;
             this.label2.Text = "🔍";
             // 
@@ -209,6 +208,7 @@ namespace Kursovaya
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1157, 416);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tBsearch);
