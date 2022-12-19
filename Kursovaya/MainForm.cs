@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,168 +8,130 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
 using MySql.Data.MySqlClient;
 
 namespace Kursovaya
 {
-    public partial class MainForm : Form
+    public partial class MainForm : MaterialForm
     {
         public MainForm()
         {
             InitializeComponent();
-        }
-            //создание глоб форм для открытия и закрытия
-            EmployeeForm eForm = new EmployeeForm();
-            PositionForm pForm = new PositionForm();
-            EducationForm edForm = new EducationForm();
-            WTimeForm wForm = new WTimeForm();
-            TasksForm taskForm = new TasksForm();
-            DismissalForm dForm = new DismissalForm();
-            PaymentForm payForm = new PaymentForm();
-            VacationForm vForm = new VacationForm();
 
-        private void tsBtnEmployee_Click(object sender, EventArgs e)
+            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green600, MaterialSkin.Primary.Green900, MaterialSkin.Primary.Green500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+
+            
+        }
+
+        public void LoadForm(object Form)
         {
-            EmployeeForm eForm = new EmployeeForm();
-            eForm.Show();
+            if (this.mainPanel.Controls.Count > 0)
+                this.mainPanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.mainPanel.Controls.Add(f);
+            this.mainPanel.Tag = f;
+            f.Show();
         }
 
-        private void tsBtnPosition_Click(object sender, EventArgs e)
+        private void MainForm2_Load(object sender, EventArgs e)
         {
-            PositionForm pForm = new PositionForm();
-            pForm.Show();
+            DB db = new DB();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT Employee_FIO FROM Employee WHERE idEmployee = @ID", db.getConnection());
+            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = Global.GlobalVar;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            db.openConnection();
+            if (table.Rows.Count > 0) //поиск записей
+            {
+                labelName.Text = command.ExecuteScalar().ToString();
+            }       
+            else
+                MessageBox.Show("Неизвестный сотрудник!");
+            db.closeConnection();
         }
 
-        private void tsBtnEducation_Click(object sender, EventArgs e)
+        private void btnEmployee_Click(object sender, EventArgs e)
         {
-            EducationForm edForm = new EducationForm();
-            edForm.Show();
+            LoadForm(new EmployeeForm());
         }
 
-        private void tsBtnWTime_Click(object sender, EventArgs e)
+        private void btnPosition_Click(object sender, EventArgs e)
         {
-            WTimeForm wForm = new WTimeForm();
-            wForm.Show();
+            LoadForm(new PositionForm());
         }
 
-        private void tsBtnTasks_Click(object sender, EventArgs e)
+        private void btnEducation_Click(object sender, EventArgs e)
         {
-            TasksForm taskForm = new TasksForm();
-            taskForm.Show();
+            LoadForm(new EducationForm());
         }
 
-        private void tsBtnVacation_Click(object sender, EventArgs e)
+        private void btnWTime_Click(object sender, EventArgs e)
         {
-            VacationForm vForm = new VacationForm();
-            vForm.Show();
+            LoadForm(new WTimeForm());
         }
-
-        private void tsBtnDismissal_Click(object sender, EventArgs e)
+        private void btnTasks_Click(object sender, EventArgs e)
         {
-            DismissalForm dForm = new DismissalForm();
-            dForm.Show();
+            LoadForm(new TasksForm());
         }
 
-        private void tsBtnExit_Click(object sender, EventArgs e)
+        private void btnVacation_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AutorisationForm aForm = new AutorisationForm();
-            aForm.Show();
+            LoadForm(new VacationForm());
         }
 
-        private void tsBtnPayment_Click(object sender, EventArgs e)
+        private void btnDismissial_Click(object sender, EventArgs e)
         {
-            PaymentForm payForm = new PaymentForm();
-            payForm.Show();
+            LoadForm(new DismissalForm());
         }
 
-        private void labelHide_Click(object sender, EventArgs e)
+        private void btnPayment_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            LoadForm(new PaymentForm());
         }
-
-        private void labelFullScreen_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelClose_Click(object sender, EventArgs e)
+        private void MainForm2_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
-        private void labelHide_MouseEnter(object sender, EventArgs e)
+        private void panel1_Enter(object sender, EventArgs e)
         {
-            labelHide.ForeColor = Color.Orange;
+
         }
 
-        private void labelHide_MouseLeave(object sender, EventArgs e)
+        private void panel1_Leave(object sender, EventArgs e)
         {
-            labelHide.ForeColor = Color.Black;
+
         }
 
-        private void labelFullScreen_MouseEnter(object sender, EventArgs e)
+        private void btnReport_Click(object sender, EventArgs e)
         {
-            labelFullScreen.ForeColor = Color.White;
+            panelSubmenuReport.Visible = true;
         }
 
-        private void labelFullScreen_MouseLeave(object sender, EventArgs e)
+        private void btnFinRep_Click(object sender, EventArgs e)
         {
-            labelFullScreen.ForeColor = Color.Black;
+            panelSubmenuReport.Visible = false;
         }
 
-        private void labelClose_MouseEnter(object sender, EventArgs e)
+        private void btnTimeRep_Click(object sender, EventArgs e)
         {
-            labelClose.ForeColor = Color.Red;
+            panelSubmenuReport.Visible = false;
         }
 
-        private void labelClose_MouseLeave(object sender, EventArgs e)
+        private void btnEfRep_Click(object sender, EventArgs e)
         {
-            labelClose.ForeColor = Color.Black;
-        }
-
-        private void tsLback_Click(object sender, EventArgs e)
-        {           
-            eForm.Hide();            
-            pForm.Hide();           
-            edForm.Hide();            
-            wForm.Hide();            
-            taskForm.Hide();            
-            vForm.Hide();           
-            dForm.Hide();            
-            payForm.Hide();
-
-            this.Hide();
-            AutorisationForm aForm = new AutorisationForm(); 
-            aForm.Show();
-        }
-
-        private void tsLback_MouseEnter(object sender, EventArgs e)
-        {
-            tsLback.ForeColor = Color.Green;
-        }
-
-        private void tsLback_MouseLeave(object sender, EventArgs e)
-        {
-            tsLback.ForeColor = Color.Silver;
-        }
-
-        Point lastPoint;
-        private void panel2_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
-
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
+            panelSubmenuReport.Visible = false;
         }
     }
-
-        
-    
 }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Kursovaya
 {
-    public partial class EmployeeForm : Form
+    public partial class EmployeeForm : System.Windows.Forms.Form
     {
   
         private MySqlCommandBuilder sqlBuilder = null;        
@@ -26,6 +26,16 @@ namespace Kursovaya
         public EmployeeForm()
         {
             InitializeComponent();
+
+            tBsearch.MaxLength = 25;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Green;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 9f, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Green;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
         private void LoadData()
@@ -45,14 +55,14 @@ namespace Kursovaya
 
                 adapter.Fill(dataSet, "Employee");
 
-                dataGridView1.DataSource = dataSet.Tables["Employee"]; 
+                dataGridView1.DataSource = dataSet.Tables["Employee"];
+                
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
 
                     dataGridView1[7, i] = linkCell;
                 }
-
             }
             catch(Exception exep)
             {
@@ -62,7 +72,6 @@ namespace Kursovaya
 
         private void ReloadData()
         {
-            DB db = new DB();
             try
             {
                 dataSet.Tables["Employee"].Clear();
@@ -95,7 +104,8 @@ namespace Kursovaya
             dataGridView1.Columns[4].HeaderText = "Стаж";
             dataGridView1.Columns[5].HeaderText = "Отдел";
             dataGridView1.Columns[6].HeaderText = "код_Должности";
-          
+
+            ReloadData();          
         }
 
         private void tsBtnReload_Click(object sender, EventArgs e)
@@ -273,92 +283,6 @@ namespace Kursovaya
                 e.Handled = true;
             }
         }
-
-        private void tsBtnBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void tsBtnReload_MouseEnter(object sender, EventArgs e)
-        {
-            tsBtnReload.ForeColor = Color.Green;
-        }
-
-        private void tsBtnReload_MouseLeave(object sender, EventArgs e)
-        {
-            tsBtnReload.ForeColor = Color.Silver;
-        }
-
-        private void tsBtnBack_MouseEnter(object sender, EventArgs e)
-        {
-            tsBtnBack.ForeColor = Color.Green;
-        }
-
-        private void tsBtnBack_MouseLeave(object sender, EventArgs e)
-        {
-            tsBtnBack.ForeColor = Color.Silver;
-        }
-
-        private void labelClose_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void labelFullScreen_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelHide_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        Point lastPoint;
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
-        }
-
-        private void panel2_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
-
-        private void labelClose_MouseEnter(object sender, EventArgs e)
-        {
-            labelClose.ForeColor = Color.Red;
-        }
-
-        private void labelClose_MouseLeave(object sender, EventArgs e)
-        {
-            labelClose.ForeColor = Color.Black;
-        }
-
-        private void labelFullScreen_MouseEnter(object sender, EventArgs e)
-        {
-            labelFullScreen.ForeColor = Color.White;
-        }
-
-        private void labelFullScreen_MouseLeave(object sender, EventArgs e)
-        {
-            labelFullScreen.ForeColor = Color.Black;
-        }
-
-        private void labelHide_MouseEnter(object sender, EventArgs e)
-        {
-            labelHide.ForeColor = Color.Orange;
-        }
-
-        private void labelHide_MouseLeave(object sender, EventArgs e)
-        {
-            labelHide.ForeColor = Color.Black;
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             DB db = new DB();
@@ -367,7 +291,7 @@ namespace Kursovaya
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM Employee WHERE CONCAT(`idEmployee`, `Employee_FIO`, `Employee_Gender`, `Employee_Phone`, `Employee_Experience`, `Employee_Department`, `Position_idPosition`)like '%" + tBsearch.Text +"%'", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT *, 'Delete' AS Действия FROM Employee WHERE CONCAT(`idEmployee`, `Employee_FIO`, `Employee_Gender`, `Employee_Phone`, `Employee_Experience`, `Employee_Department`, `Position_idPosition`)like '%" + tBsearch.Text +"%'", db.getConnection());
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
@@ -380,6 +304,25 @@ namespace Kursovaya
             dataGridView1.Columns[4].HeaderText = "Стаж";
             dataGridView1.Columns[5].HeaderText = "Отдел";
             dataGridView1.Columns[6].HeaderText = "код_Должности";
+
+            sqlBuilder = new MySqlCommandBuilder(adapter);
+
+            sqlBuilder.GetInsertCommand();
+            sqlBuilder.GetUpdateCommand();
+            sqlBuilder.GetDeleteCommand();
+
+            dataSet = new DataSet();
+
+            adapter.Fill(dataSet, "Employee");
+
+            dataGridView1.DataSource = dataSet.Tables["Employee"];
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
+
+                dataGridView1[7, i] = linkCell;
+            }
 
         }
     }

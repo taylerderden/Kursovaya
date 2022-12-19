@@ -11,11 +11,21 @@ using System.Windows.Forms;
 
 namespace Kursovaya
 {
-    public partial class DismissalForm : Form
+    public partial class DismissalForm : System.Windows.Forms.Form
     {
         public DismissalForm()
         {
             InitializeComponent();
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Green;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 10f, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Green;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataGridView1.DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font.FontFamily, 9f, FontStyle.Regular);
+
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
         private void DismissalForm_Load(object sender, EventArgs e)
@@ -37,64 +47,7 @@ namespace Kursovaya
             dataGridView1.Columns[1].HeaderText = "Дата";
             dataGridView1.Columns[2].HeaderText = "Причина";
             dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
-        }
-
-        Point lastPoint;
-        private void panel2_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
-
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
-        }
-
-        private void labelClose_MouseEnter(object sender, EventArgs e)
-        {
-            labelClose.ForeColor = Color.Red;
-        }
-
-        private void labelClose_MouseLeave(object sender, EventArgs e)
-        {
-            labelClose.ForeColor = Color.Black;
-        }
-        private void labelFullScreen_MouseEnter(object sender, EventArgs e)
-        {
-            labelFullScreen.ForeColor = Color.White;
-        }
-
-        private void labelFullScreen_MouseLeave(object sender, EventArgs e)
-        {
-            labelFullScreen.ForeColor = Color.Black;
-        }
-        private void labelClose_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void labelHide_MouseEnter(object sender, EventArgs e)
-        {
-            labelHide.ForeColor = Color.Orange;
-        }
-
-        private void labelHide_MouseLeave(object sender, EventArgs e)
-        {
-            labelHide.ForeColor = Color.Black;
-        }
-        private void labelHide_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void labelFullScreen_Click(object sender, EventArgs e)
-        {
-
-        }
+        }      
 
         public Boolean isDataExists()
         {

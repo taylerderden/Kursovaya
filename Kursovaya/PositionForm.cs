@@ -12,12 +12,22 @@ using System.Windows.Forms;
 
 namespace Kursovaya
 {
-    public partial class PositionForm : Form
+    public partial class PositionForm : System.Windows.Forms.Form
     {
 
         public PositionForm()
         {
             InitializeComponent();
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Green;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 10f, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Green;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataGridView1.DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font.FontFamily, 9f, FontStyle.Regular);
+
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
         private void PositionForm_Load(object sender, EventArgs e)
@@ -227,50 +237,7 @@ namespace Kursovaya
                 MessageBox.Show("Введите данные для поиска!");
         }
 
-        private void labelHide_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
 
-        private void labelFullScreen_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelClose_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void labelHide_MouseEnter(object sender, EventArgs e)
-        {
-            labelHide.ForeColor = Color.Orange;
-        }
-
-        private void labelHide_MouseLeave(object sender, EventArgs e)
-        {
-            labelHide.ForeColor = Color.Black;
-        }
-
-        private void labelFullScreen_MouseEnter(object sender, EventArgs e)
-        {
-            labelFullScreen.ForeColor = Color.White;
-        }
-
-        private void labelFullScreen_MouseLeave(object sender, EventArgs e)
-        {
-            labelFullScreen.ForeColor = Color.Black;
-        }
-
-        private void labelClose_MouseEnter(object sender, EventArgs e)
-        {
-            labelClose.ForeColor = Color.Red;
-        }
-
-        private void labelClose_MouseLeave(object sender, EventArgs e)
-        {
-            labelClose.ForeColor = Color.Black;
-        }
 
         private void labelLoadData_Click(object sender, EventArgs e)
         {
@@ -292,14 +259,6 @@ namespace Kursovaya
             dataGridView1.Columns[2].HeaderText = "Зарплата";
         }
 
-        private void PositionForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.FormBorderStyle = FormBorderStyle.Sizable;
-                this.Size = new Size(824, 393);
-            }
-        }
     }
 } 
 
