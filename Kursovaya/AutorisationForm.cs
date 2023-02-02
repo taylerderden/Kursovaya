@@ -352,6 +352,13 @@ namespace Kursovaya
         {
             
         }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegistrationForm regForm = new RegistrationForm(); //если успешна то открытие формы для сотрудника
+            regForm.Show();
+        }
     }
 
     static class Global //для id

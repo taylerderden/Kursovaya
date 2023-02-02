@@ -216,6 +216,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityRegForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityRegForm.Designer.cs">
+      <DependentUpon>SecurityRegForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TasksForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +294,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityRegForm.resx">
+      <DependentUpon>SecurityRegForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TasksForm.resx">
       <DependentUpon>TasksForm.cs</DependentUpon>
