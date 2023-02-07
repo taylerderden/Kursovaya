@@ -244,7 +244,7 @@ namespace Kursovaya
                 if (command.ExecuteNonQuery() == 1)
                     MessageBox.Show("До свидания!");
                 else
-                    MessageBox.Show("Ошибка!");
+                    MessageBox.Show("Вы не начали смену!");
 
                 db.closeConnection();
             }

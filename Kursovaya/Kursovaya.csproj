@@ -154,12 +154,7 @@
     <Compile Include="Controls\LollipopToggle.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FinRepPrint.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FinRepPrint.Designer.cs">
-      <DependentUpon>FinRepPrint.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="FinRepForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,9 +260,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FinRepForm.resx">
       <DependentUpon>FinRepForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FinRepPrint.resx">
-      <DependentUpon>FinRepPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -31,12 +31,12 @@ namespace Kursovaya
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelSubmenuReport = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.btnFinRep = new System.Windows.Forms.Button();
             this.btnEfRep = new System.Windows.Forms.Button();
+            this.btnTimeRep = new System.Windows.Forms.Button();
+            this.btnFinRep = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.btnTimeRep = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnReport = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -110,13 +110,41 @@ namespace Kursovaya
             this.panelSubmenuReport.TabIndex = 23;
             this.panelSubmenuReport.Visible = false;
             // 
-            // panel13
+            // btnEfRep
             // 
-            this.panel13.BackColor = System.Drawing.Color.White;
-            this.panel13.Location = new System.Drawing.Point(0, 84);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(10, 36);
-            this.panel13.TabIndex = 22;
+            this.btnEfRep.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnEfRep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEfRep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEfRep.FlatAppearance.BorderSize = 0;
+            this.btnEfRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEfRep.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnEfRep.ForeColor = System.Drawing.Color.White;
+            this.btnEfRep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEfRep.Location = new System.Drawing.Point(16, 84);
+            this.btnEfRep.Name = "btnEfRep";
+            this.btnEfRep.Size = new System.Drawing.Size(201, 36);
+            this.btnEfRep.TabIndex = 21;
+            this.btnEfRep.Text = "Эффективность";
+            this.btnEfRep.UseVisualStyleBackColor = false;
+            this.btnEfRep.Click += new System.EventHandler(this.btnEfRep_Click);
+            // 
+            // btnTimeRep
+            // 
+            this.btnTimeRep.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnTimeRep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnTimeRep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTimeRep.FlatAppearance.BorderSize = 0;
+            this.btnTimeRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimeRep.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnTimeRep.ForeColor = System.Drawing.Color.White;
+            this.btnTimeRep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimeRep.Location = new System.Drawing.Point(16, 42);
+            this.btnTimeRep.Name = "btnTimeRep";
+            this.btnTimeRep.Size = new System.Drawing.Size(201, 36);
+            this.btnTimeRep.TabIndex = 19;
+            this.btnTimeRep.Text = "Рабочее время";
+            this.btnTimeRep.UseVisualStyleBackColor = false;
+            this.btnTimeRep.Click += new System.EventHandler(this.btnTimeRep_Click);
             // 
             // btnFinRep
             // 
@@ -136,23 +164,13 @@ namespace Kursovaya
             this.btnFinRep.UseVisualStyleBackColor = false;
             this.btnFinRep.Click += new System.EventHandler(this.btnFinRep_Click);
             // 
-            // btnEfRep
+            // panel13
             // 
-            this.btnEfRep.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnEfRep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnEfRep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEfRep.FlatAppearance.BorderSize = 0;
-            this.btnEfRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEfRep.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnEfRep.ForeColor = System.Drawing.Color.White;
-            this.btnEfRep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEfRep.Location = new System.Drawing.Point(16, 84);
-            this.btnEfRep.Name = "btnEfRep";
-            this.btnEfRep.Size = new System.Drawing.Size(201, 36);
-            this.btnEfRep.TabIndex = 21;
-            this.btnEfRep.Text = "Эффективность";
-            this.btnEfRep.UseVisualStyleBackColor = false;
-            this.btnEfRep.Click += new System.EventHandler(this.btnEfRep_Click);
+            this.panel13.BackColor = System.Drawing.Color.White;
+            this.panel13.Location = new System.Drawing.Point(0, 84);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(10, 36);
+            this.panel13.TabIndex = 22;
             // 
             // panel11
             // 
@@ -169,24 +187,6 @@ namespace Kursovaya
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(10, 36);
             this.panel12.TabIndex = 20;
-            // 
-            // btnTimeRep
-            // 
-            this.btnTimeRep.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnTimeRep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnTimeRep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTimeRep.FlatAppearance.BorderSize = 0;
-            this.btnTimeRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimeRep.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnTimeRep.ForeColor = System.Drawing.Color.White;
-            this.btnTimeRep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimeRep.Location = new System.Drawing.Point(16, 42);
-            this.btnTimeRep.Name = "btnTimeRep";
-            this.btnTimeRep.Size = new System.Drawing.Size(201, 36);
-            this.btnTimeRep.TabIndex = 19;
-            this.btnTimeRep.Text = "Рабочее время";
-            this.btnTimeRep.UseVisualStyleBackColor = false;
-            this.btnTimeRep.Click += new System.EventHandler(this.btnTimeRep_Click);
             // 
             // panel10
             // 
@@ -444,6 +444,7 @@ namespace Kursovaya
             // 
             // labelName
             // 
+            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

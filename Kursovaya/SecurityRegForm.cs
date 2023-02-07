@@ -52,23 +52,47 @@ namespace Kursovaya
                 Category = "Admin";
 
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `Security` (`Security_Login`, `Security_Password`, `Security_Category`, `Employee_idEmployee`) VALUES (@uL, @uP, @Cat, @ID);", db.getConnection());
 
-            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
-            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
-            command.Parameters.Add("@Cat", MySqlDbType.VarChar).Value = Category;
-            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = Global.GlobalVar;
+            DataTable table = new DataTable();
 
-            db.openConnection();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            if (command.ExecuteNonQuery() == 1)
+            MySqlCommand commandCheckData = new MySqlCommand("SELECT * FROM `Security` WHERE `Security_Login` = @uL AND `Security_Password` = @uP", db.getConnection()); //авторизация администратора
+            commandCheckData.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
+            commandCheckData.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
+
+            adapter.SelectCommand = commandCheckData;
+            adapter.Fill(table);
+
+            if (table.Rows.Count == 0) //поиск записей
             {
-                MessageBox.Show("Вы успешно зарегистрированы!");                
+                MySqlCommand command = new MySqlCommand("INSERT INTO `Security` (`Security_Login`, `Security_Password`, `Security_Category`, `Employee_idEmployee`) VALUES (@uL, @uP, @Cat, @ID);", db.getConnection());
+
+                command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
+                command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
+                command.Parameters.Add("@Cat", MySqlDbType.VarChar).Value = Category;
+                command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = Global.GlobalVar;
+
+                db.openConnection();
+
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Вы успешно зарегистрированы!");
+                }
+                else
+                    MessageBox.Show("Ошибка внесения данных!");
+
+                db.closeConnection();
             }
             else
-                MessageBox.Show("Ошибка внесения данных!");
+                MessageBox.Show("Данные уже существуют!"); //иначе предупреждение о том что данные уже существуют
+        }
 
-            db.closeConnection();
+        private void btnAutoris_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AutorisationForm aForm = new AutorisationForm(); //открытие формы авторизации
+            aForm.Show();
         }
     }
 }
