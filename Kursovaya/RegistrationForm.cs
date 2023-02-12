@@ -65,6 +65,11 @@ namespace Kursovaya
             aForm.Show();
         }
 
+        private void RegistrationForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void buttonReg_Click(object sender, EventArgs e)
         {
             if (tbFIO.Text == "") //проверка заполненности

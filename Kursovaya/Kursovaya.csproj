@@ -229,6 +229,12 @@
     <Compile Include="TasksForm.Designer.cs">
       <DependentUpon>TasksForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimeRepForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeRepForm.Designer.cs">
+      <DependentUpon>TimeRepForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIManagers\DrawHelper.cs" />
     <Compile Include="UIManagers\FontManager.cs" />
     <Compile Include="preUserForm.cs">
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="preUserForm.resx">
       <DependentUpon>preUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeRepForm.resx">
+      <DependentUpon>TimeRepForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>

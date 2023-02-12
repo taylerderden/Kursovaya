@@ -29,6 +29,7 @@ namespace Kursovaya
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
             this.tbFIO = new System.Windows.Forms.TextBox();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.checkBoxMale = new System.Windows.Forms.CheckBox();
@@ -273,6 +274,7 @@ namespace Kursovaya
             this.Controls.Add(this.tbPhone);
             this.Controls.Add(this.tbFIO);
             this.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1000, 318);
@@ -281,6 +283,7 @@ namespace Kursovaya
             this.Name = "RegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "        Регистрация";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrationForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

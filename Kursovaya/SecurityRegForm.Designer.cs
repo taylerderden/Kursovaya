@@ -29,11 +29,14 @@ namespace Kursovaya
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecurityRegForm));
             this.Login = new System.Windows.Forms.TextBox();
             this.Password = new System.Windows.Forms.TextBox();
             this.buttonRegister = new MaterialSkin.Controls.MaterialRaisedButton();
             this.cBCategory = new System.Windows.Forms.CheckBox();
             this.btnAutoris = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Login
@@ -100,23 +103,39 @@ namespace Kursovaya
             this.btnAutoris.UseVisualStyleBackColor = true;
             this.btnAutoris.Click += new System.EventHandler(this.btnAutoris_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Kursovaya.Properties.Resources._4202111_envato_logo_social_social_media_icon;
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
             // SecurityRegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 343);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAutoris);
             this.Controls.Add(this.cBCategory);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Login);
             this.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SecurityRegForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Данные для авторизации";
+            this.Text = "        Данные для авторизации";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +148,6 @@ namespace Kursovaya
         private MaterialSkin.Controls.MaterialRaisedButton buttonRegister;
         private System.Windows.Forms.CheckBox cBCategory;
         private MaterialSkin.Controls.MaterialRaisedButton btnAutoris;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

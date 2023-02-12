@@ -17,6 +17,9 @@ namespace Kursovaya
         public FinRepForm()
         {
             InitializeComponent();
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 11f, FontStyle.Bold);
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
         private void btnLoad_Click(object sender, EventArgs e)

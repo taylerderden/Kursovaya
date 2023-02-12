@@ -110,7 +110,7 @@ namespace Kursovaya
                         Global.GlobalVar = id;
                     }
                     else
-                        MessageBox.Show("Failed!"); //иначе ошибка
+                        MessageBox.Show("Ваш ID не найден!"); //иначе ошибка
 
                     db.closeConnection();
 
@@ -148,7 +148,7 @@ namespace Kursovaya
                             Global.GlobalVar = id;
                         }
                         else
-                            MessageBox.Show("Failed!"); //иначе ошибка
+                            MessageBox.Show("Ваш ID не найден!"); //иначе ошибка
 
                         db.closeConnection();
 
@@ -157,7 +157,7 @@ namespace Kursovaya
                         userForm.Show();
                     }
                     else
-                        MessageBox.Show("Failed!"); //иначе ошибка
+                        MessageBox.Show("Вы не зарегистрированы в системе!"); //иначе ошибка
                 }
             }
             catch (Exception)

@@ -29,6 +29,7 @@ namespace Kursovaya
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutorisationForm));
             this.buttonLogin = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonRegister = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
@@ -180,6 +181,7 @@ namespace Kursovaya
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.buttonLogin);
             this.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(360, 390);

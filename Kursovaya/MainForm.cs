@@ -128,6 +128,7 @@ namespace Kursovaya
         private void btnTimeRep_Click(object sender, EventArgs e)
         {
             panelSubmenuReport.Visible = false;
+            LoadForm(new TimeRepForm());
         }
 
         private void btnEfRep_Click(object sender, EventArgs e)

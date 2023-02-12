@@ -29,6 +29,7 @@ namespace Kursovaya
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelSubmenuReport = new System.Windows.Forms.Panel();
             this.btnEfRep = new System.Windows.Forms.Button();
@@ -58,9 +59,12 @@ namespace Kursovaya
             this.mainPanel = new System.Windows.Forms.Panel();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelSubmenuReport.SuspendLayout();
+            this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -436,6 +440,7 @@ namespace Kursovaya
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.Controls.Add(this.pictureBox2);
             this.mainPanel.Location = new System.Drawing.Point(263, 63);
             this.mainPanel.MinimumSize = new System.Drawing.Size(980, 595);
             this.mainPanel.Name = "mainPanel";
@@ -467,6 +472,19 @@ namespace Kursovaya
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::Kursovaya.Properties.Resources._4202111_envato_logo_social_social_media_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(317, 115);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(367, 330);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -477,6 +495,7 @@ namespace Kursovaya
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(1230, 658);
             this.Name = "MainForm";
@@ -486,7 +505,9 @@ namespace Kursovaya
             this.Load += new System.EventHandler(this.MainForm2_Load);
             this.panel1.ResumeLayout(false);
             this.panelSubmenuReport.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,5 +544,6 @@ namespace Kursovaya
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btnTimeRep;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
