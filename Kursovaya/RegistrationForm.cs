@@ -22,6 +22,12 @@ namespace Kursovaya
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green600, MaterialSkin.Primary.Green900, MaterialSkin.Primary.Green500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+
+            tbFIO.Text = "Фамилия И.О.";
+            tbFIO.ForeColor = Color.Gray;
+
+            tbPhone.Text = "89008007000";
+            tbPhone.ForeColor = Color.Gray;
         }
         public Boolean isUserExists()
         {
@@ -31,9 +37,8 @@ namespace Kursovaya
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `Employee` WHERE `Employee_FIO` = @FIO AND `Employee_Phone` = @Tel", db.getConnection()); //проверка фио введенного пользов-м и указываем БД к которой подключ-ся 
-            command.Parameters.Add("@FIO", MySqlDbType.VarChar).Value = tbFIO.Text;
-            command.Parameters.Add("@Tel", MySqlDbType.VarChar).Value = tbFIO.Text;
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `Employee` WHERE `Employee_Phone` = @Tel", db.getConnection()); //проверка фио введенного пользов-м и указываем БД к которой подключ-ся 
+            command.Parameters.Add("@Tel", MySqlDbType.VarChar).Value = tbPhone.Text;
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
@@ -50,12 +55,26 @@ namespace Kursovaya
 
         private void checkBoxMale_CheckedChanged(object sender, EventArgs e)
         {
-            checkBoxFemale.Enabled = false;
+            if(checkBoxMale.Checked == true)
+            {
+                checkBoxFemale.Enabled = false;
+            }
+            else
+            {
+                checkBoxFemale.Enabled = true;
+            }           
         }
 
         private void checkBoxFemale_CheckedChanged(object sender, EventArgs e)
         {
-            checkBoxMale.Enabled = false;
+            if(checkBoxFemale.Checked == true)
+            {
+                checkBoxMale.Enabled = false;
+            }
+            else
+            {
+                checkBoxMale.Enabled = true;
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -70,14 +89,46 @@ namespace Kursovaya
             Application.Exit();
         }
 
+        private void tbFIO_Enter(object sender, EventArgs e)
+        {
+            if (tbFIO.Text == "Фамилия И.О.")
+            {
+                tbFIO.Text = "";
+            }
+        }
+
+        private void tbFIO_Leave(object sender, EventArgs e)
+        {
+            if (tbFIO.Text == "")
+            {
+                tbFIO.Text = "Фамилия И.О.";
+            }
+        }
+
+        private void tbPhone_Enter(object sender, EventArgs e)
+        {
+            if (tbPhone.Text == "89008007000")
+            {
+                tbPhone.Text = "";
+            }
+        }
+
+        private void tbPhone_Leave(object sender, EventArgs e)
+        {
+            if (tbPhone.Text == "")
+            {
+                tbPhone.Text = "89008007000";
+            }
+        }
+
         private void buttonReg_Click(object sender, EventArgs e)
         {
-            if (tbFIO.Text == "") //проверка заполненности
+            if (tbFIO.Text == "" || tbFIO.Text == "Фамилия И.О.") //проверка заполненности
             {
                 MessageBox.Show("Введите ФИО!");
                 return;
             }
-            if (tbPhone.Text == "") //проверка заполненности
+            if (tbPhone.Text == "" || tbPhone.Text == "89008007000") //проверка заполненности
             {
                 MessageBox.Show("Введите телефон!");
                 return;
@@ -155,7 +206,7 @@ namespace Kursovaya
                 DataTable tableID = new DataTable();
                 MySqlDataAdapter adapterID = new MySqlDataAdapter();
 
-                MySqlCommand commandID = new MySqlCommand("SELECT `idEmployee` FROM `Employee` WHERE `Employee_FIO` = @FIO", db.getConnection()); //авторизация администратора
+                MySqlCommand commandID = new MySqlCommand("SELECT `idEmployee` FROM `Employee` WHERE `Employee_FIO` = @FIO", db.getConnection()); //
                 commandID.Parameters.Add("@FIO", MySqlDbType.VarChar).Value = tbFIO.Text;
 
                 adapterID.SelectCommand = commandID;

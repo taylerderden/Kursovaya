@@ -56,14 +56,19 @@ namespace Kursovaya
             this.tbFIO.Name = "tbFIO";
             this.tbFIO.Size = new System.Drawing.Size(641, 28);
             this.tbFIO.TabIndex = 0;
+            this.tbFIO.Enter += new System.EventHandler(this.tbFIO_Enter);
+            this.tbFIO.Leave += new System.EventHandler(this.tbFIO_Leave);
             // 
             // tbPhone
             // 
             this.tbPhone.Location = new System.Drawing.Point(208, 151);
             this.tbPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbPhone.MaxLength = 11;
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(468, 28);
             this.tbPhone.TabIndex = 2;
+            this.tbPhone.Enter += new System.EventHandler(this.tbPhone_Enter);
+            this.tbPhone.Leave += new System.EventHandler(this.tbPhone_Leave);
             // 
             // checkBoxMale
             // 
@@ -93,6 +98,7 @@ namespace Kursovaya
             // 
             // cBExp
             // 
+            this.cBExp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBExp.FormattingEnabled = true;
             this.cBExp.Items.AddRange(new object[] {
             "1 год",
@@ -107,6 +113,7 @@ namespace Kursovaya
             // 
             // cBDep
             // 
+            this.cBDep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBDep.FormattingEnabled = true;
             this.cBDep.Items.AddRange(new object[] {
             "Управленческий",
@@ -123,6 +130,7 @@ namespace Kursovaya
             // 
             // cBPos
             // 
+            this.cBPos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBPos.FormattingEnabled = true;
             this.cBPos.Items.AddRange(new object[] {
             "Директор",

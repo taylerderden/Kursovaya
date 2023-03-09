@@ -57,9 +57,8 @@ namespace Kursovaya
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand commandCheckData = new MySqlCommand("SELECT * FROM `Security` WHERE `Security_Login` = @uL AND `Security_Password` = @uP", db.getConnection()); //авторизация администратора
+            MySqlCommand commandCheckData = new MySqlCommand("SELECT * FROM `Security` WHERE `Security_Login` = @uL", db.getConnection()); //проверка занятости лог и пароля
             commandCheckData.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
-            commandCheckData.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
             adapter.SelectCommand = commandCheckData;
             adapter.Fill(table);
@@ -77,7 +76,7 @@ namespace Kursovaya
 
                 if (command.ExecuteNonQuery() == 1)
                 {
-                    MessageBox.Show("Вы успешно зарегистрированы!");
+                    MessageBox.Show("Ваши данные внесены, ожидайте подтверждения учетной записи!");
                 }
                 else
                     MessageBox.Show("Ошибка внесения данных!");

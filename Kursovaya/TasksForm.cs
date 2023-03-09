@@ -27,7 +27,6 @@ namespace Kursovaya
 
             dataGridView1.EnableHeadersVisualStyles = false;
         }
-
         private void TasksForm_Load(object sender, EventArgs e)
         {
             DB db = new DB();
@@ -47,15 +46,12 @@ namespace Kursovaya
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Срок выполнения";
             dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
-            
+            dataGridView1.Columns[4].HeaderText = "Выполнение";
         }
-
         public Boolean isDataExists()
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Tasks WHERE `Tasks_Name`= @Name AND `Tasks_Deadline` = @Dline AND `Employee_idEmployee` = @EmId ", db.getConnection());
@@ -74,12 +70,10 @@ namespace Kursovaya
             else
                 return false;
         }
-
         private void btnIns_Click(object sender, EventArgs e)
         {
             if (tBname.Text != "" && tBDeadline.Text != "" && tBEmId.Text != "")
             {
-
                 if (isDataExists())
                 {
                     return;
@@ -113,6 +107,7 @@ namespace Kursovaya
                     dataGridView1.Columns[1].HeaderText = "Название";
                     dataGridView1.Columns[2].HeaderText = "Срок выполнения";
                     dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
+                    dataGridView1.Columns[4].HeaderText = "Выполнение";
                 }
                 else
                     MessageBox.Show("Ошибка!");
@@ -122,13 +117,10 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для добавления!");
         }
-
         private void labelLoadData_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Tasks", db.getConnection());
@@ -142,8 +134,8 @@ namespace Kursovaya
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Срок выполнения";
             dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
+            dataGridView1.Columns[4].HeaderText = "Выполнение";
         }
-
         private void btnUp_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" && tBname.Text != "" && tBDeadline.Text != "" && tBEmId.Text != "")
@@ -176,6 +168,7 @@ namespace Kursovaya
                     dataGridView1.Columns[1].HeaderText = "Название";
                     dataGridView1.Columns[2].HeaderText = "Срок выполнения";
                     dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
+                    dataGridView1.Columns[4].HeaderText = "Выполнение";
                 }
                 else
                     MessageBox.Show("Ошибка!");
@@ -185,7 +178,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для обновления!");
         }
-
         private void btnDel_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" || tBname.Text != "" && tBDeadline.Text != "" && tBEmId.Text != "")
@@ -218,6 +210,7 @@ namespace Kursovaya
                         dataGridView1.Columns[1].HeaderText = "Название";
                         dataGridView1.Columns[2].HeaderText = "Срок выполнения";
                         dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
+                        dataGridView1.Columns[4].HeaderText = "Выполнение";
                     }
                     else
                         MessageBox.Show("Ошибка!");
@@ -232,15 +225,12 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для удаления!");
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" || tBname.Text != "" || tBDeadline.Text != "" || tBEmId.Text != "")
             {
                 DB db = new DB();
-
                 DataTable table = new DataTable();
-
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
 
                 MySqlCommand command = new MySqlCommand("SELECT * FROM Tasks WHERE `idTasks` = @ID OR `Tasks_Name`= @Name OR `Tasks_Deadline`= @Dline OR `Employee_idEmployee`= @EmId;", db.getConnection());
@@ -258,6 +248,7 @@ namespace Kursovaya
                 dataGridView1.Columns[1].HeaderText = "Название";
                 dataGridView1.Columns[2].HeaderText = "Срок выполнения";
                 dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
+                dataGridView1.Columns[4].HeaderText = "Выполнение";
             }
             else
                 MessageBox.Show("Введите данные для поиска!");

@@ -43,14 +43,11 @@ namespace Kursovaya
 
             dataGridView1.DataSource = table;
 
-
-
             dataGridView1.Columns[0].HeaderText = "код_Выплаты";
             dataGridView1.Columns[1].HeaderText = "Дата";
             dataGridView1.Columns[2].HeaderText = "Сумма";
             dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
         }
-
         private void labelLoadData_Click(object sender, EventArgs e)
         {
             DB db = new DB();
@@ -74,9 +71,7 @@ namespace Kursovaya
         public Boolean isDataExists()
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Payment WHERE `Payment_Date`= @D AND `Payment_Sum` = @R AND `Employee_idEmployee` = @EmId", db.getConnection());
@@ -143,7 +138,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для добавления!");
         }
-
         private void btnUp_Click(object sender, EventArgs e)
         {
             if (tBEmId.Text != "" && tBdate.Text != "" && tBsum.Text != "" && tBEmId.Text != "")
@@ -232,7 +226,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для удаления!");
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" || tBdate.Text != "" || tBsum.Text != "" || tBEmId.Text != "")
@@ -261,8 +254,6 @@ namespace Kursovaya
             }
             else
                 MessageBox.Show("Введите данные для поиска!");
-        }
-
-        
+        }        
     }
 }

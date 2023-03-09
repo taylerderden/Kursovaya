@@ -98,6 +98,7 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -155,6 +156,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DGVPrinter.cs" />
+    <Compile Include="EfficiencyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EfficiencyForm.Designer.cs">
+      <DependentUpon>EfficiencyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FinRepForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,12 +173,6 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="preAForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="preAForm.Designer.cs">
-      <DependentUpon>preAForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="DismissalForm.cs">
@@ -217,6 +218,12 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SecurityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityForm.Designer.cs">
+      <DependentUpon>SecurityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SecurityRegForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,12 +244,6 @@
     </Compile>
     <Compile Include="UIManagers\DrawHelper.cs" />
     <Compile Include="UIManagers\FontManager.cs" />
-    <Compile Include="preUserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="preUserForm.Designer.cs">
-      <DependentUpon>preUserForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,14 +265,14 @@
     <EmbeddedResource Include="AutorisationForm.resx">
       <DependentUpon>AutorisationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EfficiencyForm.resx">
+      <DependentUpon>EfficiencyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FinRepForm.resx">
       <DependentUpon>FinRepForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="preAForm.resx">
-      <DependentUpon>preAForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DismissalForm.resx">
       <DependentUpon>DismissalForm.cs</DependentUpon>
@@ -296,14 +297,14 @@
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SecurityForm.resx">
+      <DependentUpon>SecurityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SecurityRegForm.resx">
       <DependentUpon>SecurityRegForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TasksForm.resx">
       <DependentUpon>TasksForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="preUserForm.resx">
-      <DependentUpon>preUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TimeRepForm.resx">
       <DependentUpon>TimeRepForm.cs</DependentUpon>
@@ -342,6 +343,7 @@
     <Content Include="images\6372974_account_avatar_log in_login_register_icon.png" />
     <Content Include="images\6372982_account_client_costumers_customer_profile_icon.png" />
     <Content Include="images\728934_enter_login_right_arrow_forward_icon.png" />
+    <Content Include="images\confidence.png" />
     <Content Include="images\dismiss.png" />
     <Content Include="images\educat.png" />
     <Content Include="images\money.png" />
@@ -352,6 +354,7 @@
     <Content Include="images\tasks.png" />
     <Content Include="images\vacat.png" />
     <Content Include="images\wtime.png" />
+    <None Include="Resources\confidence.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

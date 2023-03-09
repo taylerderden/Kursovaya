@@ -14,7 +14,6 @@ namespace Kursovaya
 {
     public partial class PositionForm : System.Windows.Forms.Form
     {
-
         public PositionForm()
         {
             InitializeComponent();
@@ -33,9 +32,7 @@ namespace Kursovaya
         private void PositionForm_Load(object sender, EventArgs e)
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Position", db.getConnection());
@@ -45,24 +42,18 @@ namespace Kursovaya
 
             dataGridView1.DataSource = table;
 
-
-
             dataGridView1.Columns[0].HeaderText = "код_Должности";
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Зарплата";
-
         }
-
         private void btnIns_Click(object sender, EventArgs e)
         {
             if (tBname.Text != "" && tBsalary.Text != "")
             {
-
                 if (isDataExists())
                 {
                     return;
                 }
-
                 DB db = new DB();
 
                 MySqlCommand command = new MySqlCommand("INSERT INTO `Position`(`Position_Name`,`Position_Salary`) VALUES(@Name, @Salary);", db.getConnection());
@@ -98,13 +89,10 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для добавления!");
         }
-
         public Boolean isDataExists()
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Position WHERE `Position_Name`= @Name AND `Position_Salary` = @Salary ", db.getConnection()); 
@@ -122,7 +110,6 @@ namespace Kursovaya
             else
                 return false;
         }
-
         private void btnUp_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" && tBname.Text != "" && tBsalary.Text != "")
@@ -162,7 +149,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для обновления!");
         }
-
         private void btnDel_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" || tBname.Text != "" || tBsalary.Text != "")
@@ -208,7 +194,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для удаления!");
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" || tBname.Text != "" || tBsalary.Text != "")
@@ -236,15 +221,10 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для поиска!");
         }
-
-
-
         private void labelLoadData_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Position", db.getConnection());

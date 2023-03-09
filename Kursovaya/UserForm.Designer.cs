@@ -46,6 +46,7 @@ namespace Kursovaya
             this.labelRab = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.btnCompleteTask = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -171,7 +172,7 @@ namespace Kursovaya
             // 
             resources.ApplyResources(this.labelRab, "labelRab");
             this.labelRab.BackColor = System.Drawing.Color.White;
-            this.labelRab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelRab.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelRab.ForeColor = System.Drawing.Color.DimGray;
             this.labelRab.Name = "labelRab";
             // 
@@ -191,12 +192,25 @@ namespace Kursovaya
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             // 
+            // btnCompleteTask
+            // 
+            resources.ApplyResources(this.btnCompleteTask, "btnCompleteTask");
+            this.btnCompleteTask.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompleteTask.Depth = 0;
+            this.btnCompleteTask.Icon = null;
+            this.btnCompleteTask.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCompleteTask.Name = "btnCompleteTask";
+            this.btnCompleteTask.Primary = true;
+            this.btnCompleteTask.UseVisualStyleBackColor = true;
+            this.btnCompleteTask.Click += new System.EventHandler(this.btnCompleteTask_Click);
+            // 
             // UserForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnCompleteTask);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelRab);
@@ -213,6 +227,7 @@ namespace Kursovaya
             this.Controls.Add(this.labelTasks);
             this.MaximizeBox = false;
             this.Name = "UserForm";
+            this.Sizable = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.Load += new System.EventHandler(this.UserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -241,5 +256,6 @@ namespace Kursovaya
         private System.Windows.Forms.Label labelRab;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCompleteTask;
     }
 }

@@ -27,13 +27,10 @@ namespace Kursovaya
 
             dataGridView1.EnableHeadersVisualStyles = false;
         }
-
         private void DismissalForm_Load(object sender, EventArgs e)
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Dismissal", db.getConnection());
@@ -48,13 +45,10 @@ namespace Kursovaya
             dataGridView1.Columns[2].HeaderText = "Причина";
             dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
         }      
-
         public Boolean isDataExists()
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Dismissal WHERE `Dismissal_Date`= @D AND `Dismissal_Reason` = @R AND `Employee_idEmployee` = @EmId", db.getConnection());
@@ -121,7 +115,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для добавления!");
         }
-
         private void btnUp_Click(object sender, EventArgs e)
         {
             if (tBEmId.Text != "" && tBdate.Text != "" && tBreason.Text != "" && tBEmId.Text != "")
@@ -163,7 +156,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для обновления!");
         }
-
         private void btnDel_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" || tBdate.Text != "" || tBreason.Text != "" && tBEmId.Text != "")
@@ -210,7 +202,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для удаления!");
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" || tBdate.Text != "" || tBreason.Text != "" || tBEmId.Text != "")
@@ -240,13 +231,10 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для поиска!");
         }
-
         private void labelLoadData_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Dismissal", db.getConnection());
@@ -260,6 +248,38 @@ namespace Kursovaya
             dataGridView1.Columns[1].HeaderText = "Дата";
             dataGridView1.Columns[2].HeaderText = "Причина";
             dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
+        }
+        private void tBEmId_TextChanged(object sender, EventArgs e) //при заполнении тбокса с id ищет фио сотрудника
+        {
+            if (tBEmId.Text != "") //поиск фио по id
+            {
+                DB db = new DB();
+                DataTable tableFIO = new DataTable();
+
+                MySqlDataAdapter adapterFIO = new MySqlDataAdapter();
+
+                MySqlCommand commandFIO = new MySqlCommand("SELECT Employee_FIO FROM Employee WHERE idEmployee = @id", db.getConnection());
+                commandFIO.Parameters.Add("@id", MySqlDbType.VarChar).Value = tBEmId.Text;
+
+                adapterFIO.SelectCommand = commandFIO;
+                adapterFIO.Fill(tableFIO);
+
+                db.openConnection();
+                if (tableFIO.Rows.Count > 0)
+                {
+                    tbFIO.Text = commandFIO.ExecuteScalar().ToString();
+                }
+                else
+                    tbFIO.Text = "";
+                db.closeConnection();
+            }
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tBid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            tBdate.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            tBreason.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            tBEmId.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }

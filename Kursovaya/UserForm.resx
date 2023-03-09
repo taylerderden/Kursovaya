@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="dataGridView3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 417</value>
+    <value>258, 532</value>
   </data>
   <data name="dataGridView3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -133,7 +133,7 @@
     <value>51</value>
   </data>
   <data name="dataGridView3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 86</value>
+    <value>405, 118</value>
   </data>
   <data name="dataGridView3.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView3.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="labelPayment.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -160,7 +160,7 @@
     <value>Arial, 12pt, style=Bold</value>
   </data>
   <data name="labelPayment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>569, 388</value>
+    <value>560, 504</value>
   </data>
   <data name="labelPayment.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -184,11 +184,8 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelPayment.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
-  <metadata name="labelTime.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="labelTime.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -199,7 +196,7 @@
     <value>Arial, 12pt, style=Bold</value>
   </data>
   <data name="labelTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>591, 532</value>
+    <value>98, 601</value>
   </data>
   <data name="labelTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -223,11 +220,8 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelTime.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
-  <metadata name="labelDay.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="labelDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -238,7 +232,7 @@
     <value>Arial, 12pt, style=Bold</value>
   </data>
   <data name="labelDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>579, 557</value>
+    <value>86, 626</value>
   </data>
   <data name="labelDay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -262,13 +256,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelDay.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="dataGridView2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="dataGridView2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 298</value>
+    <value>258, 370</value>
   </data>
   <data name="dataGridView2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -277,7 +271,7 @@
     <value>51</value>
   </data>
   <data name="dataGridView2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 86</value>
+    <value>405, 118</value>
   </data>
   <data name="dataGridView2.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -292,7 +286,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView2.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="labelHours.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -304,7 +298,7 @@
     <value>Arial, 12pt, style=Bold</value>
   </data>
   <data name="labelHours.Location" type="System.Drawing.Point, System.Drawing">
-    <value>461, 272</value>
+    <value>452, 342</value>
   </data>
   <data name="labelHours.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -328,7 +322,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelHours.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="labelTasks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -340,7 +334,7 @@
     <value>Arial, 12pt, style=Bold</value>
   </data>
   <data name="labelTasks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>502, 159</value>
+    <value>493, 175</value>
   </data>
   <data name="labelTasks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -364,7 +358,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelTasks.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="btnStartTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -376,7 +370,7 @@
     <value>Flat</value>
   </data>
   <data name="btnStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 398</value>
+    <value>20, 411</value>
   </data>
   <data name="btnStartTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -403,7 +397,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnStartTime.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnFinishTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -412,7 +406,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="btnFinishTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 459</value>
+    <value>20, 472</value>
   </data>
   <data name="btnFinishTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -439,13 +433,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnFinishTime.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 187</value>
+    <value>258, 207</value>
   </data>
   <data name="dataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -454,7 +448,7 @@
     <value>51</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 81</value>
+    <value>405, 118</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -469,10 +463,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="monthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 164</value>
+    <value>35, 179</value>
   </data>
   <data name="monthCalendar1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>11, 10, 11, 10</value>
@@ -493,7 +487,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;monthCalendar1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="labelRab.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -508,7 +502,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelRab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 85</value>
+    <value>168, 89</value>
   </data>
   <data name="labelRab.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -532,7 +526,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelRab.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="pictureBox1.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -559,7 +553,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="materialDivider1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 112</value>
@@ -583,6 +577,45 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;materialDivider1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnCompleteTask.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnCompleteTask.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btnCompleteTask.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCompleteTask.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 536</value>
+  </data>
+  <data name="btnCompleteTask.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnCompleteTask.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>221, 44</value>
+  </data>
+  <data name="btnCompleteTask.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 44</value>
+  </data>
+  <data name="btnCompleteTask.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="btnCompleteTask.Text" xml:space="preserve">
+    <value>Завершить задачу</value>
+  </data>
+  <data name="&gt;&gt;btnCompleteTask.Name" xml:space="preserve">
+    <value>btnCompleteTask</value>
+  </data>
+  <data name="&gt;&gt;btnCompleteTask.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialRaisedButton, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnCompleteTask.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCompleteTask.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -595,7 +628,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>685, 593</value>
+    <value>685, 719</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -702,10 +735,10 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>685, 593</value>
+    <value>685, 719</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>685, 593</value>
+    <value>685, 719</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

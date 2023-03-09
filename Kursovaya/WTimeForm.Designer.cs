@@ -36,19 +36,21 @@ namespace Kursovaya
             this.labelName = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tbEmId = new System.Windows.Forms.TextBox();
+            this.tBEmId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tBfin = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.labelLoadData = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbFIO = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tBstart
             // 
             this.tBstart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tBstart.Location = new System.Drawing.Point(26, 509);
+            this.tBstart.Location = new System.Drawing.Point(316, 424);
             this.tBstart.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tBstart.Name = "tBstart";
             this.tBstart.Size = new System.Drawing.Size(131, 25);
@@ -57,7 +59,7 @@ namespace Kursovaya
             // tBday
             // 
             this.tBday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tBday.Location = new System.Drawing.Point(26, 458);
+            this.tBday.Location = new System.Drawing.Point(175, 424);
             this.tBday.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tBday.Name = "tBday";
             this.tBday.Size = new System.Drawing.Size(131, 25);
@@ -66,7 +68,7 @@ namespace Kursovaya
             // tBid
             // 
             this.tBid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tBid.Location = new System.Drawing.Point(26, 407);
+            this.tBid.Location = new System.Drawing.Point(34, 424);
             this.tBid.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tBid.Name = "tBid";
             this.tBid.Size = new System.Drawing.Size(131, 25);
@@ -78,7 +80,7 @@ namespace Kursovaya
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(22, 487);
+            this.label2.Location = new System.Drawing.Point(312, 402);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 19);
@@ -91,7 +93,7 @@ namespace Kursovaya
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelName.ForeColor = System.Drawing.Color.Green;
-            this.labelName.Location = new System.Drawing.Point(22, 435);
+            this.labelName.Location = new System.Drawing.Point(171, 401);
             this.labelName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(51, 19);
@@ -104,7 +106,7 @@ namespace Kursovaya
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelID.ForeColor = System.Drawing.Color.Green;
-            this.labelID.Location = new System.Drawing.Point(22, 384);
+            this.labelID.Location = new System.Drawing.Point(30, 401);
             this.labelID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelID.Name = "labelID";
             this.labelID.Size = new System.Drawing.Size(25, 19);
@@ -125,15 +127,17 @@ namespace Kursovaya
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(982, 381);
             this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // tbEmId
+            // tBEmId
             // 
-            this.tbEmId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbEmId.Location = new System.Drawing.Point(167, 407);
-            this.tbEmId.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tbEmId.Name = "tbEmId";
-            this.tbEmId.Size = new System.Drawing.Size(131, 25);
-            this.tbEmId.TabIndex = 27;
+            this.tBEmId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tBEmId.Location = new System.Drawing.Point(187, 491);
+            this.tBEmId.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tBEmId.Name = "tBEmId";
+            this.tBEmId.Size = new System.Drawing.Size(131, 25);
+            this.tBEmId.TabIndex = 27;
+            this.tBEmId.TextChanged += new System.EventHandler(this.tBEmId_TextChanged);
             // 
             // label3
             // 
@@ -141,7 +145,7 @@ namespace Kursovaya
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.Green;
-            this.label3.Location = new System.Drawing.Point(163, 382);
+            this.label3.Location = new System.Drawing.Point(183, 466);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 19);
@@ -151,7 +155,7 @@ namespace Kursovaya
             // tBfin
             // 
             this.tBfin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tBfin.Location = new System.Drawing.Point(26, 561);
+            this.tBfin.Location = new System.Drawing.Point(34, 491);
             this.tBfin.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tBfin.Name = "tBfin";
             this.tBfin.Size = new System.Drawing.Size(131, 25);
@@ -163,7 +167,7 @@ namespace Kursovaya
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.Green;
-            this.label4.Location = new System.Drawing.Point(22, 538);
+            this.label4.Location = new System.Drawing.Point(30, 468);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 19);
@@ -201,17 +205,43 @@ namespace Kursovaya
             this.labelLoadData.Text = "🔄";
             this.labelLoadData.Click += new System.EventHandler(this.labelLoadData_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Green;
+            this.label1.Location = new System.Drawing.Point(344, 465);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 19);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "СОТРУДНИК";
+            // 
+            // tbFIO
+            // 
+            this.tbFIO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tbFIO.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tbFIO.Enabled = false;
+            this.tbFIO.Location = new System.Drawing.Point(348, 491);
+            this.tbFIO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tbFIO.Name = "tbFIO";
+            this.tbFIO.Size = new System.Drawing.Size(235, 25);
+            this.tbFIO.TabIndex = 49;
+            // 
             // WTimeForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(980, 595);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbFIO);
             this.Controls.Add(this.labelLoadData);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.tBfin);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbEmId);
+            this.Controls.Add(this.tBEmId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tBstart);
             this.Controls.Add(this.tBday);
@@ -241,11 +271,13 @@ namespace Kursovaya
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox tbEmId;
+        private System.Windows.Forms.TextBox tBEmId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tBfin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label labelLoadData;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbFIO;
     }
 }

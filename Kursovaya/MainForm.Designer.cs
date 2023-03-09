@@ -31,6 +31,9 @@ namespace Kursovaya
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelCountConfidence = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.btnSecurity = new System.Windows.Forms.Button();
             this.panelSubmenuReport = new System.Windows.Forms.Panel();
             this.btnEfRep = new System.Windows.Forms.Button();
             this.btnTimeRep = new System.Windows.Forms.Button();
@@ -57,14 +60,14 @@ namespace Kursovaya
             this.btnPosition = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelSubmenuReport.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,6 +76,9 @@ namespace Kursovaya
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.DarkGreen;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.labelCountConfidence);
+            this.panel1.Controls.Add(this.panel14);
+            this.panel1.Controls.Add(this.btnSecurity);
             this.panel1.Controls.Add(this.panelSubmenuReport);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.btnReport);
@@ -97,8 +103,44 @@ namespace Kursovaya
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(263, 595);
             this.panel1.TabIndex = 0;
-            this.panel1.Enter += new System.EventHandler(this.panel1_Enter);
-            this.panel1.Leave += new System.EventHandler(this.panel1_Leave);
+            // 
+            // labelCountConfidence
+            // 
+            this.labelCountConfidence.AutoSize = true;
+            this.labelCountConfidence.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCountConfidence.ForeColor = System.Drawing.Color.White;
+            this.labelCountConfidence.Location = new System.Drawing.Point(240, 366);
+            this.labelCountConfidence.Name = "labelCountConfidence";
+            this.labelCountConfidence.Size = new System.Drawing.Size(16, 18);
+            this.labelCountConfidence.TabIndex = 25;
+            this.labelCountConfidence.Text = "1";
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.White;
+            this.panel14.Location = new System.Drawing.Point(-1, 366);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(10, 36);
+            this.panel14.TabIndex = 1;
+            // 
+            // btnSecurity
+            // 
+            this.btnSecurity.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnSecurity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSecurity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSecurity.FlatAppearance.BorderSize = 0;
+            this.btnSecurity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecurity.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSecurity.ForeColor = System.Drawing.Color.White;
+            this.btnSecurity.Image = global::Kursovaya.Properties.Resources.confidence;
+            this.btnSecurity.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSecurity.Location = new System.Drawing.Point(11, 366);
+            this.btnSecurity.Name = "btnSecurity";
+            this.btnSecurity.Size = new System.Drawing.Size(251, 36);
+            this.btnSecurity.TabIndex = 24;
+            this.btnSecurity.Text = "Данные для входа";
+            this.btnSecurity.UseVisualStyleBackColor = false;
+            this.btnSecurity.Click += new System.EventHandler(this.btnSecurity_Click);
             // 
             // panelSubmenuReport
             // 
@@ -108,7 +150,7 @@ namespace Kursovaya
             this.panelSubmenuReport.Controls.Add(this.panel13);
             this.panelSubmenuReport.Controls.Add(this.panel11);
             this.panelSubmenuReport.Controls.Add(this.panel12);
-            this.panelSubmenuReport.Location = new System.Drawing.Point(45, 408);
+            this.panelSubmenuReport.Location = new System.Drawing.Point(45, 450);
             this.panelSubmenuReport.Name = "panelSubmenuReport";
             this.panelSubmenuReport.Size = new System.Drawing.Size(217, 120);
             this.panelSubmenuReport.TabIndex = 23;
@@ -195,7 +237,7 @@ namespace Kursovaya
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.Location = new System.Drawing.Point(-1, 366);
+            this.panel10.Location = new System.Drawing.Point(-1, 408);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(10, 36);
             this.panel10.TabIndex = 15;
@@ -211,7 +253,7 @@ namespace Kursovaya
             this.btnReport.ForeColor = System.Drawing.Color.White;
             this.btnReport.Image = global::Kursovaya.Properties.Resources.report;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(11, 366);
+            this.btnReport.Location = new System.Drawing.Point(11, 408);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(251, 36);
             this.btnReport.TabIndex = 16;
@@ -447,6 +489,19 @@ namespace Kursovaya
             this.mainPanel.Size = new System.Drawing.Size(980, 595);
             this.mainPanel.TabIndex = 1;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::Kursovaya.Properties.Resources._4202111_envato_logo_social_social_media_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(317, 115);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(367, 330);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // labelName
             // 
             this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -472,19 +527,6 @@ namespace Kursovaya
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::Kursovaya.Properties.Resources._4202111_envato_logo_social_social_media_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(317, 115);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(367, 330);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -504,10 +546,11 @@ namespace Kursovaya
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm2_FormClosing);
             this.Load += new System.EventHandler(this.MainForm2_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelSubmenuReport.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -545,5 +588,8 @@ namespace Kursovaya
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btnTimeRep;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button btnSecurity;
+        private System.Windows.Forms.Label labelCountConfidence;
     }
 }

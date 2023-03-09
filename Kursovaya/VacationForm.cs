@@ -27,13 +27,10 @@ namespace Kursovaya
 
             dataGridView1.EnableHeadersVisualStyles = false;
         }
-
         private void VacationForm_Load(object sender, EventArgs e)
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Vacation", db.getConnection());
@@ -54,9 +51,7 @@ namespace Kursovaya
         private void labelLoadData_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Vacation", db.getConnection());
@@ -77,7 +72,6 @@ namespace Kursovaya
         {
             if (tBtype.Text != "" && tBstart.Text != "" && tBfinish.Text != "" && tBdays.Text != "" && tBEmId.Text != "")
             {
-
                 if (isDataExists())
                 {
                     return;
@@ -128,9 +122,7 @@ namespace Kursovaya
         public Boolean isDataExists()
         {
             DB db = new DB();
-
             DataTable table = new DataTable();
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM Vacation WHERE `Vacation_Type`= @T AND `Vacation_Start` = @S AND `Vacation_Finish` = @F AND `Vacation_Days` = @D AND `Employee_idEmployee` = @EmId ", db.getConnection());
@@ -151,7 +143,6 @@ namespace Kursovaya
             else
                 return false;
         }
-
         private void btnUp_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" && tBtype.Text != "" && tBstart.Text != "" && tBfinish.Text != "" && tBdays.Text != "" && tBEmId.Text != "")
@@ -246,15 +237,12 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для удаления!");
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" || tBtype.Text != "" || tBstart.Text != "" || tBfinish.Text != "" || tBdays.Text != "" || tBEmId.Text != "")
             {
                 DB db = new DB();
-
                 DataTable table = new DataTable();
-
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
 
                 MySqlCommand command = new MySqlCommand("SELECT * FROM Vacation WHERE `idVacation` = @ID OR `Vacation_Type`= @T OR `Vacation_Start`= @S OR `Vacation_Finish`= @F OR `Vacation_Days`= @D  OR `Employee_idEmployee`= @EmId;", db.getConnection());
@@ -279,6 +267,39 @@ namespace Kursovaya
             }
             else
                 MessageBox.Show("Введите данные для поиска!");
+        }
+        private void tBEmId_TextChanged(object sender, EventArgs e) //при заполнении тбокса с id ищет фио сотрудника
+        {
+            if (tBEmId.Text != "") //поиск фио по id
+            {
+                DB db = new DB();
+                DataTable tableFIO = new DataTable();
+                MySqlDataAdapter adapterFIO = new MySqlDataAdapter();
+
+                MySqlCommand commandFIO = new MySqlCommand("SELECT Employee_FIO FROM Employee WHERE idEmployee = @id", db.getConnection());
+                commandFIO.Parameters.Add("@id", MySqlDbType.VarChar).Value = tBEmId.Text;
+
+                adapterFIO.SelectCommand = commandFIO;
+                adapterFIO.Fill(tableFIO);
+
+                db.openConnection();
+                if (tableFIO.Rows.Count > 0)
+                {
+                    tbFIO.Text = commandFIO.ExecuteScalar().ToString();
+                }
+                else
+                    tbFIO.Text = "";
+                db.closeConnection();
+            }
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tBid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            tBtype.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            tBstart.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            tBfinish.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            tBdays.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            tBEmId.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
         }
     }
 }

@@ -27,8 +27,7 @@ namespace Kursovaya
             dataGridView1.DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font.FontFamily, 9f, FontStyle.Regular);
 
             dataGridView1.EnableHeadersVisualStyles = false;
-        }
-
+        }        
         private void EducationForm_Load(object sender, EventArgs e)
         {
             DB db = new DB();
@@ -44,15 +43,11 @@ namespace Kursovaya
 
             dataGridView1.DataSource = table;
 
-
-
             dataGridView1.Columns[0].HeaderText = "код_Образования";
             dataGridView1.Columns[1].HeaderText = "Тип";
             dataGridView1.Columns[2].HeaderText = "Учреждение";
-            dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
-            
+            dataGridView1.Columns[3].HeaderText = "код_Сотрудника";                                          
         }
-
         private void labelLoadData_Click(object sender, EventArgs e)
         {
             DB db = new DB();
@@ -73,7 +68,6 @@ namespace Kursovaya
             dataGridView1.Columns[2].HeaderText = "Учреждение";
             dataGridView1.Columns[3].HeaderText = "код_Сотрудника";
         }
-
         public Boolean isDataExists()
         {
             DB db = new DB();
@@ -97,7 +91,6 @@ namespace Kursovaya
             else
                 return false;
         }
-
         private void btnIns_Click(object sender, EventArgs e)
         {
             if (tBType.Text != "" && tBInst.Text != "" && tBEmId.Text != "")
@@ -146,7 +139,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для добавления!");
         }
-
         private void btnUp_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" && tBType.Text != "" && tBInst.Text != "" && tBEmId.Text != "")
@@ -188,7 +180,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для обновления!");
         }
-
         private void btnDel_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" || tBType.Text != "" || tBInst.Text != "" && tBEmId.Text !="")
@@ -237,7 +228,6 @@ namespace Kursovaya
             else
                 MessageBox.Show("Введите данные для удаления!");
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (tBid.Text != "" || tBType.Text != "" || tBInst.Text != "" || tBEmId.Text != "")
@@ -266,6 +256,38 @@ namespace Kursovaya
             }
             else
                 MessageBox.Show("Введите данные для поиска!");
+        }
+        private void tBEmId_TextChanged(object sender, EventArgs e) //при заполнении тбокса с id ищет фио сотрудника
+        {
+            if (tBEmId.Text != "") //поиск фио по id
+            {
+                DB db = new DB();
+                DataTable tableFIO = new DataTable();
+
+                MySqlDataAdapter adapterFIO = new MySqlDataAdapter();
+
+                MySqlCommand commandFIO = new MySqlCommand("SELECT Employee_FIO FROM Employee WHERE idEmployee = @id", db.getConnection());
+                commandFIO.Parameters.Add("@id", MySqlDbType.VarChar).Value = tBEmId.Text;
+
+                adapterFIO.SelectCommand = commandFIO;
+                adapterFIO.Fill(tableFIO);
+
+                db.openConnection();
+                if (tableFIO.Rows.Count > 0)
+                {
+                    tbFIO.Text = commandFIO.ExecuteScalar().ToString();
+                }
+                else
+                    tbFIO.Text = "";
+                db.closeConnection();
+            }
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tBid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            tBType.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            tBInst.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            tBEmId.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }

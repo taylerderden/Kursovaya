@@ -43,6 +43,8 @@ namespace Kursovaya
             this.labelType = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbFIO = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +62,7 @@ namespace Kursovaya
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(983, 358);
             this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // labelLoadData
             // 
@@ -154,6 +157,7 @@ namespace Kursovaya
             this.tBEmId.Name = "tBEmId";
             this.tBEmId.Size = new System.Drawing.Size(159, 25);
             this.tBEmId.TabIndex = 51;
+            this.tBEmId.TextChanged += new System.EventHandler(this.tBEmId_TextChanged);
             // 
             // tBreason
             // 
@@ -237,12 +241,38 @@ namespace Kursovaya
             this.label2.TabIndex = 52;
             this.label2.Text = "ID СОТРУДНИКА";
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Green;
+            this.label1.Location = new System.Drawing.Point(14, 531);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 22);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "СОТРУДНИК";
+            // 
+            // tbFIO
+            // 
+            this.tbFIO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tbFIO.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tbFIO.Enabled = false;
+            this.tbFIO.Location = new System.Drawing.Point(18, 557);
+            this.tbFIO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tbFIO.Name = "tbFIO";
+            this.tbFIO.Size = new System.Drawing.Size(235, 25);
+            this.tbFIO.TabIndex = 53;
+            // 
             // DismissalForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(980, 595);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbFIO);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tBEmId);
             this.Controls.Add(this.tBreason);
@@ -285,5 +315,7 @@ namespace Kursovaya
         private System.Windows.Forms.Label labelType;
         private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbFIO;
     }
 }

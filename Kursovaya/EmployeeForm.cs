@@ -143,47 +143,60 @@ namespace Kursovaya
                     }                   
                     else if (task == "Insert")
                     {
-                        int rowIndex = dataGridView1.Rows.Count - 2;
+                        try
+                        {
+                            int rowIndex = dataGridView1.Rows.Count - 2;
 
-                        DataRow row = dataSet.Tables["Employee"].NewRow();
+                            DataRow row = dataSet.Tables["Employee"].NewRow();
 
-                        row["idEmployee"] = dataGridView1.Rows[rowIndex].Cells["idEmployee"].Value;
-                        row["Employee_FIO"] = dataGridView1.Rows[rowIndex].Cells["Employee_FIO"].Value;
-                        row["Employee_Gender"] = dataGridView1.Rows[rowIndex].Cells["Employee_Gender"].Value;
-                        row["Employee_Phone"] = dataGridView1.Rows[rowIndex].Cells["Employee_Phone"].Value;
-                        row["Employee_Experience"] = dataGridView1.Rows[rowIndex].Cells["Employee_Experience"].Value;
-                        row["Employee_Department"] = dataGridView1.Rows[rowIndex].Cells["Employee_Department"].Value;
-                        row["Position_idPosition"] = dataGridView1.Rows[rowIndex].Cells["Position_idPosition"].Value;
+                            row["idEmployee"] = dataGridView1.Rows[rowIndex].Cells["idEmployee"].Value;
+                            row["Employee_FIO"] = dataGridView1.Rows[rowIndex].Cells["Employee_FIO"].Value;
+                            row["Employee_Gender"] = dataGridView1.Rows[rowIndex].Cells["Employee_Gender"].Value;
+                            row["Employee_Phone"] = dataGridView1.Rows[rowIndex].Cells["Employee_Phone"].Value;
+                            row["Employee_Experience"] = dataGridView1.Rows[rowIndex].Cells["Employee_Experience"].Value;
+                            row["Employee_Department"] = dataGridView1.Rows[rowIndex].Cells["Employee_Department"].Value;
+                            row["Position_idPosition"] = dataGridView1.Rows[rowIndex].Cells["Position_idPosition"].Value;
 
-                        dataSet.Tables["Employee"].Rows.Add(row);
+                            dataSet.Tables["Employee"].Rows.Add(row);
 
-                        dataSet.Tables["Employee"].Rows.RemoveAt(dataSet.Tables["Employee"].Rows.Count - 1);
+                            dataSet.Tables["Employee"].Rows.RemoveAt(dataSet.Tables["Employee"].Rows.Count - 1);
 
-                        dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count - 2);
+                            dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count - 2);
 
-                        dataGridView1.Rows[e.RowIndex].Cells[7].Value = "Delete";
+                            dataGridView1.Rows[e.RowIndex].Cells[7].Value = "Delete";
 
-                        adapter.Update(dataSet, "Employee");
+                            adapter.Update(dataSet, "Employee");
 
-                        newRowAdding = false;
+                            newRowAdding = false;
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Ваши значения в ячейках некорректны, проверьте код Должности(1-12)!");
+                        }
                     }
                     else if (task == "Update")
                     {
-                        int r = e.RowIndex;
+                        try
+                        {
+                            int r = e.RowIndex;
 
-                        dataSet.Tables["Employee"].Rows[r]["idEmployee"] = dataGridView1.Rows[r].Cells["idEmployee"].Value;
-                        dataSet.Tables["Employee"].Rows[r]["Employee_FIO"] = dataGridView1.Rows[r].Cells["Employee_FIO"].Value;
-                        dataSet.Tables["Employee"].Rows[r]["Employee_Gender"] = dataGridView1.Rows[r].Cells["Employee_Gender"].Value;
-                        dataSet.Tables["Employee"].Rows[r]["Employee_Phone"] = dataGridView1.Rows[r].Cells["Employee_Phone"].Value;
-                        dataSet.Tables["Employee"].Rows[r]["Employee_Experience"] = dataGridView1.Rows[r].Cells["Employee_Experience"].Value;
-                        dataSet.Tables["Employee"].Rows[r]["Employee_Department"] = dataGridView1.Rows[r].Cells["Employee_Department"].Value;
-                        dataSet.Tables["Employee"].Rows[r]["Position_idPosition"] = dataGridView1.Rows[r].Cells["Position_idPosition"].Value;
+                            dataSet.Tables["Employee"].Rows[r]["idEmployee"] = dataGridView1.Rows[r].Cells["idEmployee"].Value;
+                            dataSet.Tables["Employee"].Rows[r]["Employee_FIO"] = dataGridView1.Rows[r].Cells["Employee_FIO"].Value;
+                            dataSet.Tables["Employee"].Rows[r]["Employee_Gender"] = dataGridView1.Rows[r].Cells["Employee_Gender"].Value;
+                            dataSet.Tables["Employee"].Rows[r]["Employee_Phone"] = dataGridView1.Rows[r].Cells["Employee_Phone"].Value;
+                            dataSet.Tables["Employee"].Rows[r]["Employee_Experience"] = dataGridView1.Rows[r].Cells["Employee_Experience"].Value;
+                            dataSet.Tables["Employee"].Rows[r]["Employee_Department"] = dataGridView1.Rows[r].Cells["Employee_Department"].Value;
+                            dataSet.Tables["Employee"].Rows[r]["Position_idPosition"] = dataGridView1.Rows[r].Cells["Position_idPosition"].Value;
 
-                        adapter.Update(dataSet, "Employee");
+                            adapter.Update(dataSet, "Employee");
 
-                        dataGridView1.Rows[e.RowIndex].Cells[7].Value = "Delete";
+                            dataGridView1.Rows[e.RowIndex].Cells[7].Value = "Delete";
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Ваши значения в ячейках некорректны, проверьте код Должности(1-12)!");
+                        }
                     }
-
                     ReloadData();
                 }
                 
@@ -248,7 +261,7 @@ namespace Kursovaya
         {
             e.Control.KeyPress -= new KeyPressEventHandler(Column_KeyPress);
 
-            if (dataGridView1.CurrentCell.ColumnIndex == 0)         //на месте _3_ ставим индекс колонки который валидируем
+            if (dataGridView1.CurrentCell.ColumnIndex == 0)         //на месте _0_ ставим индекс колонки который валидируем
             {
                 TextBox textBox = e.Control as TextBox;
                 if (textBox != null)
@@ -266,14 +279,15 @@ namespace Kursovaya
                 }
             }
             
-            if (dataGridView1.CurrentCell.ColumnIndex == 6)         //на месте _6_ ставим индекс колонки который валидируем
-            {
-                TextBox textBox = e.Control as TextBox;
-                if (textBox != null)
-                {
-                    textBox.KeyPress += new KeyPressEventHandler(Column_KeyPress);
-                }
-            }
+           if (dataGridView1.CurrentCell.ColumnIndex == 6)         //на месте _6_ ставим индекс колонки который валидируем
+           {
+               TextBox textBox = e.Control as TextBox;
+               if (textBox != null)
+               {
+                   textBox.KeyPress += new KeyPressEventHandler(Column_KeyPress);
+                   textBox.MaxLength = 2;
+               }               
+           }           
         }
 
         private void Column_KeyPress(object sender, KeyPressEventArgs e)        //метод на проверку можно ли в ячейку писать цифру(букву)
@@ -323,6 +337,11 @@ namespace Kursovaya
 
                 dataGridView1[7, i] = linkCell;
             }
+
+        }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
 
         }
     }

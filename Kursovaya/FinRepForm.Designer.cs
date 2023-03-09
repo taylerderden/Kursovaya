@@ -104,6 +104,7 @@ namespace Kursovaya
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 47);
             this.dataGridView1.Name = "dataGridView1";
@@ -129,8 +130,10 @@ namespace Kursovaya
             // 
             // cBPerson
             // 
+            this.cBPerson.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBPerson.FormattingEnabled = true;
             this.cBPerson.Items.AddRange(new object[] {
+            "",
             "Антиповский Л.С."});
             this.cBPerson.Location = new System.Drawing.Point(465, 12);
             this.cBPerson.Name = "cBPerson";

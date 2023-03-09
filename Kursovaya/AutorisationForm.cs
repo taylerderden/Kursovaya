@@ -48,10 +48,10 @@ namespace Kursovaya
         }
         public void buttonLogin_Click(object sender, EventArgs e)
         {
-            try
+            try                                      
             {
-                // Create a request for the URL.        
-                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://www.google.ru/");
+                // Create a request for the URL. // проверка подключения к интернету        
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://www.google.ru/");   //сюда любой домен     
                 request.UserAgent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)";
                 request.Timeout = 10000;
 
@@ -77,12 +77,10 @@ namespace Kursovaya
                 }
 
                 DB db = new DB();
-
                 DataTable table = new DataTable();
-
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                MySqlCommand commandAdmin = new MySqlCommand("SELECT * FROM `Security` WHERE `Security_Login` = @uL AND `Security_Password` = @uP AND `Security_Category` = 'Admin'", db.getConnection()); //авторизация администратора
+                MySqlCommand commandAdmin = new MySqlCommand("SELECT * FROM `Security` WHERE `Security_Login` = @uL AND `Security_Password` = @uP AND `Security_Category` = 'Admin' AND `Confirmation` = '+'; ", db.getConnection()); //авторизация администратора
                 commandAdmin.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
                 commandAdmin.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
@@ -120,7 +118,7 @@ namespace Kursovaya
                 }
                 else //иначе ищет запись пользователя(сотрудника)
                 {
-                    MySqlCommand commandUser = new MySqlCommand("SELECT * FROM `Security` WHERE `Security_Login` = @uL AND `Security_Password` = @uP", db.getConnection()); //авторизация пользователя(сотрудника)
+                    MySqlCommand commandUser = new MySqlCommand("SELECT * FROM `Security` WHERE `Security_Login` = @uL AND `Security_Password` = @uP AND `Confirmation` = '+'; ", db.getConnection()); //авторизация пользователя(сотрудника)
                     commandUser.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
                     commandUser.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
@@ -163,7 +161,6 @@ namespace Kursovaya
             catch (Exception)
             {
                 MessageBox.Show("Нет подключения к интернету!\nПроверьте ваш фаервол или настройки сетевого подключения!");
-
             }
             
         }
@@ -319,7 +316,6 @@ namespace Kursovaya
                 Password.Text = "Пароль";
             }
         }
-
         private void labelCheck_Click(object sender, EventArgs e)
         {
             if (labelCheck.Text == "●")
@@ -333,7 +329,6 @@ namespace Kursovaya
                 labelCheck.Text = "●";
             }
         }
-
         private void labelCheck_DoubleClick(object sender, EventArgs e)
         {
             if (labelCheck.Text == "●")
@@ -347,12 +342,10 @@ namespace Kursovaya
                 labelCheck.Text = "●";
             }
         }
-
         private void AutorisationForm_Load(object sender, EventArgs e)
         {
             
         }
-
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -360,11 +353,9 @@ namespace Kursovaya
             regForm.Show();
         }
     }
-
     static class Global //для id
     {
         public static string _globalVar = "";
-
         public static string GlobalVar
         {
             get { return _globalVar; }

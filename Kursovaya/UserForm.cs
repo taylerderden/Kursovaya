@@ -80,7 +80,7 @@ namespace Kursovaya
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT Tasks_Name, Tasks_Deadline FROM Tasks WHERE Employee_idEmployee = @ID", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT `Tasks_Name`, `Tasks_Deadline` FROM Tasks WHERE `Employee_idEmployee` = @ID AND `Tasks_Complete` = ''", db.getConnection());
             command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = Global.GlobalVar;
 
             adapter.SelectCommand = command;
@@ -290,5 +290,39 @@ namespace Kursovaya
             dataGridView3.Columns[1].HeaderText = "Сумма";
         }
 
+        private void btnCompleteTask_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("UPDATE `Tasks` SET `Tasks_Complete`= '+' WHERE `Employee_idEmployee` = @ID AND `Tasks_Name` = @tName;", db.getConnection());
+            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = Global.GlobalVar;
+            command.Parameters.Add("@tName", MySqlDbType.VarChar).Value = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+            db.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show("Данные обновлены");
+                DataTable tableNew = new DataTable();
+
+                MySqlCommand commandNew = new MySqlCommand("SELECT `Tasks_Name`, `Tasks_Deadline` FROM Tasks WHERE `Employee_idEmployee` = @ID AND `Tasks_Complete` = '' ", db.getConnection());
+                commandNew.Parameters.Add("@ID", MySqlDbType.VarChar).Value = Global.GlobalVar;
+
+                adapter.SelectCommand = commandNew;
+                adapter.Fill(tableNew);
+
+                dataGridView1.DataSource = tableNew;
+                dataGridView1.Columns[0].HeaderText = "Название";
+                dataGridView1.Columns[1].HeaderText = "Сроки";
+            }
+            else
+                MessageBox.Show("Ошибка!");
+
+            db.closeConnection();
+        }
+            
     }
 }
+

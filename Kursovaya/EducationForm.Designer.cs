@@ -43,6 +43,8 @@ namespace Kursovaya
             this.btnDel = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnIns = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbFIO = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,6 +132,7 @@ namespace Kursovaya
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1004, 354);
             this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // tBEmId
             // 
@@ -140,6 +143,7 @@ namespace Kursovaya
             this.tBEmId.Name = "tBEmId";
             this.tBEmId.Size = new System.Drawing.Size(235, 25);
             this.tBEmId.TabIndex = 40;
+            this.tBEmId.TextChanged += new System.EventHandler(this.tBEmId_TextChanged);
             // 
             // labelEmId
             // 
@@ -233,6 +237,30 @@ namespace Kursovaya
             this.btnIns.UseVisualStyleBackColor = false;
             this.btnIns.Click += new System.EventHandler(this.btnIns_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Green;
+            this.label1.Location = new System.Drawing.Point(280, 543);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 22);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "СОТРУДНИК";
+            // 
+            // tbFIO
+            // 
+            this.tbFIO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tbFIO.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tbFIO.Enabled = false;
+            this.tbFIO.Location = new System.Drawing.Point(284, 569);
+            this.tbFIO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tbFIO.Name = "tbFIO";
+            this.tbFIO.Size = new System.Drawing.Size(235, 25);
+            this.tbFIO.TabIndex = 47;
+            // 
             // EducationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -240,6 +268,8 @@ namespace Kursovaya
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 607);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbFIO);
             this.Controls.Add(this.labelLoadData);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDel);
@@ -282,5 +312,7 @@ namespace Kursovaya
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnIns;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbFIO;
     }
 }
