@@ -32,11 +32,10 @@ namespace Kursovaya
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnSelectEmployee = new MaterialSkin.Controls.MaterialRaisedButton();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnCreateChart = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -45,15 +44,16 @@ namespace Kursovaya
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(516, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(542, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(445, 71);
+            this.dataGridView1.Size = new System.Drawing.Size(445, 161);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -80,53 +80,31 @@ namespace Kursovaya
             this.label2.TabIndex = 2;
             this.label2.Text = "Формула: Задачи/Часы";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(744, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(217, 32);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // btnSelectEmployee
-            // 
-            this.btnSelectEmployee.AutoSize = true;
-            this.btnSelectEmployee.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSelectEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelectEmployee.Depth = 0;
-            this.btnSelectEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectEmployee.Icon = null;
-            this.btnSelectEmployee.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSelectEmployee.Location = new System.Drawing.Point(516, 90);
-            this.btnSelectEmployee.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSelectEmployee.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSelectEmployee.Name = "btnSelectEmployee";
-            this.btnSelectEmployee.Primary = true;
-            this.btnSelectEmployee.Size = new System.Drawing.Size(222, 36);
-            this.btnSelectEmployee.TabIndex = 30;
-            this.btnSelectEmployee.Text = "выбрать сотрудника";
-            this.btnSelectEmployee.UseVisualStyleBackColor = true;
-            // 
             // chart
             // 
+            this.chart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             chartArea1.Name = "ChartArea1";
             this.chart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart.Legends.Add(legend1);
-            this.chart.Location = new System.Drawing.Point(12, 129);
+            this.chart.Location = new System.Drawing.Point(17, 199);
             this.chart.Name = "chart";
             this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart.Series.Add(series1);
-            this.chart.Size = new System.Drawing.Size(617, 466);
+            this.chart.Size = new System.Drawing.Size(595, 396);
             this.chart.TabIndex = 31;
-            this.chart.Text = "chart1";
+            this.chart.Text = "Диаграмма эффективности";
+            title1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Диаграмма эффективности";
+            this.chart.Titles.Add(title1);
             // 
             // btnCreateChart
             // 
+            this.btnCreateChart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreateChart.AutoSize = true;
             this.btnCreateChart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCreateChart.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -134,7 +112,7 @@ namespace Kursovaya
             this.btnCreateChart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateChart.Icon = null;
             this.btnCreateChart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCreateChart.Location = new System.Drawing.Point(765, 558);
+            this.btnCreateChart.Location = new System.Drawing.Point(813, 558);
             this.btnCreateChart.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateChart.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreateChart.Name = "btnCreateChart";
@@ -153,8 +131,6 @@ namespace Kursovaya
             this.ClientSize = new System.Drawing.Size(1000, 607);
             this.Controls.Add(this.btnCreateChart);
             this.Controls.Add(this.chart);
-            this.Controls.Add(this.btnSelectEmployee);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -176,8 +152,6 @@ namespace Kursovaya
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSelectEmployee;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
         private MaterialSkin.Controls.MaterialRaisedButton btnCreateChart;
     }

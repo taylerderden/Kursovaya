@@ -46,6 +46,8 @@ namespace Kursovaya
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(372, 28);
             this.Login.TabIndex = 0;
+            this.Login.Enter += new System.EventHandler(this.Login_Enter);
+            this.Login.Leave += new System.EventHandler(this.Login_Leave);
             // 
             // Password
             // 
@@ -54,6 +56,8 @@ namespace Kursovaya
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(372, 28);
             this.Password.TabIndex = 1;
+            this.Password.Enter += new System.EventHandler(this.Password_Enter);
+            this.Password.Leave += new System.EventHandler(this.Password_Leave);
             // 
             // buttonRegister
             // 
@@ -135,6 +139,7 @@ namespace Kursovaya
             this.Name = "SecurityRegForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "        Данные для авторизации";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SecurityRegForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

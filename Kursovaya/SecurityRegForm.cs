@@ -23,6 +23,13 @@ namespace Kursovaya
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green600, MaterialSkin.Primary.Green900, MaterialSkin.Primary.Green500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+
+            Login.Text = "Логин";
+            Login.ForeColor = Color.Gray;
+
+            Password.Text = "Пароль";
+            Password.ForeColor = Color.Gray;
+
         }
         private string GetHash(string input) // хеширование пароля и логина
         {
@@ -37,12 +44,12 @@ namespace Kursovaya
             String loginUser = GetHash(Login.Text); // запись логина
             String passUser = GetHash(Password.Text); // запись пароля
 
-            if (Login.Text == "")
+            if (Login.Text == "" || Login.Text == "Логин")
             {
                 MessageBox.Show("Введите логин!");
                 return;
             }
-            if (Password.Text == "")
+            if (Password.Text == "" || Password.Text == "Пароль")
             {
                 MessageBox.Show("Введите пароль!");
                 return;
@@ -92,6 +99,43 @@ namespace Kursovaya
             this.Hide();
             AutorisationForm aForm = new AutorisationForm(); //открытие формы авторизации
             aForm.Show();
+        }
+
+        private void SecurityRegForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Login_Leave(object sender, EventArgs e)
+        {
+            if (Login.Text == "")
+            {
+                Login.Text = "Логин";
+            }
+        }
+
+        private void Login_Enter(object sender, EventArgs e)
+        {
+            if (Login.Text == "Логин")
+            {
+                Login.Text = "";
+            }
+        }
+
+        private void Password_Leave(object sender, EventArgs e)
+        {
+            if (Password.Text == "")
+            {
+                Password.Text = "Пароль";
+            }
+        }
+
+        private void Password_Enter(object sender, EventArgs e)
+        {
+            if (Password.Text == "Пароль")
+            {
+                Password.Text = "";
+            }
         }
     }
 }

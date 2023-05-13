@@ -30,7 +30,7 @@ namespace Kursovaya
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            if (cBPerson.Text == "")
+            if (cBPerson.Text == "Все сотрудники" || cBPerson.Text == "")
             {
                 MySqlCommand command = new MySqlCommand("SELECT  COUNT(*) AS Days, Sum(SUBTIME(`WTime_Finish`, `WTime_Start`)/10000) AS Hours, `Employee_FIO` FROM `WTime` " +
                 "INNER JOIN `Employee` ON Employee_idEmployee = idEmployee GROUP BY `Employee_FIO`;", db.getConnection());
@@ -45,7 +45,7 @@ namespace Kursovaya
                 dataGridView1.Columns[2].HeaderText = "Сотрудник";
             }
 
-            if (cBPerson.Text != "")
+            if (cBPerson.Text != "Все сотрудники" || cBPerson.Text != "")
             {
                 MySqlCommand command = new MySqlCommand("SELECT  COUNT(*) AS Days, Sum(SUBTIME(`WTime_Finish`, `WTime_Start`)/10000) AS Hours, `Employee_FIO` FROM `WTime` " +
                 "INNER JOIN `Employee` ON Employee_idEmployee = idEmployee WHERE Employee_FIO = @fio;", db.getConnection());

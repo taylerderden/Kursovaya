@@ -133,8 +133,17 @@ namespace Kursovaya
             this.cBPerson.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBPerson.FormattingEnabled = true;
             this.cBPerson.Items.AddRange(new object[] {
-            "",
-            "Антиповский Л.С."});
+            "Все сотрудники",
+            "Антиповский Л.С.",
+            "Архипова С.Ю.",
+            "Кадыров Р.А.",
+            "Курочкин Я.С.",
+            "Архипов Л.С.",
+            "Шуваев В.В.",
+            "Гришкина Ж.С.",
+            "Занина К.К.",
+            "Зуева Н.В.",
+            "Усачёв С.С."});
             this.cBPerson.Location = new System.Drawing.Point(465, 12);
             this.cBPerson.Name = "cBPerson";
             this.cBPerson.Size = new System.Drawing.Size(188, 25);

@@ -57,11 +57,11 @@ namespace Kursovaya
         {
             if(checkBoxMale.Checked == true)
             {
-                checkBoxFemale.Enabled = false;
+                checkBoxFemale.Checked = false;
             }
             else
             {
-                checkBoxFemale.Enabled = true;
+                checkBoxFemale.Checked = true;
             }           
         }
 
@@ -69,11 +69,11 @@ namespace Kursovaya
         {
             if(checkBoxFemale.Checked == true)
             {
-                checkBoxMale.Enabled = false;
+                checkBoxMale.Checked = false;
             }
             else
             {
-                checkBoxMale.Enabled = true;
+                checkBoxMale.Checked = true;
             }
         }
 

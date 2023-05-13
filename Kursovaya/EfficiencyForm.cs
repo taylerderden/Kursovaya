@@ -48,7 +48,7 @@ namespace Kursovaya
 
         private void btnCreateChart_Click(object sender, EventArgs e)
         {
-            CreateChart(dataGridView1, "Эффективность", "Сотрудники");
+            CreateChart(dataGridView1, "Диаграмма эффективности", "Сотрудник");
         }
 
         private void CreateChart(DataGridView dataGridView, string nameTitle, string seriesName)
@@ -58,14 +58,18 @@ namespace Kursovaya
                 chart.Series.Clear();
                 chart.Series.Add(seriesName);
 
-                for (int i = 0; i < dataGridView1.RowCount; i++)
+                for (int i = 0; i < dataGridView.RowCount; i++)
                 {
-                    var name = dataGridView1.Rows[i].Cells[0].Value?.ToString() ?? "";
-                    var value = dataGridView1.Rows[i].Cells[1].Value?.ToString() ?? "";
-                    chart.Series[seriesName].Points.AddXY(name, value);
+                    var name = dataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                    var value = dataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                    chart.Series[seriesName].Points.AddXY(name, Convert.ToDouble(value));
                 }
-                chart.ChartAreas[0].AxisX.Title = dataGridView1.Columns[0].HeaderText;
-                chart.ChartAreas[0].AxisY.Title = dataGridView1.Columns[1].HeaderText;
+
+                chart.Titles.Clear();
+                chart.Titles.Add(nameTitle);
+
+                chart.ChartAreas[0].AxisX.Title = dataGridView.Columns[0].HeaderText;
+                chart.ChartAreas[0].AxisY.Title = dataGridView.Columns[1].HeaderText;
                 //chart.ChartAreas[0].AxisY.Interval = 0.1;
 
                 MessageBox.Show("График создан");

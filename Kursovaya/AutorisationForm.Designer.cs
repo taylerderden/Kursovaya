@@ -34,10 +34,10 @@ namespace Kursovaya
             this.buttonRegister = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.labelCheck = new System.Windows.Forms.Label();
-            this.Password = new LollipopTextBox();
-            this.Login = new LollipopTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Password = new LollipopTextBox();
+            this.Login = new LollipopTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,6 +106,29 @@ namespace Kursovaya
             this.labelCheck.Click += new System.EventHandler(this.labelCheck_Click);
             this.labelCheck.DoubleClick += new System.EventHandler(this.labelCheck_DoubleClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label1.Location = new System.Drawing.Point(50, 190);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(335, 29);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Human Capital Management";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::Kursovaya.Properties.Resources._4202111_envato_logo_social_social_media_icon;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(127, 71);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(102, 104);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // Password
             // 
             this.Password.FocusedColor = "Green";
@@ -142,29 +165,6 @@ namespace Kursovaya
             this.Login.UseSystemPasswordChar = false;
             this.Login.Enter += new System.EventHandler(this.Login_Enter);
             this.Login.Leave += new System.EventHandler(this.Login_Leave);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label1.Location = new System.Drawing.Point(50, 190);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 29);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Human Capital Management";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::Kursovaya.Properties.Resources._4202111_envato_logo_social_social_media_icon;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(127, 71);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(102, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
             // 
             // AutorisationForm
             // 

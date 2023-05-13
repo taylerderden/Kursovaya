@@ -30,7 +30,7 @@ namespace Kursovaya
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();                     
             
-            if (cBPerson.Text != "" && tBsum1.Text != "" && tBsum2.Text != "")
+            if (cBPerson.Text != "" || cBPerson.Text != "Все сотрудники" && tBsum1.Text != "" && tBsum2.Text != "")
             {
                 MySqlCommand command = new MySqlCommand("SELECT Payment_Date, Payment_Sum, Employee_FIO FROM `Payment` " +
                     "INNER JOIN `Employee` on Employee_idEmployee = idEmployee " +
@@ -48,7 +48,7 @@ namespace Kursovaya
                 dataGridView1.Columns[1].HeaderText = "Сумма";
                 dataGridView1.Columns[2].HeaderText = "ФИО";
             }
-            if(tBsum1.Text != "" && tBsum2.Text != "" && cBPerson.Text == "")
+            if(tBsum1.Text != "" && tBsum2.Text != "" && cBPerson.Text == "" || cBPerson.Text == "Все сотрудники")
             {
                 MySqlCommand command = new MySqlCommand("SELECT `Payment_Date`, `Payment_Sum`, `Employee_FIO` FROM `Payment` " +
                 "INNER JOIN `Employee` ON Employee_idEmployee = idEmployee " +
@@ -80,7 +80,7 @@ namespace Kursovaya
                 dataGridView1.Columns[1].HeaderText = "Сумма";
                 dataGridView1.Columns[2].HeaderText = "ФИО";
             }
-            if (cBPerson.Text == "" && tBsum1.Text == "" && tBsum2.Text == "")
+            if (cBPerson.Text == "" || cBPerson.Text == "Все сотрудники" && tBsum1.Text == "" && tBsum2.Text == "")
             {
                 MySqlCommand command = new MySqlCommand("SELECT `Payment_Date`, `Payment_Sum`, `Employee_FIO` FROM `Payment` " +
                 "INNER JOIN `Employee` on Employee_idEmployee = idEmployee; ", db.getConnection());
