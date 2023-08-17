@@ -289,5 +289,11 @@ namespace Kursovaya
             tBInst.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             tBEmId.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            while (dataGridView1.Rows.Count > 1)
+                dataGridView1.Rows.Remove(dataGridView1.Rows[0]);
+        }
     }
 }

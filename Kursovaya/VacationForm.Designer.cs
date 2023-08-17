@@ -139,6 +139,7 @@ namespace Kursovaya
             this.dataGridView1.Size = new System.Drawing.Size(1000, 290);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // btnSearch
             // 

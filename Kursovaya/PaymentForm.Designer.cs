@@ -128,6 +128,7 @@ namespace Kursovaya
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(983, 374);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // labelLoadData
             // 
