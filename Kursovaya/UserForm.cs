@@ -85,7 +85,7 @@ namespace Kursovaya
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
-
+           
             dataGridView1.DataSource = table;
             dataGridView1.Columns[0].HeaderText = "Название";
             dataGridView1.Columns[1].HeaderText = "Сроки";
@@ -113,7 +113,7 @@ namespace Kursovaya
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT Tasks_Name, Tasks_Deadline FROM Tasks WHERE Employee_idEmployee = @ID", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT Tasks_Name, Tasks_Deadline FROM Tasks WHERE Employee_idEmployee = @ID  AND `Tasks_Complete` = ''", db.getConnection());
             command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = Global.GlobalVar;
 
             adapter.SelectCommand = command;

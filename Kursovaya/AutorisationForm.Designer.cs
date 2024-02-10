@@ -189,7 +189,6 @@ namespace Kursovaya
             this.MinimumSize = new System.Drawing.Size(360, 390);
             this.Name = "AutorisationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.AutorisationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

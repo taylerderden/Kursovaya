@@ -46,7 +46,7 @@ namespace Kursovaya
 
             return Convert.ToBase64String(hash);
         }
-        public void buttonLogin_Click(object sender, EventArgs e)
+        async public void buttonLogin_Click(object sender, EventArgs e)
         {
             try                                      
             {
@@ -76,6 +76,12 @@ namespace Kursovaya
                     return;
                 }
 
+                //асинхронность
+                await Task.Run(() =>
+                {
+
+                });
+
                 DB db = new DB();
                 DataTable table = new DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
@@ -85,7 +91,10 @@ namespace Kursovaya
                 commandAdmin.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
                 adapter.SelectCommand = commandAdmin;
-                adapter.Fill(table);
+                await Task.Run(() =>                 //асинхронно ищем записи
+                {
+                    adapter.Fill(table);
+                }); 
 
                 if (table.Rows.Count > 0) //поиск записей
                 {
@@ -98,8 +107,11 @@ namespace Kursovaya
                     commandID.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
                     adapterID.SelectCommand = commandID;
-                    adapterID.Fill(tableID);
-
+                    await Task.Run(() =>
+                    {
+                        adapterID.Fill(tableID);
+                    });
+                    
                     db.openConnection();
 
                     if (table.Rows.Count > 0) //поиск записей
@@ -123,7 +135,10 @@ namespace Kursovaya
                     commandUser.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
                     adapter.SelectCommand = commandUser;
-                    adapter.Fill(table);
+                    await Task.Run(() =>
+                    {
+                        adapter.Fill(table);
+                    }); 
 
                     if (table.Rows.Count > 0)
                     {
@@ -136,7 +151,10 @@ namespace Kursovaya
                         commandID.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
                         adapterID.SelectCommand = commandID;
-                        adapterID.Fill(tableID);
+                        await Task.Run(() =>
+                        {
+                            adapterID.Fill(tableID);
+                        }); 
 
                         db.openConnection();
 
@@ -341,10 +359,6 @@ namespace Kursovaya
                 Password.UseSystemPasswordChar = true;
                 labelCheck.Text = "●";
             }
-        }
-        private void AutorisationForm_Load(object sender, EventArgs e)
-        {
-            
         }
         private void buttonRegister_Click(object sender, EventArgs e)
         {

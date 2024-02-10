@@ -18,7 +18,12 @@ namespace Kursovaya
         {
             InitializeComponent();
 
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Green;
+
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 11f, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Green;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
             dataGridView1.EnableHeadersVisualStyles = false;
         }
 

@@ -346,6 +346,7 @@
     <Content Include="images\confidence.png" />
     <Content Include="images\dismiss.png" />
     <Content Include="images\educat.png" />
+    <Content Include="images\loading-13.gif" />
     <Content Include="images\money.png" />
     <Content Include="images\personal.png" />
     <Content Include="images\persons.png" />
